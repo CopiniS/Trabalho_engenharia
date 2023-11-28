@@ -1,6 +1,6 @@
 
 package entity.model;
-
+// PULL REQUEST
 public class Conta {
     private int id;
     private Hospede hospede;
