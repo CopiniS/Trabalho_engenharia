@@ -1,4 +1,3 @@
-<<<<<<< HEAD:Trabalho_final_EngSoft/src/main/java/entity/view/Janela.java
 
 package entity.view;
 
@@ -8,13 +7,6 @@ public class Janela extends javax.swing.JFrame {
      * Creates new form Tela_hotel
      */
     public Janela() {
-=======
-package entity.view;
-
-public class Tela_hotel extends javax.swing.JFrame {
-
-    public Tela_hotel() {
->>>>>>> 119818ff193319c570eb209b433fba04386d77ed:Trabalho_final_EngSoft/src/main/java/entity/view/Tela_hotel.java
         initComponents();
     }
 
@@ -70,6 +62,7 @@ public class Tela_hotel extends javax.swing.JFrame {
             }
         });
     }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
