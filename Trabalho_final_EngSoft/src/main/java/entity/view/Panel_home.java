@@ -26,19 +26,26 @@ public class Panel_home extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        lb_logoSB = new javax.swing.JLabel();
+        lb_sideBar = new javax.swing.JLabel();
+
+        setBackground(new java.awt.Color(255, 255, 255));
+        setLayout(null);
+
+        lb_logoSB.setMaximumSize(new java.awt.Dimension(112, 42));
+        lb_logoSB.setMinimumSize(new java.awt.Dimension(112, 42));
+        lb_logoSB.setPreferredSize(new java.awt.Dimension(112, 42));
+        add(lb_logoSB);
+        lb_logoSB.setBounds(90, 30, 112, 42);
+
+        lb_sideBar.setBackground(new java.awt.Color(0, 127, 173));
+        add(lb_sideBar);
+        lb_sideBar.setBounds(0, 0, 300, 1080);
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel lb_logoSB;
+    private javax.swing.JLabel lb_sideBar;
     // End of variables declaration//GEN-END:variables
 }
