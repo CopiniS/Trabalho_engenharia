@@ -1,13 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package entity.controller;
 
-/**
- *
- * @author Copini - PC
- */
-public class controller_login {
+import entity.view.Panel_home;
+
+public class Controller_login {
     
+    public void bt_acessar(){
+        
+    }
+    
+    public void goHome(){
+        Main.c1.getView().setTelaHome(new Panel_home());
+        Main.c1.getView().mostraTela(Main.c1.getView().getTelaHome());
+    }
 }

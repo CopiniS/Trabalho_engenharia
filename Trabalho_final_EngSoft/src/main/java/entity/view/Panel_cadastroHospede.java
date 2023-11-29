@@ -8,12 +8,12 @@ package entity.view;
  *
  * @author Copini - PC
  */
-public class Panel_cadastrarHospede extends javax.swing.JPanel {
+public class Panel_cadastroHospede extends javax.swing.JPanel {
 
     /**
      * Creates new form Panel_cadastrarHospede
      */
-    public Panel_cadastrarHospede() {
+    public Panel_cadastroHospede() {
         initComponents();
     }
 
