@@ -26,26 +26,267 @@ public class Panel_home extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lb_logoSB = new javax.swing.JLabel();
-        lb_sideBar = new javax.swing.JLabel();
+        lb_infoQ9 = new javax.swing.JLabel();
+        lb_cbcQ9 = new javax.swing.JLabel();
+        lb_bkgQ9 = new javax.swing.JLabel();
+        lb_infoQ8 = new javax.swing.JLabel();
+        lb_cbcQ8 = new javax.swing.JLabel();
+        lb_bkgQ8 = new javax.swing.JLabel();
+        lb_infoQ7 = new javax.swing.JLabel();
+        lb_cbcQ7 = new javax.swing.JLabel();
+        lb_bkgQ7 = new javax.swing.JLabel();
+        lb_infoQ6 = new javax.swing.JLabel();
+        lb_cbcQ6 = new javax.swing.JLabel();
+        lb_bkgQ6 = new javax.swing.JLabel();
+        lb_infoQ5 = new javax.swing.JLabel();
+        lb_cbcQ5 = new javax.swing.JLabel();
+        lb_bkgQ5 = new javax.swing.JLabel();
+        lb_infoQ4 = new javax.swing.JLabel();
+        lb_cbcQ4 = new javax.swing.JLabel();
+        lb_bkgQ4 = new javax.swing.JLabel();
+        lb_infoQ3 = new javax.swing.JLabel();
+        lb_cbcQ3 = new javax.swing.JLabel();
+        lb_bkgQ3 = new javax.swing.JLabel();
+        lb_infoQ2 = new javax.swing.JLabel();
+        lb_cbcQ2 = new javax.swing.JLabel();
+        lb_bkgQ2 = new javax.swing.JLabel();
+        lb_infoQ1 = new javax.swing.JLabel();
+        lb_cbcQ1 = new javax.swing.JLabel();
+        lb_bkgQ1 = new javax.swing.JLabel();
+        lb_Mailing = new javax.swing.JLabel();
+        lb_DayUse = new javax.swing.JLabel();
+        lb_Cadastro = new javax.swing.JLabel();
+        lb_Reservar = new javax.swing.JLabel();
+        lb_Calendario = new javax.swing.JLabel();
+        lb_Home = new javax.swing.JLabel();
+        lb_logoSideBar = new javax.swing.JLabel();
+        lb_menuSelecionado = new javax.swing.JLabel();
+        lb_bkgSideBar = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(1366, 768));
         setLayout(null);
 
-        lb_logoSB.setMaximumSize(new java.awt.Dimension(112, 42));
-        lb_logoSB.setMinimumSize(new java.awt.Dimension(112, 42));
-        lb_logoSB.setPreferredSize(new java.awt.Dimension(112, 42));
-        add(lb_logoSB);
-        lb_logoSB.setBounds(90, 30, 112, 42);
+        lb_infoQ9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/informacoes 1.png"))); // NOI18N
+        lb_infoQ9.setText("jLabel1");
+        lb_infoQ9.setPreferredSize(new java.awt.Dimension(25, 27));
+        add(lb_infoQ9);
+        lb_infoQ9.setBounds(1260, 650, 25, 27);
 
-        lb_sideBar.setBackground(new java.awt.Color(0, 127, 173));
-        add(lb_sideBar);
-        lb_sideBar.setBounds(0, 0, 300, 1080);
+        lb_cbcQ9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cbcLimpeza.png"))); // NOI18N
+        add(lb_cbcQ9);
+        lb_cbcQ9.setBounds(1060, 530, 241, 45);
+
+        lb_bkgQ9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Rectangle 1.png"))); // NOI18N
+        add(lb_bkgQ9);
+        lb_bkgQ9.setBounds(1060, 530, 241, 157);
+
+        lb_infoQ8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/informacoes 1.png"))); // NOI18N
+        lb_infoQ8.setText("jLabel1");
+        lb_infoQ8.setPreferredSize(new java.awt.Dimension(25, 27));
+        add(lb_infoQ8);
+        lb_infoQ8.setBounds(910, 650, 25, 27);
+
+        lb_cbcQ8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cbcSaiHoje.png"))); // NOI18N
+        add(lb_cbcQ8);
+        lb_cbcQ8.setBounds(710, 530, 241, 45);
+
+        lb_bkgQ8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Rectangle 1.png"))); // NOI18N
+        add(lb_bkgQ8);
+        lb_bkgQ8.setBounds(710, 530, 241, 157);
+
+        lb_infoQ7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/informacoes 1.png"))); // NOI18N
+        lb_infoQ7.setText("jLabel1");
+        lb_infoQ7.setPreferredSize(new java.awt.Dimension(25, 27));
+        add(lb_infoQ7);
+        lb_infoQ7.setBounds(570, 650, 25, 27);
+
+        lb_cbcQ7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cbcEntraHoje.png"))); // NOI18N
+        add(lb_cbcQ7);
+        lb_cbcQ7.setBounds(370, 530, 241, 45);
+
+        lb_bkgQ7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Rectangle 1.png"))); // NOI18N
+        add(lb_bkgQ7);
+        lb_bkgQ7.setBounds(370, 530, 241, 157);
+
+        lb_infoQ6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/informacoes 1.png"))); // NOI18N
+        lb_infoQ6.setText("jLabel1");
+        lb_infoQ6.setPreferredSize(new java.awt.Dimension(25, 27));
+        add(lb_infoQ6);
+        lb_infoQ6.setBounds(1260, 450, 25, 27);
+
+        lb_cbcQ6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cbcDisp.png"))); // NOI18N
+        add(lb_cbcQ6);
+        lb_cbcQ6.setBounds(1060, 330, 241, 45);
+
+        lb_bkgQ6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Rectangle 1.png"))); // NOI18N
+        add(lb_bkgQ6);
+        lb_bkgQ6.setBounds(1060, 330, 241, 157);
+
+        lb_infoQ5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/informacoes 1.png"))); // NOI18N
+        lb_infoQ5.setText("jLabel1");
+        lb_infoQ5.setPreferredSize(new java.awt.Dimension(25, 27));
+        add(lb_infoQ5);
+        lb_infoQ5.setBounds(910, 450, 25, 27);
+
+        lb_cbcQ5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cbcDisp.png"))); // NOI18N
+        add(lb_cbcQ5);
+        lb_cbcQ5.setBounds(710, 330, 241, 45);
+
+        lb_bkgQ5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Rectangle 1.png"))); // NOI18N
+        add(lb_bkgQ5);
+        lb_bkgQ5.setBounds(710, 330, 241, 157);
+
+        lb_infoQ4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/informacoes 1.png"))); // NOI18N
+        lb_infoQ4.setText("jLabel1");
+        lb_infoQ4.setPreferredSize(new java.awt.Dimension(25, 27));
+        add(lb_infoQ4);
+        lb_infoQ4.setBounds(570, 450, 25, 27);
+
+        lb_cbcQ4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cbcOcupado.png"))); // NOI18N
+        add(lb_cbcQ4);
+        lb_cbcQ4.setBounds(370, 330, 241, 45);
+
+        lb_bkgQ4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Rectangle 1.png"))); // NOI18N
+        add(lb_bkgQ4);
+        lb_bkgQ4.setBounds(370, 330, 241, 157);
+
+        lb_infoQ3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/informacoes 1.png"))); // NOI18N
+        lb_infoQ3.setText("jLabel1");
+        lb_infoQ3.setPreferredSize(new java.awt.Dimension(25, 27));
+        add(lb_infoQ3);
+        lb_infoQ3.setBounds(1260, 240, 25, 27);
+
+        lb_cbcQ3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cbcLimpeza.png"))); // NOI18N
+        add(lb_cbcQ3);
+        lb_cbcQ3.setBounds(1060, 120, 241, 45);
+
+        lb_bkgQ3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Rectangle 1.png"))); // NOI18N
+        add(lb_bkgQ3);
+        lb_bkgQ3.setBounds(1060, 120, 241, 157);
+
+        lb_infoQ2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/informacoes 1.png"))); // NOI18N
+        lb_infoQ2.setText("jLabel1");
+        lb_infoQ2.setPreferredSize(new java.awt.Dimension(25, 27));
+        add(lb_infoQ2);
+        lb_infoQ2.setBounds(910, 240, 25, 27);
+
+        lb_cbcQ2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cbcSaiHoje.png"))); // NOI18N
+        add(lb_cbcQ2);
+        lb_cbcQ2.setBounds(710, 120, 241, 45);
+
+        lb_bkgQ2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Rectangle 1.png"))); // NOI18N
+        add(lb_bkgQ2);
+        lb_bkgQ2.setBounds(710, 120, 241, 157);
+
+        lb_infoQ1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/informacoes 1.png"))); // NOI18N
+        lb_infoQ1.setText("jLabel1");
+        lb_infoQ1.setPreferredSize(new java.awt.Dimension(25, 27));
+        add(lb_infoQ1);
+        lb_infoQ1.setBounds(570, 240, 25, 27);
+
+        lb_cbcQ1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cbcEntraHoje.png"))); // NOI18N
+        add(lb_cbcQ1);
+        lb_cbcQ1.setBounds(370, 120, 241, 45);
+
+        lb_bkgQ1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Rectangle 1.png"))); // NOI18N
+        lb_bkgQ1.setMaximumSize(new java.awt.Dimension(241, 157));
+        lb_bkgQ1.setPreferredSize(new java.awt.Dimension(241, 157));
+        add(lb_bkgQ1);
+        lb_bkgQ1.setBounds(370, 120, 241, 157);
+
+        lb_Mailing.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
+        lb_Mailing.setText("Mailing");
+        lb_Mailing.setAlignmentY(0.0F);
+        add(lb_Mailing);
+        lb_Mailing.setBounds(50, 350, 130, 20);
+
+        lb_DayUse.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
+        lb_DayUse.setText("Day Use");
+        lb_DayUse.setAlignmentY(0.0F);
+        add(lb_DayUse);
+        lb_DayUse.setBounds(50, 310, 130, 20);
+
+        lb_Cadastro.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
+        lb_Cadastro.setText("Cadastrar Hóspedes");
+        lb_Cadastro.setAlignmentY(0.0F);
+        add(lb_Cadastro);
+        lb_Cadastro.setBounds(50, 270, 220, 20);
+
+        lb_Reservar.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
+        lb_Reservar.setText("Reservar/Hospedar");
+        lb_Reservar.setAlignmentY(0.0F);
+        add(lb_Reservar);
+        lb_Reservar.setBounds(50, 230, 210, 20);
+
+        lb_Calendario.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
+        lb_Calendario.setText("Calendário de Reservas   ");
+        lb_Calendario.setAlignmentY(0.0F);
+        add(lb_Calendario);
+        lb_Calendario.setBounds(50, 190, 220, 20);
+
+        lb_Home.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
+        lb_Home.setText("Home");
+        lb_Home.setAlignmentY(0.0F);
+        add(lb_Home);
+        lb_Home.setBounds(50, 150, 130, 20);
+
+        lb_logoSideBar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/hotelIcon-reduzido.png"))); // NOI18N
+        lb_logoSideBar.setText("jLabel1");
+        add(lb_logoSideBar);
+        lb_logoSideBar.setBounds(90, 30, 112, 42);
+
+        lb_menuSelecionado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/SelectSideBar.png"))); // NOI18N
+        lb_menuSelecionado.setPreferredSize(new java.awt.Dimension(300, 41));
+        lb_menuSelecionado.setRequestFocusEnabled(false);
+        add(lb_menuSelecionado);
+        lb_menuSelecionado.setBounds(0, 140, 300, 41);
+
+        lb_bkgSideBar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/SideBar.png"))); // NOI18N
+        lb_bkgSideBar.setText("jLabel1");
+        lb_bkgSideBar.setMaximumSize(new java.awt.Dimension(300, 768));
+        lb_bkgSideBar.setPreferredSize(new java.awt.Dimension(300, 768));
+        add(lb_bkgSideBar);
+        lb_bkgSideBar.setBounds(0, 0, 300, 768);
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel lb_logoSB;
-    private javax.swing.JLabel lb_sideBar;
+    private javax.swing.JLabel lb_Cadastro;
+    private javax.swing.JLabel lb_Calendario;
+    private javax.swing.JLabel lb_DayUse;
+    private javax.swing.JLabel lb_Home;
+    private javax.swing.JLabel lb_Mailing;
+    private javax.swing.JLabel lb_Reservar;
+    private javax.swing.JLabel lb_bkgQ1;
+    private javax.swing.JLabel lb_bkgQ2;
+    private javax.swing.JLabel lb_bkgQ3;
+    private javax.swing.JLabel lb_bkgQ4;
+    private javax.swing.JLabel lb_bkgQ5;
+    private javax.swing.JLabel lb_bkgQ6;
+    private javax.swing.JLabel lb_bkgQ7;
+    private javax.swing.JLabel lb_bkgQ8;
+    private javax.swing.JLabel lb_bkgQ9;
+    private javax.swing.JLabel lb_bkgSideBar;
+    private javax.swing.JLabel lb_cbcQ1;
+    private javax.swing.JLabel lb_cbcQ2;
+    private javax.swing.JLabel lb_cbcQ3;
+    private javax.swing.JLabel lb_cbcQ4;
+    private javax.swing.JLabel lb_cbcQ5;
+    private javax.swing.JLabel lb_cbcQ6;
+    private javax.swing.JLabel lb_cbcQ7;
+    private javax.swing.JLabel lb_cbcQ8;
+    private javax.swing.JLabel lb_cbcQ9;
+    private javax.swing.JLabel lb_infoQ1;
+    private javax.swing.JLabel lb_infoQ2;
+    private javax.swing.JLabel lb_infoQ3;
+    private javax.swing.JLabel lb_infoQ4;
+    private javax.swing.JLabel lb_infoQ5;
+    private javax.swing.JLabel lb_infoQ6;
+    private javax.swing.JLabel lb_infoQ7;
+    private javax.swing.JLabel lb_infoQ8;
+    private javax.swing.JLabel lb_infoQ9;
+    private javax.swing.JLabel lb_logoSideBar;
+    private javax.swing.JLabel lb_menuSelecionado;
     // End of variables declaration//GEN-END:variables
 }
