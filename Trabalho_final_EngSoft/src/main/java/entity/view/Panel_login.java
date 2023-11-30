@@ -25,7 +25,7 @@ public class Panel_login extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
         setForeground(new java.awt.Color(255, 255, 255));
-        setPreferredSize(new java.awt.Dimension(1920, 1080));
+        setPreferredSize(new java.awt.Dimension(1366, 768));
         setLayout(null);
 
         lb_txAcessar.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
@@ -33,7 +33,7 @@ public class Panel_login extends javax.swing.JPanel {
         lb_txAcessar.setText("Acessar");
         lb_txAcessar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         add(lb_txAcessar);
-        lb_txAcessar.setBounds(800, 830, 340, 15);
+        lb_txAcessar.setBounds(520, 560, 340, 15);
 
         tf_Senha.setBackground(new java.awt.Color(255, 255, 255));
         tf_Senha.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
@@ -47,7 +47,7 @@ public class Panel_login extends javax.swing.JPanel {
             }
         });
         add(tf_Senha);
-        tf_Senha.setBounds(740, 680, 460, 40);
+        tf_Senha.setBounds(460, 410, 460, 40);
 
         tf_ID.setBackground(new java.awt.Color(255, 255, 255));
         tf_ID.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
@@ -56,18 +56,15 @@ public class Panel_login extends javax.swing.JPanel {
         tf_ID.setText("Identificador");
         tf_ID.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         add(tf_ID);
-        tf_ID.setBounds(740, 610, 460, 40);
+        tf_ID.setBounds(460, 340, 460, 40);
 
         lb_logoHotel.setBackground(new java.awt.Color(204, 0, 204));
         lb_logoHotel.setForeground(new java.awt.Color(51, 255, 204));
         lb_logoHotel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/hotelIcon.png"))); // NOI18N
         lb_logoHotel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        lb_logoHotel.setMaximumSize(new java.awt.Dimension(352, 132));
-        lb_logoHotel.setMinimumSize(new java.awt.Dimension(352, 132));
-        lb_logoHotel.setPreferredSize(new java.awt.Dimension(352, 132));
         lb_logoHotel.setRequestFocusEnabled(false);
         add(lb_logoHotel);
-        lb_logoHotel.setBounds(790, 410, 350, 132);
+        lb_logoHotel.setBounds(510, 140, 350, 132);
 
         lb_bkgLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/retanguloAzul.png"))); // NOI18N
         lb_bkgLogin.setMaximumSize(new java.awt.Dimension(628, 215));
@@ -75,7 +72,7 @@ public class Panel_login extends javax.swing.JPanel {
         lb_bkgLogin.setPreferredSize(new java.awt.Dimension(628, 215));
         lb_bkgLogin.setRequestFocusEnabled(false);
         add(lb_bkgLogin);
-        lb_bkgLogin.setBounds(650, 560, 636, 227);
+        lb_bkgLogin.setBounds(370, 290, 636, 227);
 
         lb_btAcessar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/AcessarBotão.png"))); // NOI18N
         lb_btAcessar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -83,7 +80,7 @@ public class Panel_login extends javax.swing.JPanel {
         lb_btAcessar.setMinimumSize(new java.awt.Dimension(332, 48));
         lb_btAcessar.setPreferredSize(new java.awt.Dimension(332, 48));
         add(lb_btAcessar);
-        lb_btAcessar.setBounds(800, 810, 340, 60);
+        lb_btAcessar.setBounds(520, 540, 340, 60);
     }// </editor-fold>//GEN-END:initComponents
 
     private void tf_SenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_SenhaActionPerformed

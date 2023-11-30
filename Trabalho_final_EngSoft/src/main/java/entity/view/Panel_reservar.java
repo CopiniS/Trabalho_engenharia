@@ -26,19 +26,121 @@ public class Panel_reservar extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        lb_Mailing = new javax.swing.JLabel();
+        lb_DayUse = new javax.swing.JLabel();
+        lb_Cadastro = new javax.swing.JLabel();
+        lb_Reservar = new javax.swing.JLabel();
+        lb_Calendario = new javax.swing.JLabel();
+        lb_Home = new javax.swing.JLabel();
+        lb_logoSideBar = new javax.swing.JLabel();
+        lb_menuSelecionado = new javax.swing.JLabel();
+        lb_bkgSideBar = new javax.swing.JLabel();
+        cbcTabela = new javax.swing.JLabel();
+        linhaTabela = new javax.swing.JLabel();
+        lb_Descartar = new javax.swing.JLabel();
+        lb_Salvar = new javax.swing.JLabel();
+        pesquisa = new javax.swing.JLabel();
+        lb_novoHospede = new javax.swing.JLabel();
+
+        setBackground(new java.awt.Color(255, 255, 255));
+        setLayout(null);
+
+        lb_Mailing.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
+        lb_Mailing.setText("Mailing");
+        lb_Mailing.setAlignmentY(0.0F);
+        add(lb_Mailing);
+        lb_Mailing.setBounds(50, 350, 130, 20);
+
+        lb_DayUse.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
+        lb_DayUse.setText("Day Use");
+        lb_DayUse.setAlignmentY(0.0F);
+        add(lb_DayUse);
+        lb_DayUse.setBounds(50, 310, 130, 20);
+
+        lb_Cadastro.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
+        lb_Cadastro.setText("Cadastrar Hóspedes");
+        lb_Cadastro.setAlignmentY(0.0F);
+        add(lb_Cadastro);
+        lb_Cadastro.setBounds(50, 270, 220, 20);
+
+        lb_Reservar.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
+        lb_Reservar.setText("Reservar/Hospedar");
+        lb_Reservar.setAlignmentY(0.0F);
+        add(lb_Reservar);
+        lb_Reservar.setBounds(50, 230, 210, 20);
+
+        lb_Calendario.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
+        lb_Calendario.setText("Calendário de Reservas   ");
+        lb_Calendario.setAlignmentY(0.0F);
+        add(lb_Calendario);
+        lb_Calendario.setBounds(50, 190, 220, 20);
+
+        lb_Home.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
+        lb_Home.setText("Home");
+        lb_Home.setAlignmentY(0.0F);
+        add(lb_Home);
+        lb_Home.setBounds(50, 150, 130, 20);
+
+        lb_logoSideBar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/hotelIcon-reduzido.png"))); // NOI18N
+        lb_logoSideBar.setText("jLabel1");
+        add(lb_logoSideBar);
+        lb_logoSideBar.setBounds(90, 30, 112, 42);
+
+        lb_menuSelecionado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/SelectSideBar.png"))); // NOI18N
+        lb_menuSelecionado.setRequestFocusEnabled(false);
+        add(lb_menuSelecionado);
+        lb_menuSelecionado.setBounds(0, 220, 300, 41);
+
+        lb_bkgSideBar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/SideBar.png"))); // NOI18N
+        lb_bkgSideBar.setText("jLabel1");
+        lb_bkgSideBar.setMaximumSize(new java.awt.Dimension(300, 768));
+        lb_bkgSideBar.setPreferredSize(new java.awt.Dimension(300, 768));
+        add(lb_bkgSideBar);
+        lb_bkgSideBar.setBounds(0, 0, 300, 768);
+
+        cbcTabela.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/CabecalhoReserva.png"))); // NOI18N
+        add(cbcTabela);
+        cbcTabela.setBounds(350, 230, 963, 40);
+
+        linhaTabela.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/LinhaReserva.png"))); // NOI18N
+        add(linhaTabela);
+        linhaTabela.setBounds(350, 260, 964, 260);
+
+        lb_Descartar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/btDescartar.png"))); // NOI18N
+        lb_Descartar.setText("jLabel3");
+        add(lb_Descartar);
+        lb_Descartar.setBounds(960, 660, 170, 30);
+
+        lb_Salvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/bt_Salvar.png"))); // NOI18N
+        lb_Salvar.setText("jLabel3");
+        add(lb_Salvar);
+        lb_Salvar.setBounds(1160, 660, 150, 30);
+
+        pesquisa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Barra Pesquisa.png"))); // NOI18N
+        add(pesquisa);
+        pesquisa.setBounds(350, 130, 380, 50);
+
+        lb_novoHospede.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/bt_NovoHospede.png"))); // NOI18N
+        add(lb_novoHospede);
+        lb_novoHospede.setBounds(810, 130, 160, 50);
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel cbcTabela;
+    private javax.swing.JLabel lb_Cadastro;
+    private javax.swing.JLabel lb_Calendario;
+    private javax.swing.JLabel lb_DayUse;
+    private javax.swing.JLabel lb_Descartar;
+    private javax.swing.JLabel lb_Home;
+    private javax.swing.JLabel lb_Mailing;
+    private javax.swing.JLabel lb_Reservar;
+    private javax.swing.JLabel lb_Salvar;
+    private javax.swing.JLabel lb_bkgSideBar;
+    private javax.swing.JLabel lb_logoSideBar;
+    private javax.swing.JLabel lb_menuSelecionado;
+    private javax.swing.JLabel lb_novoHospede;
+    private javax.swing.JLabel linhaTabela;
+    private javax.swing.JLabel pesquisa;
     // End of variables declaration//GEN-END:variables
 }
