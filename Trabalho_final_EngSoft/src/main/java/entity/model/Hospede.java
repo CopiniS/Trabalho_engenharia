@@ -13,6 +13,16 @@ public class Hospede {
     private Date check_in;
     private Date check_out;
 
+    public Hospede(String nome, String telefone, int quantidadeAcompanhantes, Enum tipoQuarto, String email) {
+        this.nome = nome;
+        this.telefone = telefone;
+        this.quantidadeAcompanhantes = quantidadeAcompanhantes;
+        this.tipoQuarto = tipoQuarto;
+        this.email = email;
+    }
+    
+    
+
     public int getId() {
         return id;
     }

@@ -13,6 +13,7 @@ public class Controller {
     Controller_mailing controllerMainling;
     Controller_reservar controllerReservar;
     
+    
     public Controller(AplicationView view){
         this.view = view;
         

@@ -1,6 +1,7 @@
 
 package entity.controller;
 
+import entity.model.Hospede;
 import entity.view.Panel_calendario;
 import entity.view.Panel_dayUse;
 import entity.view.Panel_home;
@@ -32,6 +33,11 @@ public class Controller_cadastroHospede {
     public void bt_mailingMouseClicked(){
         Main.c1.getView().setTelaMailing(new Panel_mailing());
         Main.c1.getView().mostraTela(Main.c1.getView().getTelaMailing());
+    }
+    
+    
+    public void bt_salvaAlteracoesMouseClicked(String nome, String telefone, int quantidadeAcompanhantes, Enum tipoQuarto, String email){
+        Hospede h = new Hospede(nome, telefone, quantidadeAcompanhantes, tipoQuarto, email);
     }
     
     

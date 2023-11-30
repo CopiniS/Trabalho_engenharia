@@ -1,11 +1,15 @@
 
 package entity.controller;
 
+import entity.model.Hospede;
+import entity.model.Reserva;
+import entity.model.Servicos;
 import entity.view.Panel_cadastroHospede;
 import entity.view.Panel_calendario;
 import entity.view.Panel_dayUse;
 import entity.view.Panel_home;
 import entity.view.Panel_mailing;
+import java.util.Date;
 
 public class Controller_reservar {
     
@@ -32,6 +36,10 @@ public class Controller_reservar {
     public void bt_mailingMouseClicked(){
         Main.c1.getView().setTelaMailing(new Panel_mailing());
         Main.c1.getView().mostraTela(Main.c1.getView().getTelaMailing());
+    }
+    
+    public void bt_salvarAlteracoesMouseClicked(Date chegada, Date saida, Hospede hospede, Enum statusQuarto){
+        Reserva r = new Reserva(chegada, saida, hospede, statusQuarto);
     }
     
 }
