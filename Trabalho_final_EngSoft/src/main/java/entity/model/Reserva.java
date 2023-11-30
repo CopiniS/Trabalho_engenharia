@@ -1,12 +1,25 @@
 
 package entity.model;
 
+import java.util.Date;
+
 public class Reserva {
     private int id;
+    private Date chegada;
+    private Date saida;
     private Hospede hospede;
     private Enum statusQuarto;
     private Servicos servico;
 
+    public Reserva(Date chegada, Date saida, Hospede hospede, Enum statusQuarto) {
+        this.chegada = chegada;
+        this.saida = saida;
+        this.hospede = hospede;
+        this.statusQuarto = statusQuarto;
+    }
+
+    
+    
     public int getId() {
         return id;
     }
@@ -38,10 +51,27 @@ public class Reserva {
     public void setServico(Servicos servico) {
         this.servico = servico;
     }
+
+    public Date getChegada() {
+        return chegada;
+    }
+
+    public void setChegada(Date chegada) {
+        this.chegada = chegada;
+    }
+
+    public Date getSaida() {
+        return saida;
+    }
+
+    public void setSaida(Date saida) {
+        this.saida = saida;
+    }
     
     
     
     public void VerificaQuartos(){
         
     }
+    
 }
