@@ -12,6 +12,7 @@ public class Panel_home extends javax.swing.JPanel {
         lb_Home.setText(undelineHome);
         
         //oioioioio
+        // right
         
         menuSideBarBranco();
         removeSelecao();
