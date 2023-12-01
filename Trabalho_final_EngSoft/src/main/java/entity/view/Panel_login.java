@@ -6,9 +6,8 @@ public class Panel_login extends javax.swing.JPanel {
 
     public Panel_login() {
         initComponents();
-        
-        lb_logoHotel.setHorizontalAlignment(SwingConstants.CENTER);
-        lb_bkgLogin.setHorizontalAlignment(SwingConstants.CENTER);
+     //   lb_logoHotel.setHorizontalAlignment(SwingConstants.CENTER);
+     //   lb_bkgLogin.setHorizontalAlignment(SwingConstants.CENTER);
     }
 
 
@@ -28,6 +27,7 @@ public class Panel_login extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1366, 768));
         setLayout(null);
 
+        lb_txAcessar.setBackground(new java.awt.Color(187, 187, 187));
         lb_txAcessar.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         lb_txAcessar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lb_txAcessar.setText("Acessar");

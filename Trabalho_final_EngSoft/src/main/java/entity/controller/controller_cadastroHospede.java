@@ -38,6 +38,7 @@ public class Controller_cadastroHospede {
     
     public void bt_salvaAlteracoesMouseClicked(String nome, String telefone, int quantidadeAcompanhantes, Enum tipoQuarto, String email){
         Hospede h = new Hospede(nome, telefone, quantidadeAcompanhantes, tipoQuarto, email);
+        System.out.println(h);
     }
     
     

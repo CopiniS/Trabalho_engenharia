@@ -16,8 +16,7 @@ public class AplicationView {
     
     
     public AplicationView(){
-        this.janela = new Janela();
-        this.janela.setLayout(new BorderLayout());
+           this.janela = new Janela();
         this.janela.setLocationRelativeTo(null);   //Posiciona no meio da tela.
         this.janela.setVisible(true);  
     }

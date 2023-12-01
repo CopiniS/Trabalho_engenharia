@@ -102,4 +102,10 @@ public class Hospede {
         Object exemplo = "exemplo";
         return exemplo;
     }
+
+    @Override
+    public String toString() {
+        return super.toString(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+    }
+    
 }

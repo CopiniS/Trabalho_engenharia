@@ -3,7 +3,6 @@ package entity.controller;
 
 import entity.model.Hospede;
 import entity.model.Reserva;
-import entity.model.Servicos;
 import entity.view.Panel_cadastroHospede;
 import entity.view.Panel_calendario;
 import entity.view.Panel_dayUse;
