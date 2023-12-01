@@ -4,6 +4,8 @@
  */
 package entity.view;
 
+import entity.controller.Main;
+
 /**
  *
  * @author Copini - PC
@@ -143,7 +145,6 @@ public class Panel_home extends javax.swing.JPanel {
         setLayout(null);
 
         lb_iconUserQ9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/iconUser.png"))); // NOI18N
-        lb_iconUserQ9.setPreferredSize(new java.awt.Dimension(12, 12));
         add(lb_iconUserQ9);
         lb_iconUserQ9.setBounds(1080, 610, 190, 12);
 
@@ -210,7 +211,6 @@ public class Panel_home extends javax.swing.JPanel {
         lb_dataQ8.setBounds(750, 630, 200, 10);
 
         lb_iconUserQ8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/iconUser.png"))); // NOI18N
-        lb_iconUserQ8.setPreferredSize(new java.awt.Dimension(12, 12));
         add(lb_iconUserQ8);
         lb_iconUserQ8.setBounds(730, 610, 190, 12);
 
@@ -296,7 +296,6 @@ public class Panel_home extends javax.swing.JPanel {
         lb_userQ7.setBounds(410, 610, 200, 10);
 
         lb_iconUserQ7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/iconUser.png"))); // NOI18N
-        lb_iconUserQ7.setPreferredSize(new java.awt.Dimension(12, 12));
         add(lb_iconUserQ7);
         lb_iconUserQ7.setBounds(390, 610, 190, 12);
 
@@ -329,7 +328,6 @@ public class Panel_home extends javax.swing.JPanel {
         lb_statusCivilQ6.setBounds(1100, 450, 200, 10);
 
         lb_iconUserQ6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/iconUser.png"))); // NOI18N
-        lb_iconUserQ6.setPreferredSize(new java.awt.Dimension(12, 12));
         add(lb_iconUserQ6);
         lb_iconUserQ6.setBounds(1080, 410, 20, 12);
 
@@ -409,7 +407,6 @@ public class Panel_home extends javax.swing.JPanel {
         lb_statusCivilQ5.setBounds(750, 450, 200, 10);
 
         lb_iconUserQ5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/iconUser.png"))); // NOI18N
-        lb_iconUserQ5.setPreferredSize(new java.awt.Dimension(12, 12));
         add(lb_iconUserQ5);
         lb_iconUserQ5.setBounds(730, 410, 20, 12);
 
@@ -469,7 +466,6 @@ public class Panel_home extends javax.swing.JPanel {
         lb_statusCivilQ4.setBounds(410, 450, 200, 10);
 
         lb_iconUserQ4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/iconUser.png"))); // NOI18N
-        lb_iconUserQ4.setPreferredSize(new java.awt.Dimension(12, 12));
         add(lb_iconUserQ4);
         lb_iconUserQ4.setBounds(390, 410, 190, 12);
 
@@ -534,7 +530,6 @@ public class Panel_home extends javax.swing.JPanel {
         lb_userQ3.setBounds(1100, 200, 200, 10);
 
         lb_iconUserQ3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/iconUser.png"))); // NOI18N
-        lb_iconUserQ3.setPreferredSize(new java.awt.Dimension(12, 12));
         add(lb_iconUserQ3);
         lb_iconUserQ3.setBounds(1080, 200, 20, 12);
 
@@ -593,7 +588,6 @@ public class Panel_home extends javax.swing.JPanel {
         lb_userQ2.setBounds(750, 200, 200, 10);
 
         lb_iconUserQ2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/iconUser.png"))); // NOI18N
-        lb_iconUserQ2.setPreferredSize(new java.awt.Dimension(12, 12));
         add(lb_iconUserQ2);
         lb_iconUserQ2.setBounds(730, 200, 20, 12);
 
@@ -652,7 +646,6 @@ public class Panel_home extends javax.swing.JPanel {
         lb_userQ1.setBounds(410, 200, 200, 10);
 
         lb_iconUserQ1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/iconUser.png"))); // NOI18N
-        lb_iconUserQ1.setPreferredSize(new java.awt.Dimension(12, 12));
         add(lb_iconUserQ1);
         lb_iconUserQ1.setBounds(390, 200, 20, 12);
 
@@ -674,8 +667,6 @@ public class Panel_home extends javax.swing.JPanel {
         lb_cbcQ1.setBounds(370, 130, 241, 45);
 
         lb_bkgQ1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Rectangle 1.png"))); // NOI18N
-        lb_bkgQ1.setMaximumSize(new java.awt.Dimension(241, 157));
-        lb_bkgQ1.setPreferredSize(new java.awt.Dimension(241, 157));
         add(lb_bkgQ1);
         lb_bkgQ1.setBounds(370, 130, 241, 157);
 
@@ -684,42 +675,47 @@ public class Panel_home extends javax.swing.JPanel {
         lb_Mailing.setAlignmentY(0.0F);
         lb_Mailing.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         add(lb_Mailing);
-        lb_Mailing.setBounds(50, 350, 130, 20);
+        lb_Mailing.setBounds(50, 350, 130, 21);
 
         lb_DayUse.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_DayUse.setText("Day Use");
         lb_DayUse.setAlignmentY(0.0F);
         lb_DayUse.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         add(lb_DayUse);
-        lb_DayUse.setBounds(50, 310, 130, 20);
+        lb_DayUse.setBounds(50, 310, 130, 21);
 
         lb_Cadastro.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_Cadastro.setText("Cadastrar Hóspedes");
         lb_Cadastro.setAlignmentY(0.0F);
         lb_Cadastro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lb_Cadastro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_CadastroMouseClicked(evt);
+            }
+        });
         add(lb_Cadastro);
-        lb_Cadastro.setBounds(50, 270, 220, 20);
+        lb_Cadastro.setBounds(50, 270, 220, 21);
 
         lb_Reservar.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_Reservar.setText("Reservar/Hospedar");
         lb_Reservar.setAlignmentY(0.0F);
         lb_Reservar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         add(lb_Reservar);
-        lb_Reservar.setBounds(50, 230, 210, 20);
+        lb_Reservar.setBounds(50, 230, 210, 21);
 
         lb_Calendario.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_Calendario.setText("Calendário de Reservas   ");
         lb_Calendario.setAlignmentY(0.0F);
         lb_Calendario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         add(lb_Calendario);
-        lb_Calendario.setBounds(50, 190, 220, 20);
+        lb_Calendario.setBounds(50, 190, 220, 21);
 
         lb_Home.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_Home.setText("Home");
         lb_Home.setAlignmentY(0.0F);
         lb_Home.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         add(lb_Home);
-        lb_Home.setBounds(50, 150, 130, 20);
+        lb_Home.setBounds(50, 150, 130, 21);
 
         lb_logoSideBar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/hotelIcon-reduzido.png"))); // NOI18N
         lb_logoSideBar.setText("jLabel1");
@@ -727,7 +723,6 @@ public class Panel_home extends javax.swing.JPanel {
         lb_logoSideBar.setBounds(90, 30, 112, 42);
 
         lb_menuSelecionado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/SelectSideBar.png"))); // NOI18N
-        lb_menuSelecionado.setPreferredSize(new java.awt.Dimension(300, 41));
         lb_menuSelecionado.setRequestFocusEnabled(false);
         add(lb_menuSelecionado);
         lb_menuSelecionado.setBounds(0, 140, 300, 41);
@@ -805,6 +800,11 @@ public class Panel_home extends javax.swing.JPanel {
         add(lb_bkgMenuSupTodos);
         lb_bkgMenuSupTodos.setBounds(370, 70, 85, 30);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void lb_CadastroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_CadastroMouseClicked
+         Main.c1.getView().setTelaCadastro(new Panel_cadastroHospede());
+        Main.c1.getView().mostraTela(Main.c1.getView().getTelaCadastro());
+    }//GEN-LAST:event_lb_CadastroMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

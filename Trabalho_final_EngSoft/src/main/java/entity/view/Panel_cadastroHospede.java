@@ -163,7 +163,7 @@ public class Panel_cadastroHospede extends javax.swing.JPanel {
 
         cb_tipoQuarto.setBackground(new java.awt.Color(255, 255, 255));
         cb_tipoQuarto.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
-        cb_tipoQuarto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cb_tipoQuarto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Duplo Solteiro", "Casal", "Standard", "Twin Room", "Deluxe" }));
         add(cb_tipoQuarto);
         cb_tipoQuarto.setBounds(720, 300, 340, 20);
 
@@ -355,6 +355,8 @@ public class Panel_cadastroHospede extends javax.swing.JPanel {
         Integer guests = Integer.valueOf(tf_Acompanhantes.getText());
         String roomTypeStr = (String) cb_tipoQuarto.getSelectedItem();
         TipoQuarto roomType = TipoQuarto.valueOf(roomTypeStr.toUpperCase());
+        System.out.println(guests);
+        System.out.println(roomType);
         Main.c1.getControllerCadastroHospede().bt_salvaAlteracoesMouseClicked(name, phone, guests, roomType, email);
     }//GEN-LAST:event_lb_SalvarMouseClicked
 

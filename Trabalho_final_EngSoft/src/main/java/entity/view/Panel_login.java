@@ -1,15 +1,15 @@
 package entity.view;
 
+import entity.controller.Main;
 import javax.swing.SwingConstants;
 
 public class Panel_login extends javax.swing.JPanel {
 
     public Panel_login() {
         initComponents();
-     //   lb_logoHotel.setHorizontalAlignment(SwingConstants.CENTER);
-     //   lb_bkgLogin.setHorizontalAlignment(SwingConstants.CENTER);
+        //   lb_logoHotel.setHorizontalAlignment(SwingConstants.CENTER);
+        //   lb_bkgLogin.setHorizontalAlignment(SwingConstants.CENTER);
     }
-
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -33,7 +33,7 @@ public class Panel_login extends javax.swing.JPanel {
         lb_txAcessar.setText("Acessar");
         lb_txAcessar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         add(lb_txAcessar);
-        lb_txAcessar.setBounds(520, 560, 340, 15);
+        lb_txAcessar.setBounds(650, 560, 90, 15);
 
         tf_Senha.setBackground(new java.awt.Color(255, 255, 255));
         tf_Senha.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
@@ -74,11 +74,17 @@ public class Panel_login extends javax.swing.JPanel {
         add(lb_bkgLogin);
         lb_bkgLogin.setBounds(370, 290, 636, 227);
 
+        lb_btAcessar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lb_btAcessar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/AcessarBotão.png"))); // NOI18N
         lb_btAcessar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lb_btAcessar.setMaximumSize(new java.awt.Dimension(332, 48));
         lb_btAcessar.setMinimumSize(new java.awt.Dimension(332, 48));
         lb_btAcessar.setPreferredSize(new java.awt.Dimension(332, 48));
+        lb_btAcessar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_btAcessarMouseClicked(evt);
+            }
+        });
         add(lb_btAcessar);
         lb_btAcessar.setBounds(520, 540, 340, 60);
     }// </editor-fold>//GEN-END:initComponents
@@ -86,6 +92,11 @@ public class Panel_login extends javax.swing.JPanel {
     private void tf_SenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_SenhaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tf_SenhaActionPerformed
+
+    private void lb_btAcessarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_btAcessarMouseClicked
+        Main.c1.getView().setTelaHome(new Panel_home());
+        Main.c1.getView().mostraTela(Main.c1.getView().getTelaHome());
+    }//GEN-LAST:event_lb_btAcessarMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
