@@ -2,6 +2,7 @@
 package entity.model;
 //teste 4
 import java.util.Date;
+import java.util.List;
 
 public class Hospede {
     private int id;
@@ -12,16 +13,24 @@ public class Hospede {
     private String email;
     private Date check_in;
     private Date check_out;
+    private List<String> servicos;
 
-    public Hospede(String nome, String telefone, int quantidadeAcompanhantes, Enum tipoQuarto, String email) {
+    public Hospede(String nome, String telefone, int quantidadeAcompanhantes, Enum tipoQuarto, String email, List<String> servicos) {
         this.nome = nome;
         this.telefone = telefone;
         this.quantidadeAcompanhantes = quantidadeAcompanhantes;
         this.tipoQuarto = tipoQuarto;
         this.email = email;
+        this.servicos = servicos;
     }
-    
-    
+
+    public List<String> getServicos() {
+        return servicos;
+    }
+
+    public void setServicos(List<String> servicos) {
+        this.servicos = servicos;
+    }
 
     public int getId() {
         return id;

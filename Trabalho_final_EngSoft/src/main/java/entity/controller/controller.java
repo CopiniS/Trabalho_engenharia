@@ -6,8 +6,8 @@ import entity.view.Panel_login;
 public class Controller {
 
     static AplicationView view;
-    Controller_login controllerLoging;
-    Controller_cadastroHospede controllerCadastroHospede;
+    private Controller_login controllerLoging;
+    private Controller_cadastroHospede controllerCadastroHospede;
     Controller_calendario controllerCalendario;
     Controller_dayUSe controllerDayUse;
     Controller_home controllerHome;
@@ -18,7 +18,7 @@ public class Controller {
         this.view = view;
 
         controllerLoging = new Controller_login();
-        controllerCadastroHospede = new Controller_cadastroHospede();
+        this.controllerCadastroHospede = new Controller_cadastroHospede();
         controllerCalendario = new Controller_calendario();
         controllerDayUse = new Controller_dayUSe();
         controllerHome = new Controller_home();

@@ -7,6 +7,7 @@ import entity.view.Panel_dayUse;
 import entity.view.Panel_home;
 import entity.view.Panel_mailing;
 import entity.view.Panel_reservar;
+import java.util.List;
 
 public class Controller_cadastroHospede {
     
@@ -16,7 +17,7 @@ public class Controller_cadastroHospede {
     }
     
     public void bt_reservarMouseClicked(){
-        Main.c1.getView().setTelaReservar(new Panel_reservar());
+        Main.c1.getView().setTelaReservar(new Panel_reservar(null));
         Main.c1.getView().mostraTela(Main.c1.getView().getTelaReservar());
     }
     
@@ -37,8 +38,7 @@ public class Controller_cadastroHospede {
     
     
     public void bt_salvaAlteracoesMouseClicked(String nome, String telefone, int quantidadeAcompanhantes, Enum tipoQuarto, String email){
-        Hospede h = new Hospede(nome, telefone, quantidadeAcompanhantes, tipoQuarto, email);
-        System.out.println(h);
+     
     }
     
     

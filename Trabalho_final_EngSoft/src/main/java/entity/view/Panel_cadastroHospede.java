@@ -4,8 +4,11 @@
  */
 package entity.view;
 
-import entity.controller.Main;
+import entity.model.Hospede;
 import entity.model.TipoQuarto;
+import java.util.List;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -16,6 +19,8 @@ public class Panel_cadastroHospede extends javax.swing.JPanel {
     /**
      * Creates new form Panel_cadastrarHospede
      */
+    private List<String> servicos;
+    
     public Panel_cadastroHospede() {
         initComponents();
     }
@@ -355,11 +360,47 @@ public class Panel_cadastroHospede extends javax.swing.JPanel {
         Integer guests = Integer.valueOf(tf_Acompanhantes.getText());
         String roomTypeStr = (String) cb_tipoQuarto.getSelectedItem();
         TipoQuarto roomType = TipoQuarto.valueOf(roomTypeStr.toUpperCase());
-        System.out.println(guests);
-        System.out.println(roomType);
-        Main.c1.getControllerCadastroHospede().bt_salvaAlteracoesMouseClicked(name, phone, guests, roomType, email);
+
+        // verifica serviços
+        if (cb_Restaurante.isSelected()) {
+            servicos.add(cb_Restaurante.getText());
+        }
+        if (cb_Piscina.isSelected()) {
+            servicos.add(cb_Piscina.getText());
+        }
+        if (cb_Lavanderia.isSelected()) {
+            servicos.add(cb_Lavanderia.getText());
+        }
+        if (cb_Frigobar.isSelected()) {
+            servicos.add(cb_Frigobar.getText());
+        }
+        if (cb_Cafe.isSelected()) {
+            servicos.add(cb_Cafe.getText());
+        }
+        if (cb_AluguelCarro.isSelected()) {
+            servicos.add(cb_AluguelCarro.getText());
+        }
+        
+        Hospede h = new Hospede(name, phone, guests, roomType, email, servicos);
+        listHospede(h); 
+        JOptionPane.showMessageDialog(null, "Hóspede cadastrado com sucesso", "Sucesso!", JOptionPane.INFORMATION_MESSAGE);
+        // limpa campos
+        tf_nomeCompleto.setText(null);
+        tf_Telefone.setText(null);
+        tf_Email.setText(null);
+        tf_Acompanhantes.setText(null);
+        cb_Restaurante.setSelected(false);
+        cb_Piscina.setSelected(false);
+        cb_Lavanderia.setSelected(false);
+        cb_Frigobar.setSelected(false);
+        cb_Cafe.setSelected(false);
+        cb_AluguelCarro.setSelected(false);
     }//GEN-LAST:event_lb_SalvarMouseClicked
 
+    public void listHospede(Hospede h) {
+        List<Hospede> hospedeList = new ArrayList<>();
+        hospedeList.add(h);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox cb_AluguelCarro;

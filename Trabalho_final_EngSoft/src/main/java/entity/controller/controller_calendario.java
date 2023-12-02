@@ -15,7 +15,7 @@ public class Controller_calendario {
     }
     
     public void bt_reservarMouseClicked(){
-        Main.c1.getView().setTelaReservar(new Panel_reservar());
+        Main.c1.getView().setTelaReservar(new Panel_reservar(null));
         Main.c1.getView().mostraTela(Main.c1.getView().getTelaReservar());
     }
     
