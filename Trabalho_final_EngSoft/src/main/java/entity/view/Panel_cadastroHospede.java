@@ -4,6 +4,7 @@
  */
 package entity.view;
 
+import entity.controller.Main;
 import entity.model.Hospede;
 import entity.model.TipoQuarto;
 import java.util.List;
@@ -20,7 +21,8 @@ public class Panel_cadastroHospede extends javax.swing.JPanel {
      * Creates new form Panel_cadastrarHospede
      */
     private List<String> servicos;
-    
+    private List<Hospede> hospedeList = new ArrayList<>();
+
     public Panel_cadastroHospede() {
         initComponents();
     }
@@ -90,6 +92,11 @@ public class Panel_cadastroHospede extends javax.swing.JPanel {
         lb_Reservar.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_Reservar.setText("Reservar/Hospedar");
         lb_Reservar.setAlignmentY(0.0F);
+        lb_Reservar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_ReservarMouseClicked(evt);
+            }
+        });
         add(lb_Reservar);
         lb_Reservar.setBounds(50, 230, 210, 21);
 
@@ -363,26 +370,26 @@ public class Panel_cadastroHospede extends javax.swing.JPanel {
 
         // verifica serviços
         if (cb_Restaurante.isSelected()) {
-            servicos.add(cb_Restaurante.getText());
+            servicos.add("Restaurante");
         }
         if (cb_Piscina.isSelected()) {
-            servicos.add(cb_Piscina.getText());
+            servicos.add("Piscina");
         }
         if (cb_Lavanderia.isSelected()) {
-            servicos.add(cb_Lavanderia.getText());
+            servicos.add("Lavanderia");
         }
         if (cb_Frigobar.isSelected()) {
-            servicos.add(cb_Frigobar.getText());
+            servicos.add("Frigobar");
         }
         if (cb_Cafe.isSelected()) {
-            servicos.add(cb_Cafe.getText());
+            servicos.add("Café da Manhã");
         }
         if (cb_AluguelCarro.isSelected()) {
-            servicos.add(cb_AluguelCarro.getText());
+            servicos.add("Aluguel Carro");
         }
-        
+
         Hospede h = new Hospede(name, phone, guests, roomType, email, servicos);
-        listHospede(h); 
+        hospedeList.add(h);
         JOptionPane.showMessageDialog(null, "Hóspede cadastrado com sucesso", "Sucesso!", JOptionPane.INFORMATION_MESSAGE);
         // limpa campos
         tf_nomeCompleto.setText(null);
@@ -395,12 +402,22 @@ public class Panel_cadastroHospede extends javax.swing.JPanel {
         cb_Frigobar.setSelected(false);
         cb_Cafe.setSelected(false);
         cb_AluguelCarro.setSelected(false);
+
+        for (Hospede h1 : hospedeList) {
+            System.out.println(h1.getNome());
+            System.out.println(h1.getTelefone());
+            System.out.println(h1.getEmail());
+            System.out.println(h1.getQuantidadeAcompanhantes());
+            System.out.println(h1.getTipoQuarto());
+            System.out.println(h1.getServicos());
+        }
     }//GEN-LAST:event_lb_SalvarMouseClicked
 
-    public void listHospede(Hospede h) {
-        List<Hospede> hospedeList = new ArrayList<>();
-        hospedeList.add(h);
-    }
+    private void lb_ReservarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_ReservarMouseClicked
+        Main.c1.getView().setTelaReservar(new Panel_reservar(hospedeList));
+        Main.c1.getView().mostraTela(Main.c1.getView().getTelaReservar());
+    }//GEN-LAST:event_lb_ReservarMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox cb_AluguelCarro;
