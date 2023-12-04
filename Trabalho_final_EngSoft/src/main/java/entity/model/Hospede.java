@@ -11,8 +11,8 @@ public class Hospede {
     private int quantidadeAcompanhantes;
     private Enum tipoQuarto;
     private String email;
-    private Date check_in;
-    private Date check_out;
+    private String check_in;
+    private String check_out;
     private List<String> servicos;
 
     public Hospede(String nome, String telefone, int quantidadeAcompanhantes, Enum tipoQuarto, String email, List<String> servicos) {
@@ -72,19 +72,19 @@ public class Hospede {
         this.email = email;
     }
 
-    public Date getCheck_in() {
+    public String getCheck_in() {
         return check_in;
     }
 
-    public void setCheck_in(Date check_in) {
+    public void setCheck_in(String check_in) {
         this.check_in = check_in;
     }
 
-    public Date getCheck_out() {
+    public String getCheck_out() {
         return check_out;
     }
 
-    public void setCheck_out(Date check_out) {
+    public void setCheck_out(String check_out) {
         this.check_out = check_out;
     }
 

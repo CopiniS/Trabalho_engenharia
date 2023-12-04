@@ -23,12 +23,6 @@
             <type>jar</type>
         </dependency>
         <dependency>
-            <groupId>br.net.i360.file.converter</groupId>
-            <artifactId>file-converter-lib</artifactId>
-            <version>0.1</version>
-            <type>jar</type>
-        </dependency>
-        <dependency>
             <groupId>jakarta.inject</groupId>
             <artifactId>jakarta.inject-api</artifactId>
             <version>2.0.1</version>
