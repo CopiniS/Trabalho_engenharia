@@ -20,7 +20,7 @@ public class Panel_cadastroHospede extends javax.swing.JPanel {
     /**
      * Creates new form Panel_cadastrarHospede
      */
-    private List<String> servicos;
+    private List<String> servicos = new ArrayList<>();
     private List<Hospede> hospedeList = new ArrayList<>();
 
     public Panel_cadastroHospede() {
@@ -369,6 +369,7 @@ public class Panel_cadastroHospede extends javax.swing.JPanel {
         TipoQuarto roomType = TipoQuarto.valueOf(roomTypeStr.toUpperCase());
 
         // verifica serviços
+        
         if (cb_Restaurante.isSelected()) {
             servicos.add("Restaurante");
         }
@@ -390,6 +391,7 @@ public class Panel_cadastroHospede extends javax.swing.JPanel {
 
         Hospede h = new Hospede(name, phone, guests, roomType, email, servicos);
         hospedeList.add(h);
+        servicos = new ArrayList<>();
         JOptionPane.showMessageDialog(null, "Hóspede cadastrado com sucesso", "Sucesso!", JOptionPane.INFORMATION_MESSAGE);
         // limpa campos
         tf_nomeCompleto.setText(null);
