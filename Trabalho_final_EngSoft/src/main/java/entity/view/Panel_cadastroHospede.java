@@ -7,6 +7,7 @@ package entity.view;
 import entity.controller.Main;
 import entity.model.Hospede;
 import entity.model.TipoQuarto;
+import java.awt.Color;
 import java.util.List;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -24,7 +25,8 @@ public class Panel_cadastroHospede extends javax.swing.JPanel {
     private List<Hospede> hospedeList = new ArrayList<>();
 
     public Panel_cadastroHospede() {
-        initComponents();
+        menuSideBarBranco();
+       initComponents();
     }
 
     /**
@@ -369,7 +371,6 @@ public class Panel_cadastroHospede extends javax.swing.JPanel {
         TipoQuarto roomType = TipoQuarto.valueOf(roomTypeStr.toUpperCase());
 
         // verifica serviços
-        
         if (cb_Restaurante.isSelected()) {
             servicos.add("Restaurante");
         }
@@ -420,6 +421,14 @@ public class Panel_cadastroHospede extends javax.swing.JPanel {
         Main.c1.getView().mostraTela(Main.c1.getView().getTelaReservar());
     }//GEN-LAST:event_lb_ReservarMouseClicked
 
+    public void menuSideBarBranco() {
+        lb_Home.setForeground(Color.WHITE);
+        lb_Cadastro.setForeground(Color.WHITE);
+        lb_Calendario.setForeground(Color.WHITE);
+        lb_Reservar.setForeground(Color.WHITE);
+        lb_Mailing.setForeground(Color.WHITE);
+        lb_DayUse.setForeground(Color.WHITE);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox cb_AluguelCarro;
