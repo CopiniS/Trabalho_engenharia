@@ -3,8 +3,6 @@ package entity.view;
 import entity.controller.Main;
 import entity.model.Hospede;
 import java.awt.Color;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 public class Panel_reservar extends javax.swing.JPanel {
@@ -33,13 +31,13 @@ public class Panel_reservar extends javax.swing.JPanel {
             int numAcompanhantes = h1.getQuantidadeAcompanhantes();
             String numAcompanhantesTxt = String.valueOf(numAcompanhantes);
                         
-            lb_txtAcompanhantes.setText(numAcompanhantesTxt+"\n");           
-            lb_txtCheckIn.setText(h1.getCheck_in()+"\n");
-            lb_txtCheckout.setText(h1.getCheck_out()+"\n");
-            lb_txtEmail.setText(h1.getEmail()+"\n");
-            lb_txtFone.setText(h1.getNome()+"\n");
-            lb_txtNome.setText(h1.getNome()+"\n");
-            lb_txtTipoQuarto.setText(h1.getTipoQuarto().toString()+"\n");
+            lb_txtAcompanhantes.setText(lb_txtAcompanhantes.getText()+"<HTML><p>"+numAcompanhantesTxt+"</p><HTML>");    
+            lb_txtCheckIn.setText(lb_txtCheckIn.getText()+"<HTML><p>"+h1.getCheck_in()+"</p><HTML>");
+            lb_txtCheckout.setText(lb_txtCheckout.getText()+"<HTML><p>"+h1.getCheck_out()+"</p><HTML>");
+            lb_txtEmail.setText(lb_txtEmail.getText()+"<HTML><p>"+h1.getEmail()+"</p><HTML>");
+            lb_txtFone.setText(lb_txtFone.getText()+"<HTML><p>"+h1.getTelefone()+"</p><HTML>");
+            lb_txtNome.setText(lb_txtNome.getText()+"<HTML><p>"+h1.getNome()+"</p><HTML>");
+            lb_txtTipoQuarto.setText(lb_txtTipoQuarto.getText()+"<HTML><p>"+h1.getTipoQuarto().toString()+"</p><HTML>");
         }
     }
 
@@ -98,45 +96,58 @@ public class Panel_reservar extends javax.swing.JPanel {
         lb_txtFone.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         lb_txtFone.setForeground(new java.awt.Color(0, 0, 0));
         lb_txtFone.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lb_txtFone.setText("E-mail");
+        lb_txtFone.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        lb_txtFone.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         add(lb_txtFone);
-        lb_txtFone.setBounds(1170, 270, 140, 30);
+        lb_txtFone.setBounds(1170, 270, 140, 250);
 
         lb_txtAcompanhantes.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         lb_txtAcompanhantes.setForeground(new java.awt.Color(0, 0, 0));
         lb_txtAcompanhantes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lb_txtAcompanhantes.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        lb_txtAcompanhantes.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         add(lb_txtAcompanhantes);
-        lb_txtAcompanhantes.setBounds(350, 270, 150, 30);
+        lb_txtAcompanhantes.setBounds(350, 270, 150, 250);
 
         lb_txtNome.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         lb_txtNome.setForeground(new java.awt.Color(0, 0, 0));
         lb_txtNome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lb_txtNome.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        lb_txtNome.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         add(lb_txtNome);
-        lb_txtNome.setBounds(500, 270, 150, 30);
+        lb_txtNome.setBounds(500, 270, 150, 250);
 
         lb_txtTipoQuarto.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         lb_txtTipoQuarto.setForeground(new java.awt.Color(0, 0, 0));
         lb_txtTipoQuarto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lb_txtTipoQuarto.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        lb_txtTipoQuarto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         add(lb_txtTipoQuarto);
-        lb_txtTipoQuarto.setBounds(650, 270, 130, 30);
+        lb_txtTipoQuarto.setBounds(650, 270, 130, 250);
 
         lb_txtCheckIn.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         lb_txtCheckIn.setForeground(new java.awt.Color(0, 0, 0));
         lb_txtCheckIn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lb_txtCheckIn.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        lb_txtCheckIn.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         add(lb_txtCheckIn);
-        lb_txtCheckIn.setBounds(780, 270, 130, 30);
+        lb_txtCheckIn.setBounds(780, 270, 130, 250);
 
         lb_txtCheckout.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         lb_txtCheckout.setForeground(new java.awt.Color(0, 0, 0));
         lb_txtCheckout.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lb_txtCheckout.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        lb_txtCheckout.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         add(lb_txtCheckout);
-        lb_txtCheckout.setBounds(910, 270, 130, 30);
+        lb_txtCheckout.setBounds(910, 270, 130, 250);
 
         lb_txtEmail.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         lb_txtEmail.setForeground(new java.awt.Color(0, 0, 0));
         lb_txtEmail.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lb_txtEmail.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        lb_txtEmail.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         add(lb_txtEmail);
-        lb_txtEmail.setBounds(1040, 270, 130, 30);
+        lb_txtEmail.setBounds(1040, 270, 130, 250);
 
         lb_titFone.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         lb_titFone.setForeground(new java.awt.Color(0, 0, 0));
@@ -226,7 +237,7 @@ public class Panel_reservar extends javax.swing.JPanel {
             }
         });
         add(lb_Mailing);
-        lb_Mailing.setBounds(50, 350, 70, 21);
+        lb_Mailing.setBounds(50, 350, 70, 20);
 
         lb_DayUse.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_DayUse.setText("Day Use");
@@ -241,7 +252,7 @@ public class Panel_reservar extends javax.swing.JPanel {
             }
         });
         add(lb_DayUse);
-        lb_DayUse.setBounds(50, 310, 70, 21);
+        lb_DayUse.setBounds(50, 310, 70, 20);
 
         lb_Cadastro.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_Cadastro.setText("Cadastrar Hóspedes");
@@ -259,7 +270,7 @@ public class Panel_reservar extends javax.swing.JPanel {
             }
         });
         add(lb_Cadastro);
-        lb_Cadastro.setBounds(50, 270, 146, 21);
+        lb_Cadastro.setBounds(50, 270, 167, 20);
 
         lb_Reservar.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_Reservar.setText("Reservar/Hospedar");
@@ -277,7 +288,7 @@ public class Panel_reservar extends javax.swing.JPanel {
             }
         });
         add(lb_Reservar);
-        lb_Reservar.setBounds(50, 230, 136, 21);
+        lb_Reservar.setBounds(50, 230, 159, 20);
 
         lb_Calendario.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_Calendario.setText("Calendário de Reservas   ");
@@ -292,7 +303,7 @@ public class Panel_reservar extends javax.swing.JPanel {
             }
         });
         add(lb_Calendario);
-        lb_Calendario.setBounds(50, 190, 181, 21);
+        lb_Calendario.setBounds(50, 190, 206, 20);
 
         lb_Home.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_Home.setText("Home");
@@ -307,7 +318,7 @@ public class Panel_reservar extends javax.swing.JPanel {
             }
         });
         add(lb_Home);
-        lb_Home.setBounds(50, 150, 60, 21);
+        lb_Home.setBounds(50, 150, 60, 20);
 
         lb_logoSideBar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/hotelIcon-reduzido.png"))); // NOI18N
         lb_logoSideBar.setText("jLabel1");
