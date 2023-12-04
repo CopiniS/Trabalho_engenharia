@@ -1,26 +1,30 @@
 package entity.view;
 
 import entity.controller.Main;
+import entity.model.Hospede;
 import java.awt.Color;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Panel_home extends javax.swing.JPanel {
 
-    public Panel_home() {
+    private List<Hospede> hospedeList = new ArrayList<>();
+
+    public Panel_home(List<Hospede> hospedeList) {
         initComponents();
-        
+
         String undelineHome = "<HTML><u>Home</u></HTML>";
         lb_Home.setText(undelineHome);
-        
+        this.hospedeList = hospedeList;
         //oioioioio
         // right
-        
         menuSideBarBranco();
         removeSelecao();
-        
+
         lb_menuSelecionado.setVisible(true);
     }
-    
-    public void menuSideBarBranco(){
+
+    public void menuSideBarBranco() {
         lb_Home.setForeground(Color.WHITE);
         lb_Cadastro.setForeground(Color.WHITE);
         lb_Calendario.setForeground(Color.WHITE);
@@ -28,8 +32,8 @@ public class Panel_home extends javax.swing.JPanel {
         lb_Mailing.setForeground(Color.WHITE);
         lb_DayUse.setForeground(Color.WHITE);
     }
-    
-    public void removeSelecao(){
+
+    public void removeSelecao() {
         lb_menuSelecionado.setVisible(false);
         lb_bkgCalendReserv.setVisible(false);
         lb_bkgReserv.setVisible(false);
@@ -711,7 +715,7 @@ public class Panel_home extends javax.swing.JPanel {
             }
         });
         add(lb_Mailing);
-        lb_Mailing.setBounds(50, 350, 70, 20);
+        lb_Mailing.setBounds(50, 350, 70, 21);
 
         lb_DayUse.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_DayUse.setText("Day Use");
@@ -726,7 +730,7 @@ public class Panel_home extends javax.swing.JPanel {
             }
         });
         add(lb_DayUse);
-        lb_DayUse.setBounds(50, 310, 70, 20);
+        lb_DayUse.setBounds(50, 310, 70, 21);
 
         lb_Cadastro.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_Cadastro.setText("Cadastrar Hóspedes");
@@ -744,7 +748,7 @@ public class Panel_home extends javax.swing.JPanel {
             }
         });
         add(lb_Cadastro);
-        lb_Cadastro.setBounds(50, 270, 167, 20);
+        lb_Cadastro.setBounds(50, 270, 146, 21);
 
         lb_Reservar.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_Reservar.setText("Reservar/Hospedar");
@@ -759,7 +763,7 @@ public class Panel_home extends javax.swing.JPanel {
             }
         });
         add(lb_Reservar);
-        lb_Reservar.setBounds(50, 230, 159, 20);
+        lb_Reservar.setBounds(50, 230, 210, 21);
 
         lb_Calendario.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_Calendario.setText("Calendário de Reservas   ");
@@ -774,7 +778,7 @@ public class Panel_home extends javax.swing.JPanel {
             }
         });
         add(lb_Calendario);
-        lb_Calendario.setBounds(50, 190, 206, 20);
+        lb_Calendario.setBounds(50, 190, 181, 21);
 
         lb_Home.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_Home.setText("Home");
@@ -789,7 +793,7 @@ public class Panel_home extends javax.swing.JPanel {
             }
         });
         add(lb_Home);
-        lb_Home.setBounds(50, 150, 60, 20);
+        lb_Home.setBounds(50, 150, 60, 21);
 
         lb_logoSideBar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/hotelIcon-reduzido.png"))); // NOI18N
         lb_logoSideBar.setText("jLabel1");
@@ -901,7 +905,7 @@ public class Panel_home extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void lb_CadastroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_CadastroMouseClicked
-        Main.c1.getView().setTelaCadastro(new Panel_cadastroHospede());
+        Main.c1.getView().setTelaCadastro(new Panel_cadastroHospede(hospedeList));
         Main.c1.getView().mostraTela(Main.c1.getView().getTelaCadastro());
     }//GEN-LAST:event_lb_CadastroMouseClicked
 

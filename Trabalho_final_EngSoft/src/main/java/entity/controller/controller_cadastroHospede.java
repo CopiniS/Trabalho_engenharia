@@ -7,12 +7,13 @@ import entity.view.Panel_dayUse;
 import entity.view.Panel_home;
 import entity.view.Panel_mailing;
 import entity.view.Panel_reservar;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Controller_cadastroHospede {
-    
+       private List<Hospede> hospedeList = new ArrayList<>();
     public void bt_homeMouseClicked(){
-        Main.c1.getView().setTelaHome(new Panel_home());
+        Main.c1.getView().setTelaHome(new Panel_home(hospedeList));
         Main.c1.getView().mostraTela(Main.c1.getView().getTelaHome());
     }
     

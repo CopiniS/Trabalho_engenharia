@@ -1,14 +1,18 @@
 package entity.view;
 
 import entity.controller.Main;
+import entity.model.Hospede;
 import java.awt.Color;
-import javax.swing.SwingConstants;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Panel_login extends javax.swing.JPanel {
 
+    private List<Hospede> hospedeList = new ArrayList<>();
+
     public Panel_login() {
         initComponents();
-        
+        this.hospedeList = hospedeList;
         lb_txAcessar.setForeground(Color.WHITE);
     }
 
@@ -95,7 +99,7 @@ public class Panel_login extends javax.swing.JPanel {
     }//GEN-LAST:event_tf_SenhaActionPerformed
 
     private void lb_btAcessarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_btAcessarMouseClicked
-        Main.c1.getView().setTelaHome(new Panel_home());
+        Main.c1.getView().setTelaHome(new Panel_home(hospedeList));
         Main.c1.getView().mostraTela(Main.c1.getView().getTelaHome());
     }//GEN-LAST:event_lb_btAcessarMouseClicked
 

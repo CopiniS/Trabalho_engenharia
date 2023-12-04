@@ -13,9 +13,9 @@ public class Panel_cadastroHospede extends javax.swing.JPanel {
     private List<String> servicos = new ArrayList<>();
     private List<Hospede> hospedeList = new ArrayList<>();
 
-    public Panel_cadastroHospede() {
+    public Panel_cadastroHospede(List<Hospede> hospedeList) {
        initComponents();
-       
+       this.hospedeList = hospedeList;
        menuSideBarBranco();
        removeSelecao();
     }
@@ -336,7 +336,7 @@ public class Panel_cadastroHospede extends javax.swing.JPanel {
             }
         });
         add(lb_Reservar);
-        lb_Reservar.setBounds(50, 230, 136, 21);
+        lb_Reservar.setBounds(50, 230, 220, 21);
 
         lb_Calendario.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_Calendario.setText("Calendário de Reservas   ");
@@ -524,7 +524,7 @@ public class Panel_cadastroHospede extends javax.swing.JPanel {
     }//GEN-LAST:event_lb_DayUseMouseExited
 
     private void lb_CadastroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_CadastroMouseClicked
-        Main.c1.getView().setTelaCadastro(new Panel_cadastroHospede());
+        Main.c1.getView().setTelaCadastro(new Panel_cadastroHospede(hospedeList));
         Main.c1.getView().mostraTela(Main.c1.getView().getTelaCadastro());
     }//GEN-LAST:event_lb_CadastroMouseClicked
 

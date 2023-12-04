@@ -237,7 +237,7 @@ public class Panel_reservar extends javax.swing.JPanel {
             }
         });
         add(lb_Mailing);
-        lb_Mailing.setBounds(50, 350, 70, 20);
+        lb_Mailing.setBounds(50, 350, 70, 21);
 
         lb_DayUse.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_DayUse.setText("Day Use");
@@ -252,7 +252,7 @@ public class Panel_reservar extends javax.swing.JPanel {
             }
         });
         add(lb_DayUse);
-        lb_DayUse.setBounds(50, 310, 70, 20);
+        lb_DayUse.setBounds(50, 310, 70, 21);
 
         lb_Cadastro.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_Cadastro.setText("Cadastrar Hóspedes");
@@ -270,7 +270,7 @@ public class Panel_reservar extends javax.swing.JPanel {
             }
         });
         add(lb_Cadastro);
-        lb_Cadastro.setBounds(50, 270, 167, 20);
+        lb_Cadastro.setBounds(50, 270, 146, 21);
 
         lb_Reservar.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_Reservar.setText("Reservar/Hospedar");
@@ -288,7 +288,7 @@ public class Panel_reservar extends javax.swing.JPanel {
             }
         });
         add(lb_Reservar);
-        lb_Reservar.setBounds(50, 230, 159, 20);
+        lb_Reservar.setBounds(50, 230, 220, 21);
 
         lb_Calendario.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_Calendario.setText("Calendário de Reservas   ");
@@ -303,7 +303,7 @@ public class Panel_reservar extends javax.swing.JPanel {
             }
         });
         add(lb_Calendario);
-        lb_Calendario.setBounds(50, 190, 206, 20);
+        lb_Calendario.setBounds(50, 190, 181, 21);
 
         lb_Home.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_Home.setText("Home");
@@ -318,7 +318,7 @@ public class Panel_reservar extends javax.swing.JPanel {
             }
         });
         add(lb_Home);
-        lb_Home.setBounds(50, 150, 60, 20);
+        lb_Home.setBounds(50, 150, 60, 21);
 
         lb_logoSideBar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/hotelIcon-reduzido.png"))); // NOI18N
         lb_logoSideBar.setText("jLabel1");
@@ -382,7 +382,7 @@ public class Panel_reservar extends javax.swing.JPanel {
     }//GEN-LAST:event_lb_DayUseMouseExited
 
     private void lb_CadastroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_CadastroMouseClicked
-        Main.c1.getView().setTelaCadastro(new Panel_cadastroHospede());
+        Main.c1.getView().setTelaCadastro(new Panel_cadastroHospede(hospedeList));
         Main.c1.getView().mostraTela(Main.c1.getView().getTelaCadastro());
     }//GEN-LAST:event_lb_CadastroMouseClicked
 
