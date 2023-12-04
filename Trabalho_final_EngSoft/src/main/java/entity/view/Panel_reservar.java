@@ -14,8 +14,18 @@ public class Panel_reservar extends javax.swing.JPanel {
     public Panel_reservar(List<Hospede> hospedeList) {
         initComponents();
         menuSideBarBranco();
+        removeSelecao();
         
         this.hospedeList = hospedeList;
+    }
+    
+    public void removeSelecao(){
+        lb_menuSelecionado.setVisible(false);
+        lb_bkgCalendReserv.setVisible(false);
+        lb_bkgReserv.setVisible(false);
+        lb_bkgMailing.setVisible(false);
+        lb_bkgDayUse.setVisible(false);
+        lb_bkgCadastrar.setVisible(false);
     }
     
     public void preencherLabels (){
@@ -42,14 +52,7 @@ public class Panel_reservar extends javax.swing.JPanel {
         lb_DayUse.setForeground(Color.WHITE);
     }
     
-    public void removeSelecao(){
-        lb_menuSelecionado.setVisible(false);
-        lb_bkgCalendReserv.setVisible(false);
-        lb_bkgReserv.setVisible(false);
-        lb_bkgMailing.setVisible(false);
-        lb_bkgDayUse.setVisible(false);
-        lb_bkgCadastrar.setVisible(false);
-    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
