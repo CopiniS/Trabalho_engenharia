@@ -14,9 +14,9 @@ public class Panel_reservar extends javax.swing.JPanel {
     public Panel_reservar(List<Hospede> hospedeList) {
         initComponents();
         menuSideBarBranco();
-        removeSelecao();
-        
         this.hospedeList = hospedeList;
+        removeSelecao();
+        preencherLabels();
     }
     
     public void removeSelecao(){
@@ -226,7 +226,7 @@ public class Panel_reservar extends javax.swing.JPanel {
             }
         });
         add(lb_Mailing);
-        lb_Mailing.setBounds(50, 350, 70, 20);
+        lb_Mailing.setBounds(50, 350, 70, 21);
 
         lb_DayUse.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_DayUse.setText("Day Use");
@@ -241,7 +241,7 @@ public class Panel_reservar extends javax.swing.JPanel {
             }
         });
         add(lb_DayUse);
-        lb_DayUse.setBounds(50, 310, 70, 20);
+        lb_DayUse.setBounds(50, 310, 70, 21);
 
         lb_Cadastro.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_Cadastro.setText("Cadastrar Hóspedes");
@@ -259,13 +259,16 @@ public class Panel_reservar extends javax.swing.JPanel {
             }
         });
         add(lb_Cadastro);
-        lb_Cadastro.setBounds(50, 270, 167, 20);
+        lb_Cadastro.setBounds(50, 270, 146, 21);
 
         lb_Reservar.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_Reservar.setText("Reservar/Hospedar");
         lb_Reservar.setAlignmentY(0.0F);
         lb_Reservar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lb_Reservar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_ReservarMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 lb_ReservarMouseEntered(evt);
             }
@@ -274,7 +277,7 @@ public class Panel_reservar extends javax.swing.JPanel {
             }
         });
         add(lb_Reservar);
-        lb_Reservar.setBounds(50, 230, 159, 20);
+        lb_Reservar.setBounds(50, 230, 136, 21);
 
         lb_Calendario.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_Calendario.setText("Calendário de Reservas   ");
@@ -289,7 +292,7 @@ public class Panel_reservar extends javax.swing.JPanel {
             }
         });
         add(lb_Calendario);
-        lb_Calendario.setBounds(50, 190, 206, 20);
+        lb_Calendario.setBounds(50, 190, 181, 21);
 
         lb_Home.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_Home.setText("Home");
@@ -304,7 +307,7 @@ public class Panel_reservar extends javax.swing.JPanel {
             }
         });
         add(lb_Home);
-        lb_Home.setBounds(50, 150, 60, 20);
+        lb_Home.setBounds(50, 150, 60, 21);
 
         lb_logoSideBar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/hotelIcon-reduzido.png"))); // NOI18N
         lb_logoSideBar.setText("jLabel1");
@@ -407,6 +410,10 @@ public class Panel_reservar extends javax.swing.JPanel {
     private void lb_HomeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_HomeMouseExited
         removeSelecao();
     }//GEN-LAST:event_lb_HomeMouseExited
+
+    private void lb_ReservarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_ReservarMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lb_ReservarMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
