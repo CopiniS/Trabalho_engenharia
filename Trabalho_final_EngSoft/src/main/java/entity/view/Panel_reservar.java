@@ -33,13 +33,13 @@ public class Panel_reservar extends javax.swing.JPanel {
             int numAcompanhantes = h1.getQuantidadeAcompanhantes();
             String numAcompanhantesTxt = String.valueOf(numAcompanhantes);
                         
-            lb_txtAcompanhantes.setText(numAcompanhantesTxt);           
-            lb_txtCheckIn.setText(h1.getCheck_in());
-            lb_txtCheckout.setText(h1.getCheck_out());
-            lb_txtEmail.setText(h1.getEmail());
-            lb_txtFone.setText(h1.getNome());
-            lb_txtNome.setText(h1.getNome());
-            lb_txtTipoQuarto.setText(h1.getTipoQuarto().toString());
+            lb_txtAcompanhantes.setText(numAcompanhantesTxt+"\n");           
+            lb_txtCheckIn.setText(h1.getCheck_in()+"\n");
+            lb_txtCheckout.setText(h1.getCheck_out()+"\n");
+            lb_txtEmail.setText(h1.getEmail()+"\n");
+            lb_txtFone.setText(h1.getNome()+"\n");
+            lb_txtNome.setText(h1.getNome()+"\n");
+            lb_txtTipoQuarto.setText(h1.getTipoQuarto().toString()+"\n");
         }
     }
 
