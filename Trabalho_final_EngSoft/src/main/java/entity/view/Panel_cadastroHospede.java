@@ -14,19 +14,15 @@ public class Panel_cadastroHospede extends javax.swing.JPanel {
     private List<Hospede> hospedeList = new ArrayList<>();
 
     public Panel_cadastroHospede(List<Hospede> hospedeList) {
-       initComponents();
-<<<<<<< HEAD
-       
-       String undelineHome = "<HTML><u>Cadastrar Hóspede</u></HTML>";
-       lb_Cadastro.setText(undelineHome);
-       
-=======
-       this.hospedeList = hospedeList;
->>>>>>> d1140903d3659b9c95813a3555db63dd395f4ce1
-       menuSideBarBranco();
-       removeSelecao();
+        initComponents();
+
+        String undelineHome = "<HTML><u>Cadastrar Hóspede</u></HTML>";
+        lb_Cadastro.setText(undelineHome);
+        this.hospedeList = hospedeList;
+        menuSideBarBranco();
+        removeSelecao();
     }
-    
+
     public void menuSideBarBranco() {
         lb_Home.setForeground(Color.WHITE);
         lb_Cadastro.setForeground(Color.WHITE);
@@ -34,9 +30,9 @@ public class Panel_cadastroHospede extends javax.swing.JPanel {
         lb_Reservar.setForeground(Color.WHITE);
         lb_Mailing.setForeground(Color.WHITE);
         lb_DayUse.setForeground(Color.WHITE);
-    }   
-    
-    public void removeSelecao(){
+    }
+
+    public void removeSelecao() {
         lb_menuSelecionado.setVisible(false);
         lb_bkgCalendReserv.setVisible(false);
         lb_bkgReserv.setVisible(false);
@@ -45,7 +41,7 @@ public class Panel_cadastroHospede extends javax.swing.JPanel {
         lb_bkgCadastrar.setVisible(false);
     }
 
-     @SuppressWarnings("unchecked")
+    @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -94,7 +90,7 @@ public class Panel_cadastroHospede extends javax.swing.JPanel {
         lb_TitleInfHosp.setForeground(new java.awt.Color(0, 0, 0));
         lb_TitleInfHosp.setText("Informações do Hóspede");
         add(lb_TitleInfHosp);
-        lb_TitleInfHosp.setBounds(450, 70, 310, 23);
+        lb_TitleInfHosp.setBounds(450, 70, 310, 24);
 
         lb_linha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/linha.png"))); // NOI18N
         add(lb_linha);
@@ -192,7 +188,7 @@ public class Panel_cadastroHospede extends javax.swing.JPanel {
         lb_TitleServ.setForeground(new java.awt.Color(0, 0, 0));
         lb_TitleServ.setText("Serviços");
         add(lb_TitleServ);
-        lb_TitleServ.setBounds(450, 410, 310, 23);
+        lb_TitleServ.setBounds(450, 410, 310, 24);
 
         lb_linha1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/linha.png"))); // NOI18N
         add(lb_linha1);
@@ -208,7 +204,7 @@ public class Panel_cadastroHospede extends javax.swing.JPanel {
             }
         });
         add(cb_Lavanderia);
-        cb_Lavanderia.setBounds(450, 540, 210, 26);
+        cb_Lavanderia.setBounds(450, 540, 210, 23);
 
         cb_Cafe.setBackground(new java.awt.Color(255, 255, 255));
         cb_Cafe.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
@@ -220,7 +216,7 @@ public class Panel_cadastroHospede extends javax.swing.JPanel {
             }
         });
         add(cb_Cafe);
-        cb_Cafe.setBounds(450, 460, 210, 26);
+        cb_Cafe.setBounds(450, 460, 210, 23);
 
         cb_Restaurante.setBackground(new java.awt.Color(255, 255, 255));
         cb_Restaurante.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
@@ -232,7 +228,7 @@ public class Panel_cadastroHospede extends javax.swing.JPanel {
             }
         });
         add(cb_Restaurante);
-        cb_Restaurante.setBounds(450, 500, 210, 26);
+        cb_Restaurante.setBounds(450, 500, 210, 23);
 
         cb_Frigobar.setBackground(new java.awt.Color(255, 255, 255));
         cb_Frigobar.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
@@ -256,7 +252,7 @@ public class Panel_cadastroHospede extends javax.swing.JPanel {
             }
         });
         add(cb_AluguelCarro);
-        cb_AluguelCarro.setBounds(670, 460, 210, 26);
+        cb_AluguelCarro.setBounds(670, 460, 210, 23);
 
         cb_Piscina.setBackground(new java.awt.Color(255, 255, 255));
         cb_Piscina.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
@@ -268,7 +264,7 @@ public class Panel_cadastroHospede extends javax.swing.JPanel {
             }
         });
         add(cb_Piscina);
-        cb_Piscina.setBounds(670, 500, 210, 26);
+        cb_Piscina.setBounds(670, 500, 210, 23);
 
         lb_Salvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/bt_Salvar.png"))); // NOI18N
         lb_Salvar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -293,7 +289,7 @@ public class Panel_cadastroHospede extends javax.swing.JPanel {
             }
         });
         add(lb_Mailing);
-        lb_Mailing.setBounds(50, 350, 70, 20);
+        lb_Mailing.setBounds(50, 350, 70, 21);
 
         lb_DayUse.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_DayUse.setText("Day Use");
@@ -308,7 +304,7 @@ public class Panel_cadastroHospede extends javax.swing.JPanel {
             }
         });
         add(lb_DayUse);
-        lb_DayUse.setBounds(50, 310, 70, 20);
+        lb_DayUse.setBounds(50, 310, 70, 21);
 
         lb_Cadastro.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_Cadastro.setText("Cadastrar Hóspedes");
@@ -326,7 +322,7 @@ public class Panel_cadastroHospede extends javax.swing.JPanel {
             }
         });
         add(lb_Cadastro);
-        lb_Cadastro.setBounds(50, 270, 167, 20);
+        lb_Cadastro.setBounds(50, 270, 146, 21);
 
         lb_Reservar.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_Reservar.setText("Reservar/Hospedar");
@@ -344,11 +340,7 @@ public class Panel_cadastroHospede extends javax.swing.JPanel {
             }
         });
         add(lb_Reservar);
-<<<<<<< HEAD
-        lb_Reservar.setBounds(50, 230, 159, 20);
-=======
         lb_Reservar.setBounds(50, 230, 220, 21);
->>>>>>> d1140903d3659b9c95813a3555db63dd395f4ce1
 
         lb_Calendario.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_Calendario.setText("Cadastro Reserva");
@@ -363,13 +355,16 @@ public class Panel_cadastroHospede extends javax.swing.JPanel {
             }
         });
         add(lb_Calendario);
-        lb_Calendario.setBounds(50, 190, 145, 20);
+        lb_Calendario.setBounds(50, 190, 127, 21);
 
         lb_Home.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_Home.setText("Home");
         lb_Home.setAlignmentY(0.0F);
         lb_Home.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lb_Home.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_HomeMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 lb_HomeMouseEntered(evt);
             }
@@ -378,7 +373,7 @@ public class Panel_cadastroHospede extends javax.swing.JPanel {
             }
         });
         add(lb_Home);
-        lb_Home.setBounds(50, 150, 60, 20);
+        lb_Home.setBounds(50, 150, 60, 21);
 
         lb_logoSideBar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/hotelIcon-reduzido.png"))); // NOI18N
         lb_logoSideBar.setText("jLabel1");
@@ -462,7 +457,7 @@ public class Panel_cadastroHospede extends javax.swing.JPanel {
     private void cb_PiscinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_PiscinaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cb_PiscinaActionPerformed
-
+    
     private void lb_SalvarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_SalvarMouseClicked
         String name = tf_nomeCompleto.getText();
         String phone = tf_Telefone.getText();
@@ -581,7 +576,11 @@ public class Panel_cadastroHospede extends javax.swing.JPanel {
         Main.c1.getView().mostraTela(Main.c1.getView().getTelaReservar());
     }//GEN-LAST:event_lb_ReservarMouseClicked
 
-    
+    private void lb_HomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_HomeMouseClicked
+         Main.c1.getView().setTelaHome(new Panel_home(hospedeList));
+        Main.c1.getView().mostraTela(Main.c1.getView().getTelaHome());
+    }//GEN-LAST:event_lb_HomeMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox cb_AluguelCarro;

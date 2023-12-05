@@ -287,7 +287,7 @@ public class panel_cadastroReserva extends javax.swing.JPanel {
     }//GEN-LAST:event_lb_DayUseMouseExited
 
     private void lb_CadastroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_CadastroMouseClicked
-        Main.c1.getView().setTelaCadastro(new Panel_cadastroHospede());
+        Main.c1.getView().setTelaCadastro(new Panel_cadastroHospede(hospedeList));
         Main.c1.getView().mostraTela(Main.c1.getView().getTelaCadastro());
     }//GEN-LAST:event_lb_CadastroMouseClicked
 

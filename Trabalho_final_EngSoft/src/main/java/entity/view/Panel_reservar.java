@@ -310,11 +310,11 @@ public class Panel_reservar extends javax.swing.JPanel {
             }
         });
         add(lb_Calendario);
-<<<<<<< HEAD
+
         lb_Calendario.setBounds(50, 190, 1366, 768);
-=======
+
         lb_Calendario.setBounds(50, 190, 181, 21);
->>>>>>> d1140903d3659b9c95813a3555db63dd395f4ce1
+
 
         lb_Home.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_Home.setText("Home");

@@ -10,22 +10,73 @@ public class Panel_home extends javax.swing.JPanel {
 
     private List<Hospede> hospedeList = new ArrayList<>();
 
-    public Panel_home(List<Hospede> hospedeList) {
+public Panel_home(List<Hospede> hospedeList) {
         initComponents();
-
+        
         String undelineHome = "<HTML><u>Home</u></HTML>";
         lb_Home.setText(undelineHome);
-<<<<<<< HEAD
-        
-=======
         this.hospedeList = hospedeList;
-        //oioioioio
-        // right
->>>>>>> d1140903d3659b9c95813a3555db63dd395f4ce1
         menuSideBarBranco();
         removeSelecao();
-
+        checkGuests(hospedeList);
         lb_menuSelecionado.setVisible(true);
+    }
+    
+    public void checkGuests(List<Hospede> hospedeList) {
+        for (int i = 0; i < hospedeList.size(); i++) {
+            checkLabelGuest(i, hospedeList.get(i));
+        } 
+        lb_menuSupTodos.setText("Todos: " + hospedeList.size());
+    }
+    
+    public void checkLabelGuest(Integer labelValue, Hospede h) {
+        switch (labelValue) {
+            case 0:
+                lb_userQ1.setText(h.getNome());
+                lb_dataQ1.setText(h.getCheck_in() + " - " + h.getCheck_out());
+                lb_statusCivilQ1.setText(h.getTipoQuarto().toString());
+                break;
+            case 1:
+                lb_userQ2.setText(h.getNome());
+                lb_dataQ2.setText(h.getCheck_in() + " - " + h.getCheck_out());
+                lb_statusCivilQ2.setText(h.getTipoQuarto().toString());
+                break;
+            case 2:
+                lb_userQ3.setText(h.getNome());
+                lb_dataQ3.setText(h.getCheck_in() + " - " + h.getCheck_out());
+                lb_statusCivilQ3.setText(h.getTipoQuarto().toString());
+                break;
+            case 3:
+                lb_userQ4.setText(h.getNome());
+                lb_dataQ4.setText(h.getCheck_in() + " - " + h.getCheck_out());
+                lb_statusCivilQ4.setText(h.getTipoQuarto().toString());
+                break;
+            case 4:
+                lb_userQ5.setText(h.getNome());
+                lb_dataQ5.setText(h.getCheck_in() + " - " + h.getCheck_out());
+                lb_statusCivilQ5.setText(h.getTipoQuarto().toString());
+                break;
+            case 5:
+                lb_userQ6.setText(h.getNome());
+                lb_dataQ6.setText(h.getCheck_in() + " - " + h.getCheck_out());
+                lb_statusCivilQ6.setText(h.getTipoQuarto().toString());
+                break;
+            case 6:
+                lb_userQ7.setText(h.getNome());
+                lb_dataQ7.setText(h.getCheck_in() + " - " + h.getCheck_out());
+                lb_statusCivilQ7.setText(h.getTipoQuarto().toString());
+                break;
+            case 7:
+                lb_userQ8.setText(h.getNome());
+                lb_dataQ8.setText(h.getCheck_in() + " - " + h.getCheck_out());
+                lb_statusCivilQ8.setText(h.getTipoQuarto().toString());
+                break;
+            case 8:
+                lb_userQ9.setText(h.getNome());
+                lb_dataQ9.setText(h.getCheck_in() + " - " + h.getCheck_out());
+                lb_statusCivilQ9.setText(h.getTipoQuarto().toString());
+                break;
+        }
     }
 
     public void menuSideBarBranco() {
@@ -782,11 +833,10 @@ public class Panel_home extends javax.swing.JPanel {
             }
         });
         add(lb_Calendario);
-<<<<<<< HEAD
+
         lb_Calendario.setBounds(50, 190, 145, 20);
-=======
+
         lb_Calendario.setBounds(50, 190, 181, 21);
->>>>>>> d1140903d3659b9c95813a3555db63dd395f4ce1
 
         lb_Home.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_Home.setText("Home");
@@ -970,7 +1020,10 @@ public class Panel_home extends javax.swing.JPanel {
     private void lb_MailingMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_MailingMouseExited
         removeSelecao();
     }//GEN-LAST:event_lb_MailingMouseExited
-
+    private void lb_HomeMouseClicked(java.awt.event.MouseEvent evt) {
+        Main.c1.getView().setTelaHome(new Panel_home(hospedeList));
+        Main.c1.getView().mostraTela(Main.c1.getView().getTelaHome());
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel lb_Cadastro;
