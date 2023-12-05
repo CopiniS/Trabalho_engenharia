@@ -11,9 +11,6 @@ public class Panel_home extends javax.swing.JPanel {
         String undelineHome = "<HTML><u>Home</u></HTML>";
         lb_Home.setText(undelineHome);
         
-        //oioioioio
-        // right
-        
         menuSideBarBranco();
         removeSelecao();
         
@@ -762,7 +759,7 @@ public class Panel_home extends javax.swing.JPanel {
         lb_Reservar.setBounds(50, 230, 159, 20);
 
         lb_Calendario.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
-        lb_Calendario.setText("Calendário de Reservas   ");
+        lb_Calendario.setText("Cadastro Reserva");
         lb_Calendario.setAlignmentY(0.0F);
         lb_Calendario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lb_Calendario.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -774,7 +771,7 @@ public class Panel_home extends javax.swing.JPanel {
             }
         });
         add(lb_Calendario);
-        lb_Calendario.setBounds(50, 190, 206, 20);
+        lb_Calendario.setBounds(50, 190, 145, 20);
 
         lb_Home.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_Home.setText("Home");

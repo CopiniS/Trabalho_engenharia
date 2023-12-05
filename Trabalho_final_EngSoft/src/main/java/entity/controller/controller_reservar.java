@@ -4,7 +4,7 @@ package entity.controller;
 import entity.model.Hospede;
 import entity.model.Reserva;
 import entity.view.Panel_cadastroHospede;
-import entity.view.Panel_calendario;
+import entity.view.panel_cadastroReserva;
 import entity.view.Panel_dayUse;
 import entity.view.Panel_home;
 import entity.view.Panel_mailing;
@@ -18,7 +18,7 @@ public class Controller_reservar {
     }
     
     public void bt_calendarioReservasMouseClicked(){
-        Main.c1.getView().setTelaCalendario(new Panel_calendario());
+        Main.c1.getView().setTelaCalendario(new panel_cadastroReserva());
         Main.c1.getView().mostraTela(Main.c1.getView().getTelaCalendario());
     }
     

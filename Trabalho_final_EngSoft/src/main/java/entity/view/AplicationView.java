@@ -8,7 +8,7 @@ public class AplicationView {
     private Janela janela;
     private Panel_login telaLogin;
     private Panel_cadastroHospede telaCadastro;
-    private Panel_calendario telaCalendario;
+    private panel_cadastroReserva telaCalendario;
     private Panel_dayUse telaDayUse;
     private Panel_home telaHome;
     private Panel_mailing telaMainling;
@@ -60,11 +60,11 @@ public class AplicationView {
         this.telaCadastro = telaCadastro;
     }
     
-    public Panel_calendario getTelaCalendario() {
+    public panel_cadastroReserva getTelaCalendario() {
         return telaCalendario;
     }
 
-    public void setTelaCalendario(Panel_calendario telaCalendario) {
+    public void setTelaCalendario(panel_cadastroReserva telaCalendario) {
         this.telaCalendario = telaCalendario;
     }
     

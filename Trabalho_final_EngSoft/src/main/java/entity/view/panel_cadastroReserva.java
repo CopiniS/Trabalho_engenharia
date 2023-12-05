@@ -3,23 +3,46 @@ package entity.view;
 import entity.controller.Main;
 import entity.model.Hospede;
 import java.awt.Color;
+import java.util.ArrayList;
 import java.util.List;
 
-public class Panel_reservar extends javax.swing.JPanel {
+public class panel_cadastroReserva extends javax.swing.JPanel {
 
-    private List<Hospede> hospedeList;
+    private List<Hospede> hospedeList = new ArrayList<>();
     
-    public Panel_reservar(List<Hospede> hospedeList) {
+    public panel_cadastroReserva() {
         initComponents();
+        
+        String undelineHome = "<HTML><u>Cadastro Reservar</u></HTML>";
+        lb_Calendario.setText(undelineHome);
+        
         menuSideBarBranco();
-        this.hospedeList = hospedeList;
-        
-        String undelineHome = "<HTML><u>Reservar/Hospedar</u></HTML>";
-        lb_Reservar.setText(undelineHome);
-        
         removeSelecao();
-        preencherLabels();
+        
+        this.hospedeList = hospedeList;        
+        preencherComboBox();
     }
+    
+    public void preencherComboBox(){
+        for (Hospede h1 : hospedeList) {
+            cb_nomeCadastrados.addItem(h1.getNome());
+        }
+        for (Hospede h1 : hospedeList) {
+            if(h1.getNome().equals(cb_nomeCadastrados.getSelectedItem())){
+                h1.setCheck_in(ftf_Checkin.getText());
+                h1.setCheck_out(ftf_Checkout.getText());
+            }
+        }
+    }
+    
+    public void menuSideBarBranco() {
+        lb_Home.setForeground(Color.WHITE);
+        lb_Cadastro.setForeground(Color.WHITE);
+        lb_Calendario.setForeground(Color.WHITE);
+        lb_Reservar.setForeground(Color.WHITE);
+        lb_Mailing.setForeground(Color.WHITE);
+        lb_DayUse.setForeground(Color.WHITE);
+    }   
     
     public void removeSelecao(){
         lb_menuSelecionado.setVisible(false);
@@ -29,56 +52,11 @@ public class Panel_reservar extends javax.swing.JPanel {
         lb_bkgDayUse.setVisible(false);
         lb_bkgCadastrar.setVisible(false);
     }
-    
-    public void preencherLabels (){
-         for (Hospede h1 : hospedeList) {
-            int numAcompanhantes = h1.getQuantidadeAcompanhantes();
-            String numAcompanhantesTxt = String.valueOf(numAcompanhantes);
-                        
-            lb_txtAcompanhantes.setText(lb_txtAcompanhantes.getText()+"<HTML><p>"+numAcompanhantesTxt+"</p><HTML>");    
-            lb_txtCheckIn.setText(lb_txtCheckIn.getText()+"<HTML><p>"+h1.getCheck_in()+"</p><HTML>");
-            lb_txtCheckout.setText(lb_txtCheckout.getText()+"<HTML><p>"+h1.getCheck_out()+"</p><HTML>");
-            lb_txtEmail.setText(lb_txtEmail.getText()+"<HTML><p>"+h1.getEmail()+"</p><HTML>");
-            lb_txtFone.setText(lb_txtFone.getText()+"<HTML><p>"+h1.getTelefone()+"</p><HTML>");
-            lb_txtNome.setText(lb_txtNome.getText()+"<HTML><p>"+h1.getNome()+"</p><HTML>");
-            lb_txtTipoQuarto.setText(lb_txtTipoQuarto.getText()+"<HTML><p>"+h1.getTipoQuarto().toString()+"</p><HTML>");
-        }
-    }
 
-    public void menuSideBarBranco(){
-        lb_Home.setForeground(Color.WHITE);
-        lb_Cadastro.setForeground(Color.WHITE);
-        lb_Calendario.setForeground(Color.WHITE);
-        lb_Reservar.setForeground(Color.WHITE);
-        lb_Mailing.setForeground(Color.WHITE);
-        lb_DayUse.setForeground(Color.WHITE);
-    }
-    
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lb_txtFone = new javax.swing.JLabel();
-        lb_txtAcompanhantes = new javax.swing.JLabel();
-        lb_txtNome = new javax.swing.JLabel();
-        lb_txtTipoQuarto = new javax.swing.JLabel();
-        lb_txtCheckIn = new javax.swing.JLabel();
-        lb_txtCheckout = new javax.swing.JLabel();
-        lb_txtEmail = new javax.swing.JLabel();
-        lb_titFone = new javax.swing.JLabel();
-        lb_titEmail = new javax.swing.JLabel();
-        lb_titCheckout = new javax.swing.JLabel();
-        lb_titCheckIn = new javax.swing.JLabel();
-        lb_titTipoQuarto = new javax.swing.JLabel();
-        lb_titNome = new javax.swing.JLabel();
-        lb_titAcompanhantes = new javax.swing.JLabel();
-        cbcTabela = new javax.swing.JLabel();
-        linhaTabela = new javax.swing.JLabel();
-        lb_Descartar = new javax.swing.JLabel();
-        lb_Salvar = new javax.swing.JLabel();
-        pesquisa = new javax.swing.JLabel();
-        lb_novoHospede = new javax.swing.JLabel();
         lb_Mailing = new javax.swing.JLabel();
         lb_DayUse = new javax.swing.JLabel();
         lb_Cadastro = new javax.swing.JLabel();
@@ -93,141 +71,15 @@ public class Panel_reservar extends javax.swing.JPanel {
         lb_bkgCalendReserv = new javax.swing.JLabel();
         lb_menuSelecionado = new javax.swing.JLabel();
         lb_bkgSideBar = new javax.swing.JLabel();
+        cb_nomeCadastrados = new javax.swing.JComboBox<>();
+        lb_titCheckout = new javax.swing.JLabel();
+        lb_titCheckin = new javax.swing.JLabel();
+        lb_Salvar = new javax.swing.JLabel();
+        ftf_Checkout = new javax.swing.JFormattedTextField();
+        ftf_Checkin = new javax.swing.JFormattedTextField();
 
         setBackground(new java.awt.Color(255, 255, 255));
-        setPreferredSize(new java.awt.Dimension(1366, 768));
         setLayout(null);
-
-        lb_txtFone.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        lb_txtFone.setForeground(new java.awt.Color(0, 0, 0));
-        lb_txtFone.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lb_txtFone.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        lb_txtFone.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        add(lb_txtFone);
-        lb_txtFone.setBounds(1170, 270, 140, 250);
-
-        lb_txtAcompanhantes.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        lb_txtAcompanhantes.setForeground(new java.awt.Color(0, 0, 0));
-        lb_txtAcompanhantes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lb_txtAcompanhantes.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        lb_txtAcompanhantes.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        add(lb_txtAcompanhantes);
-        lb_txtAcompanhantes.setBounds(350, 270, 150, 250);
-
-        lb_txtNome.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        lb_txtNome.setForeground(new java.awt.Color(0, 0, 0));
-        lb_txtNome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lb_txtNome.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        lb_txtNome.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        add(lb_txtNome);
-        lb_txtNome.setBounds(500, 270, 150, 250);
-
-        lb_txtTipoQuarto.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        lb_txtTipoQuarto.setForeground(new java.awt.Color(0, 0, 0));
-        lb_txtTipoQuarto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lb_txtTipoQuarto.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        lb_txtTipoQuarto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        add(lb_txtTipoQuarto);
-        lb_txtTipoQuarto.setBounds(650, 270, 130, 250);
-
-        lb_txtCheckIn.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        lb_txtCheckIn.setForeground(new java.awt.Color(0, 0, 0));
-        lb_txtCheckIn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lb_txtCheckIn.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        lb_txtCheckIn.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        add(lb_txtCheckIn);
-        lb_txtCheckIn.setBounds(780, 270, 130, 250);
-
-        lb_txtCheckout.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        lb_txtCheckout.setForeground(new java.awt.Color(0, 0, 0));
-        lb_txtCheckout.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lb_txtCheckout.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        lb_txtCheckout.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        add(lb_txtCheckout);
-        lb_txtCheckout.setBounds(910, 270, 130, 250);
-
-        lb_txtEmail.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        lb_txtEmail.setForeground(new java.awt.Color(0, 0, 0));
-        lb_txtEmail.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lb_txtEmail.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        lb_txtEmail.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        add(lb_txtEmail);
-        lb_txtEmail.setBounds(1040, 270, 130, 250);
-
-        lb_titFone.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        lb_titFone.setForeground(new java.awt.Color(0, 0, 0));
-        lb_titFone.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lb_titFone.setText("E-mail");
-        add(lb_titFone);
-        lb_titFone.setBounds(1170, 234, 140, 30);
-
-        lb_titEmail.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        lb_titEmail.setForeground(new java.awt.Color(0, 0, 0));
-        lb_titEmail.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lb_titEmail.setText("Fone");
-        add(lb_titEmail);
-        lb_titEmail.setBounds(1040, 234, 130, 30);
-
-        lb_titCheckout.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        lb_titCheckout.setForeground(new java.awt.Color(0, 0, 0));
-        lb_titCheckout.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lb_titCheckout.setText("Checkout");
-        add(lb_titCheckout);
-        lb_titCheckout.setBounds(910, 234, 130, 30);
-
-        lb_titCheckIn.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        lb_titCheckIn.setForeground(new java.awt.Color(0, 0, 0));
-        lb_titCheckIn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lb_titCheckIn.setText("Check-in");
-        add(lb_titCheckIn);
-        lb_titCheckIn.setBounds(780, 234, 130, 30);
-
-        lb_titTipoQuarto.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        lb_titTipoQuarto.setForeground(new java.awt.Color(0, 0, 0));
-        lb_titTipoQuarto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lb_titTipoQuarto.setText("Tipo de Quarto");
-        add(lb_titTipoQuarto);
-        lb_titTipoQuarto.setBounds(650, 234, 130, 30);
-
-        lb_titNome.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        lb_titNome.setForeground(new java.awt.Color(0, 0, 0));
-        lb_titNome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lb_titNome.setText("Nome");
-        add(lb_titNome);
-        lb_titNome.setBounds(500, 234, 150, 30);
-
-        lb_titAcompanhantes.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        lb_titAcompanhantes.setForeground(new java.awt.Color(0, 0, 0));
-        lb_titAcompanhantes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lb_titAcompanhantes.setText("Acompanhantes");
-        add(lb_titAcompanhantes);
-        lb_titAcompanhantes.setBounds(350, 234, 150, 30);
-
-        cbcTabela.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/CabecalhoReserva.png"))); // NOI18N
-        add(cbcTabela);
-        cbcTabela.setBounds(350, 230, 963, 40);
-
-        linhaTabela.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/LinhaReserva.png"))); // NOI18N
-        add(linhaTabela);
-        linhaTabela.setBounds(350, 260, 964, 260);
-
-        lb_Descartar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/btDescartar.png"))); // NOI18N
-        lb_Descartar.setText("jLabel3");
-        add(lb_Descartar);
-        lb_Descartar.setBounds(960, 660, 170, 30);
-
-        lb_Salvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/bt_Salvar.png"))); // NOI18N
-        lb_Salvar.setText("jLabel3");
-        add(lb_Salvar);
-        lb_Salvar.setBounds(1160, 660, 150, 30);
-
-        pesquisa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Barra Pesquisa.png"))); // NOI18N
-        add(pesquisa);
-        pesquisa.setBounds(350, 130, 380, 50);
-
-        lb_novoHospede.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/bt_NovoHospede.png"))); // NOI18N
-        add(lb_novoHospede);
-        lb_novoHospede.setBounds(810, 130, 160, 50);
 
         lb_Mailing.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_Mailing.setText("Mailing");
@@ -299,8 +151,6 @@ public class Panel_reservar extends javax.swing.JPanel {
         lb_Calendario.setText("Cadastro Reserva");
         lb_Calendario.setAlignmentY(0.0F);
         lb_Calendario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lb_Calendario.setMaximumSize(new java.awt.Dimension(32000, 32000));
-        lb_Calendario.setPreferredSize(new java.awt.Dimension(1366, 768));
         lb_Calendario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 lb_CalendarioMouseEntered(evt);
@@ -310,7 +160,7 @@ public class Panel_reservar extends javax.swing.JPanel {
             }
         });
         add(lb_Calendario);
-        lb_Calendario.setBounds(50, 190, 1366, 768);
+        lb_Calendario.setBounds(50, 190, 145, 20);
 
         lb_Home.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_Home.setText("Home");
@@ -368,6 +218,54 @@ public class Panel_reservar extends javax.swing.JPanel {
         lb_bkgSideBar.setPreferredSize(new java.awt.Dimension(300, 768));
         add(lb_bkgSideBar);
         lb_bkgSideBar.setBounds(0, 0, 300, 768);
+
+        cb_nomeCadastrados.setBackground(new java.awt.Color(255, 255, 255));
+        cb_nomeCadastrados.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
+        cb_nomeCadastrados.setForeground(new java.awt.Color(0, 0, 0));
+        cb_nomeCadastrados.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        add(cb_nomeCadastrados);
+        cb_nomeCadastrados.setBounds(570, 140, 570, 40);
+
+        lb_titCheckout.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        lb_titCheckout.setForeground(new java.awt.Color(0, 0, 0));
+        lb_titCheckout.setText("Checkout");
+        add(lb_titCheckout);
+        lb_titCheckout.setBounds(870, 210, 90, 30);
+
+        lb_titCheckin.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        lb_titCheckin.setForeground(new java.awt.Color(0, 0, 0));
+        lb_titCheckin.setText("Check-in");
+        add(lb_titCheckin);
+        lb_titCheckin.setBounds(570, 210, 90, 30);
+
+        lb_Salvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/bt_Salvar.png"))); // NOI18N
+        lb_Salvar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lb_Salvar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_SalvarMouseClicked(evt);
+            }
+        });
+        add(lb_Salvar);
+        lb_Salvar.setBounds(990, 690, 150, 30);
+
+        ftf_Checkout.setBackground(new java.awt.Color(255, 255, 255));
+        ftf_Checkout.setForeground(new java.awt.Color(0, 0, 0));
+        ftf_Checkout.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
+        ftf_Checkout.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        add(ftf_Checkout);
+        ftf_Checkout.setBounds(870, 240, 270, 30);
+
+        ftf_Checkin.setBackground(new java.awt.Color(255, 255, 255));
+        ftf_Checkin.setForeground(new java.awt.Color(0, 0, 0));
+        ftf_Checkin.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
+        ftf_Checkin.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        ftf_Checkin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ftf_CheckinActionPerformed(evt);
+            }
+        });
+        add(ftf_Checkin);
+        ftf_Checkin.setBounds(570, 240, 270, 30);
     }// </editor-fold>//GEN-END:initComponents
 
     private void lb_MailingMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_MailingMouseEntered
@@ -402,6 +300,11 @@ public class Panel_reservar extends javax.swing.JPanel {
         removeSelecao();
     }//GEN-LAST:event_lb_CadastroMouseExited
 
+    private void lb_ReservarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_ReservarMouseClicked
+        Main.c1.getView().setTelaReservar(new Panel_reservar(hospedeList));
+        Main.c1.getView().mostraTela(Main.c1.getView().getTelaReservar());
+    }//GEN-LAST:event_lb_ReservarMouseClicked
+
     private void lb_ReservarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_ReservarMouseEntered
         removeSelecao();
         lb_bkgReserv.setVisible(true);
@@ -429,17 +332,22 @@ public class Panel_reservar extends javax.swing.JPanel {
         removeSelecao();
     }//GEN-LAST:event_lb_HomeMouseExited
 
-    private void lb_ReservarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_ReservarMouseClicked
+    private void lb_SalvarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_SalvarMouseClicked
+        
+    }//GEN-LAST:event_lb_SalvarMouseClicked
+
+    private void ftf_CheckinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ftf_CheckinActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_lb_ReservarMouseClicked
+    }//GEN-LAST:event_ftf_CheckinActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel cbcTabela;
+    private javax.swing.JComboBox<String> cb_nomeCadastrados;
+    private javax.swing.JFormattedTextField ftf_Checkin;
+    private javax.swing.JFormattedTextField ftf_Checkout;
     private javax.swing.JLabel lb_Cadastro;
     private javax.swing.JLabel lb_Calendario;
     private javax.swing.JLabel lb_DayUse;
-    private javax.swing.JLabel lb_Descartar;
     private javax.swing.JLabel lb_Home;
     private javax.swing.JLabel lb_Mailing;
     private javax.swing.JLabel lb_Reservar;
@@ -452,22 +360,7 @@ public class Panel_reservar extends javax.swing.JPanel {
     private javax.swing.JLabel lb_bkgSideBar;
     private javax.swing.JLabel lb_logoSideBar;
     private javax.swing.JLabel lb_menuSelecionado;
-    private javax.swing.JLabel lb_novoHospede;
-    private javax.swing.JLabel lb_titAcompanhantes;
-    private javax.swing.JLabel lb_titCheckIn;
+    private javax.swing.JLabel lb_titCheckin;
     private javax.swing.JLabel lb_titCheckout;
-    private javax.swing.JLabel lb_titEmail;
-    private javax.swing.JLabel lb_titFone;
-    private javax.swing.JLabel lb_titNome;
-    private javax.swing.JLabel lb_titTipoQuarto;
-    private javax.swing.JLabel lb_txtAcompanhantes;
-    private javax.swing.JLabel lb_txtCheckIn;
-    private javax.swing.JLabel lb_txtCheckout;
-    private javax.swing.JLabel lb_txtEmail;
-    private javax.swing.JLabel lb_txtFone;
-    private javax.swing.JLabel lb_txtNome;
-    private javax.swing.JLabel lb_txtTipoQuarto;
-    private javax.swing.JLabel linhaTabela;
-    private javax.swing.JLabel pesquisa;
     // End of variables declaration//GEN-END:variables
 }

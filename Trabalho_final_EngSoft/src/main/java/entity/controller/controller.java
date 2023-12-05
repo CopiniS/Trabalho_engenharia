@@ -8,7 +8,7 @@ public class Controller {
     static AplicationView view;
     private Controller_login controllerLoging;
     private Controller_cadastroHospede controllerCadastroHospede;
-    Controller_calendario controllerCalendario;
+    controller_cadastroReserva controllerCalendario;
     Controller_dayUSe controllerDayUse;
     Controller_home controllerHome;
     Controller_mailing controllerMainling;
@@ -19,7 +19,7 @@ public class Controller {
 
         controllerLoging = new Controller_login();
         this.controllerCadastroHospede = new Controller_cadastroHospede();
-        controllerCalendario = new Controller_calendario();
+        controllerCalendario = new controller_cadastroReserva();
         controllerDayUse = new Controller_dayUSe();
         controllerHome = new Controller_home();
         controllerMainling = new Controller_mailing();
@@ -42,11 +42,11 @@ public class Controller {
         this.controllerCadastroHospede = controllerCadastroHospede;
     }
 
-    public Controller_calendario getControllerCalendario() {
+    public controller_cadastroReserva getControllerCalendario() {
         return controllerCalendario;
     }
 
-    public void setControllerCalendario(Controller_calendario controllerCalendario) {
+    public void setControllerCalendario(controller_cadastroReserva controllerCalendario) {
         this.controllerCalendario = controllerCalendario;
     }
 
