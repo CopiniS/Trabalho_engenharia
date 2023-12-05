@@ -457,15 +457,20 @@ public class Panel_cadastroHospede extends javax.swing.JPanel {
     private void cb_PiscinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_PiscinaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cb_PiscinaActionPerformed
-    
+
     private void lb_SalvarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_SalvarMouseClicked
         String name = tf_nomeCompleto.getText();
         String phone = tf_Telefone.getText();
         String email = tf_Email.getText();
         Integer guests = Integer.valueOf(tf_Acompanhantes.getText());
         String roomTypeStr = (String) cb_tipoQuarto.getSelectedItem();
+        if (roomTypeStr.equals("Duplo Solteiro")) {
+            roomTypeStr = "Duplo_Solteiro";
+        }
+        if (roomTypeStr.equals("Twin Room")) {
+            roomTypeStr = "Twin_Room";
+        }
         TipoQuarto roomType = TipoQuarto.valueOf(roomTypeStr.toUpperCase());
-
         // verifica serviços
         if (cb_Restaurante.isSelected()) {
             servicos.add("Restaurante");
@@ -577,7 +582,7 @@ public class Panel_cadastroHospede extends javax.swing.JPanel {
     }//GEN-LAST:event_lb_ReservarMouseClicked
 
     private void lb_HomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_HomeMouseClicked
-         Main.c1.getView().setTelaHome(new Panel_home(hospedeList));
+        Main.c1.getView().setTelaHome(new Panel_home(hospedeList));
         Main.c1.getView().mostraTela(Main.c1.getView().getTelaHome());
     }//GEN-LAST:event_lb_HomeMouseClicked
 

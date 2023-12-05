@@ -3,6 +3,8 @@ package entity.view;
 import entity.controller.Main;
 import entity.model.Hospede;
 import java.awt.Color;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -10,76 +12,123 @@ import javax.swing.JOptionPane;
 public class Panel_home extends javax.swing.JPanel {
 
     private List<Hospede> hospedeList = new ArrayList<>();
+    private Integer disponivel = 0;
+    private Integer saiHoje = 0;
+    private Integer entraHoje = 0;
+    private Integer emLimpeza = 0;
+    private Integer ocupado = 0;
 
-public Panel_home(List<Hospede> hospedeList) {
+    public Panel_home(List<Hospede> hospedeList) {
         initComponents();
-        
+
         String undelineHome = "<HTML><u>Home</u></HTML>";
         lb_Home.setText(undelineHome);
-        
+
         this.hospedeList = hospedeList;
-        
+
         menuSideBarBranco();
         removeSelecao();
         checkGuests(hospedeList);
         lb_menuSelecionado.setVisible(true);
+        lb_menuSupDisp.setText("Disponível: " + disponivel);
+        lb_menuSupSaiHoje.setText("Sai Hoje: " + saiHoje);
+        lb_menuSupEntraHoje.setText("Entra Hoje: " + entraHoje);
+        lb_menuSupLimpeza.setText("Em Limpeza: " + emLimpeza);
+        lb_menuSupOcupado.setText("Ocupado: " + ocupado);
     }
-    
+
     public void checkGuests(List<Hospede> hospedeList) {
         for (int i = 0; i < hospedeList.size(); i++) {
             checkLabelGuest(i, hospedeList.get(i));
-        } 
-        lb_menuSupTodos.setText("Todos: " + hospedeList.size());
+        }
+        lb_menuSupTodos.setText("Todos: 9");
     }
-    
+
     public void checkLabelGuest(Integer labelValue, Hospede h) {
         switch (labelValue) {
             case 0:
                 lb_userQ1.setText(h.getNome());
                 lb_dataQ1.setText(h.getCheck_in() + " - " + h.getCheck_out());
                 lb_statusCivilQ1.setText(h.getTipoQuarto().toString());
+                checkStatus(h, lb_cbcQ1);
                 break;
             case 1:
                 lb_userQ2.setText(h.getNome());
                 lb_dataQ2.setText(h.getCheck_in() + " - " + h.getCheck_out());
                 lb_statusCivilQ2.setText(h.getTipoQuarto().toString());
+                checkStatus(h, lb_cbcQ2);
                 break;
             case 2:
                 lb_userQ3.setText(h.getNome());
                 lb_dataQ3.setText(h.getCheck_in() + " - " + h.getCheck_out());
                 lb_statusCivilQ3.setText(h.getTipoQuarto().toString());
+                checkStatus(h, lb_cbcQ3);
                 break;
             case 3:
                 lb_userQ4.setText(h.getNome());
                 lb_dataQ4.setText(h.getCheck_in() + " - " + h.getCheck_out());
                 lb_statusCivilQ4.setText(h.getTipoQuarto().toString());
+                checkStatus(h, lb_cbcQ4);
                 break;
             case 4:
                 lb_userQ5.setText(h.getNome());
                 lb_dataQ5.setText(h.getCheck_in() + " - " + h.getCheck_out());
                 lb_statusCivilQ5.setText(h.getTipoQuarto().toString());
+                checkStatus(h, lb_cbcQ5);
                 break;
             case 5:
                 lb_userQ6.setText(h.getNome());
                 lb_dataQ6.setText(h.getCheck_in() + " - " + h.getCheck_out());
                 lb_statusCivilQ6.setText(h.getTipoQuarto().toString());
+                checkStatus(h, lb_cbcQ6);
                 break;
             case 6:
                 lb_userQ7.setText(h.getNome());
                 lb_dataQ7.setText(h.getCheck_in() + " - " + h.getCheck_out());
                 lb_statusCivilQ7.setText(h.getTipoQuarto().toString());
+                checkStatus(h, lb_cbcQ7);
                 break;
             case 7:
                 lb_userQ8.setText(h.getNome());
                 lb_dataQ8.setText(h.getCheck_in() + " - " + h.getCheck_out());
                 lb_statusCivilQ8.setText(h.getTipoQuarto().toString());
+                checkStatus(h, lb_cbcQ8);
                 break;
             case 8:
                 lb_userQ9.setText(h.getNome());
                 lb_dataQ9.setText(h.getCheck_in() + " - " + h.getCheck_out());
                 lb_statusCivilQ9.setText(h.getTipoQuarto().toString());
+                checkStatus(h, lb_cbcQ9);
                 break;
         }
+    }
+
+    public void checkStatus(Hospede h, javax.swing.JLabel label) {
+        LocalDate dataAtual = LocalDate.now();
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        String dataAtualString = dataAtual.format(formato);
+
+        LocalDate data1 = LocalDate.parse(dataAtualString, formato);
+        LocalDate data2 = LocalDate.parse(h.getCheck_out(), formato);
+        LocalDate data3 = LocalDate.parse(h.getCheck_in(), formato);
+
+        if (h.getCheck_in().equals(dataAtualString)) {
+            label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cbcEntraHoje.png")));
+            entraHoje = entraHoje + 1;
+        } else if (data1.isAfter(data2)) {
+            label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cbcLimpeza.png")));
+            emLimpeza = emLimpeza + 1;
+        } else if (h.getCheck_out().equals(dataAtualString)) {
+            label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cbcSaiHoje.png")));
+            saiHoje = saiHoje + 1;
+        } else if (data1.isAfter(data3) && data1.isBefore(data2)) {
+            label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cbcOcupado.png")));
+            ocupado = ocupado + 1;
+        } else {
+            label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cbcDisp.png")));
+            disponivel = disponivel + 1;
+        }
+
     }
 
     public void menuSideBarBranco() {
@@ -227,12 +276,12 @@ public Panel_home(List<Hospede> hospedeList) {
 
         lb_iconUserQ9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/iconUser.png"))); // NOI18N
         add(lb_iconUserQ9);
-        lb_iconUserQ9.setBounds(1080, 610, 190, 12);
+        lb_iconUserQ9.setBounds(1080, 610, 20, 12);
 
         lb_userQ9.setBackground(new java.awt.Color(0, 0, 0));
         lb_userQ9.setFont(new java.awt.Font("Montserrat SemiBold", 1, 14)); // NOI18N
         lb_userQ9.setForeground(new java.awt.Color(0, 0, 0));
-        lb_userQ9.setText("Duda Costa");
+        lb_userQ9.setText("-");
         add(lb_userQ9);
         lb_userQ9.setBounds(1100, 610, 200, 10);
 
@@ -245,14 +294,14 @@ public Panel_home(List<Hospede> hospedeList) {
         lb_statusCivilQ9.setBackground(new java.awt.Color(0, 0, 0));
         lb_statusCivilQ9.setFont(new java.awt.Font("Montserrat SemiBold", 1, 14)); // NOI18N
         lb_statusCivilQ9.setForeground(new java.awt.Color(0, 0, 0));
-        lb_statusCivilQ9.setText("Solteiro");
+        lb_statusCivilQ9.setText("-");
         add(lb_statusCivilQ9);
         lb_statusCivilQ9.setBounds(1100, 650, 200, 10);
 
         lb_dataQ9.setBackground(new java.awt.Color(0, 0, 0));
         lb_dataQ9.setFont(new java.awt.Font("Montserrat SemiBold", 1, 14)); // NOI18N
         lb_dataQ9.setForeground(new java.awt.Color(0, 0, 0));
-        lb_dataQ9.setText("19/09/2023 - 22/09/2023");
+        lb_dataQ9.setText("-");
         add(lb_dataQ9);
         lb_dataQ9.setBounds(1100, 630, 200, 10);
 
@@ -277,7 +326,7 @@ public Panel_home(List<Hospede> hospedeList) {
         add(lb_nomeQuartoQ9);
         lb_nomeQuartoQ9.setBounds(1060, 543, 240, 40);
 
-        lb_cbcQ9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cbcLimpeza.png"))); // NOI18N
+        lb_cbcQ9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cbcDisp.png"))); // NOI18N
         add(lb_cbcQ9);
         lb_cbcQ9.setBounds(1060, 540, 241, 45);
 
@@ -288,13 +337,14 @@ public Panel_home(List<Hospede> hospedeList) {
         lb_dataQ8.setBackground(new java.awt.Color(0, 0, 0));
         lb_dataQ8.setFont(new java.awt.Font("Montserrat SemiBold", 1, 14)); // NOI18N
         lb_dataQ8.setForeground(new java.awt.Color(0, 0, 0));
-        lb_dataQ8.setText("19/09/2023 - 22/09/2023");
+        lb_dataQ8.setText("-");
         add(lb_dataQ8);
         lb_dataQ8.setBounds(750, 630, 200, 10);
 
         lb_iconUserQ8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/iconUser.png"))); // NOI18N
+        lb_iconUserQ8.setText("-");
         add(lb_iconUserQ8);
-        lb_iconUserQ8.setBounds(730, 610, 190, 12);
+        lb_iconUserQ8.setBounds(730, 610, 40, 12);
 
         lb_iconQuartoQ8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/iconCobertor.png"))); // NOI18N
         lb_iconQuartoQ8.setText("jLabel1");
@@ -311,14 +361,14 @@ public Panel_home(List<Hospede> hospedeList) {
         lb_statusCivilQ8.setBackground(new java.awt.Color(0, 0, 0));
         lb_statusCivilQ8.setFont(new java.awt.Font("Montserrat SemiBold", 1, 14)); // NOI18N
         lb_statusCivilQ8.setForeground(new java.awt.Color(0, 0, 0));
-        lb_statusCivilQ8.setText("Solteiro");
+        lb_statusCivilQ8.setText("-");
         add(lb_statusCivilQ8);
         lb_statusCivilQ8.setBounds(750, 650, 200, 10);
 
         lb_userQ8.setBackground(new java.awt.Color(0, 0, 0));
         lb_userQ8.setFont(new java.awt.Font("Montserrat SemiBold", 1, 14)); // NOI18N
         lb_userQ8.setForeground(new java.awt.Color(0, 0, 0));
-        lb_userQ8.setText("Duda Costa");
+        lb_userQ8.setText("-");
         add(lb_userQ8);
         lb_userQ8.setBounds(750, 610, 200, 10);
 
@@ -337,7 +387,7 @@ public Panel_home(List<Hospede> hospedeList) {
         add(lb_nomeQuartoQ8);
         lb_nomeQuartoQ8.setBounds(710, 543, 240, 40);
 
-        lb_cbcQ8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cbcSaiHoje.png"))); // NOI18N
+        lb_cbcQ8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cbcDisp.png"))); // NOI18N
         add(lb_cbcQ8);
         lb_cbcQ8.setBounds(710, 540, 241, 45);
 
@@ -348,7 +398,7 @@ public Panel_home(List<Hospede> hospedeList) {
         lb_dataQ7.setBackground(new java.awt.Color(0, 0, 0));
         lb_dataQ7.setFont(new java.awt.Font("Montserrat SemiBold", 1, 14)); // NOI18N
         lb_dataQ7.setForeground(new java.awt.Color(0, 0, 0));
-        lb_dataQ7.setText("19/09/2023 - 22/09/2023");
+        lb_dataQ7.setText("-");
         add(lb_dataQ7);
         lb_dataQ7.setBounds(410, 630, 200, 10);
 
@@ -361,7 +411,7 @@ public Panel_home(List<Hospede> hospedeList) {
         lb_statusCivilQ7.setBackground(new java.awt.Color(0, 0, 0));
         lb_statusCivilQ7.setFont(new java.awt.Font("Montserrat SemiBold", 1, 14)); // NOI18N
         lb_statusCivilQ7.setForeground(new java.awt.Color(0, 0, 0));
-        lb_statusCivilQ7.setText("Solteiro");
+        lb_statusCivilQ7.setText("-");
         add(lb_statusCivilQ7);
         lb_statusCivilQ7.setBounds(410, 650, 200, 10);
 
@@ -374,7 +424,7 @@ public Panel_home(List<Hospede> hospedeList) {
         lb_userQ7.setBackground(new java.awt.Color(0, 0, 0));
         lb_userQ7.setFont(new java.awt.Font("Montserrat SemiBold", 1, 14)); // NOI18N
         lb_userQ7.setForeground(new java.awt.Color(0, 0, 0));
-        lb_userQ7.setText("Duda Costa");
+        lb_userQ7.setText("-");
         add(lb_userQ7);
         lb_userQ7.setBounds(410, 610, 200, 10);
 
@@ -396,7 +446,7 @@ public Panel_home(List<Hospede> hospedeList) {
         add(lb_nomeQuartoQ7);
         lb_nomeQuartoQ7.setBounds(370, 543, 240, 40);
 
-        lb_cbcQ7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cbcEntraHoje.png"))); // NOI18N
+        lb_cbcQ7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cbcDisp.png"))); // NOI18N
         add(lb_cbcQ7);
         lb_cbcQ7.setBounds(370, 540, 241, 45);
 
@@ -527,7 +577,7 @@ public Panel_home(List<Hospede> hospedeList) {
         lb_userQ4.setBackground(new java.awt.Color(0, 0, 0));
         lb_userQ4.setFont(new java.awt.Font("Montserrat SemiBold", 1, 14)); // NOI18N
         lb_userQ4.setForeground(new java.awt.Color(0, 0, 0));
-        lb_userQ4.setText("Duda Costa");
+        lb_userQ4.setText("-");
         add(lb_userQ4);
         lb_userQ4.setBounds(410, 410, 200, 10);
 
@@ -540,14 +590,14 @@ public Panel_home(List<Hospede> hospedeList) {
         lb_dataQ4.setBackground(new java.awt.Color(0, 0, 0));
         lb_dataQ4.setFont(new java.awt.Font("Montserrat SemiBold", 1, 14)); // NOI18N
         lb_dataQ4.setForeground(new java.awt.Color(0, 0, 0));
-        lb_dataQ4.setText("19/09/2023 - 22/09/2023");
+        lb_dataQ4.setText("-");
         add(lb_dataQ4);
         lb_dataQ4.setBounds(410, 430, 200, 10);
 
         lb_statusCivilQ4.setBackground(new java.awt.Color(0, 0, 0));
         lb_statusCivilQ4.setFont(new java.awt.Font("Montserrat SemiBold", 1, 14)); // NOI18N
         lb_statusCivilQ4.setForeground(new java.awt.Color(0, 0, 0));
-        lb_statusCivilQ4.setText("Solteiro");
+        lb_statusCivilQ4.setText("-");
         add(lb_statusCivilQ4);
         lb_statusCivilQ4.setBounds(410, 450, 200, 10);
 
@@ -575,7 +625,7 @@ public Panel_home(List<Hospede> hospedeList) {
         add(lb_nomeQuartoQ4);
         lb_nomeQuartoQ4.setBounds(370, 342, 240, 40);
 
-        lb_cbcQ4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cbcOcupado.png"))); // NOI18N
+        lb_cbcQ4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cbcDisp.png"))); // NOI18N
         add(lb_cbcQ4);
         lb_cbcQ4.setBounds(370, 340, 241, 45);
 
@@ -586,7 +636,7 @@ public Panel_home(List<Hospede> hospedeList) {
         lb_statusCivilQ3.setBackground(new java.awt.Color(0, 0, 0));
         lb_statusCivilQ3.setFont(new java.awt.Font("Montserrat SemiBold", 1, 14)); // NOI18N
         lb_statusCivilQ3.setForeground(new java.awt.Color(0, 0, 0));
-        lb_statusCivilQ3.setText("Solteiro");
+        lb_statusCivilQ3.setText("-");
         add(lb_statusCivilQ3);
         lb_statusCivilQ3.setBounds(1100, 240, 200, 10);
 
@@ -599,7 +649,7 @@ public Panel_home(List<Hospede> hospedeList) {
         lb_dataQ3.setBackground(new java.awt.Color(0, 0, 0));
         lb_dataQ3.setFont(new java.awt.Font("Montserrat SemiBold", 1, 14)); // NOI18N
         lb_dataQ3.setForeground(new java.awt.Color(0, 0, 0));
-        lb_dataQ3.setText("19/09/2023 - 22/09/2023");
+        lb_dataQ3.setText("-");
         add(lb_dataQ3);
         lb_dataQ3.setBounds(1100, 220, 200, 10);
 
@@ -612,7 +662,7 @@ public Panel_home(List<Hospede> hospedeList) {
         lb_userQ3.setBackground(new java.awt.Color(0, 0, 0));
         lb_userQ3.setFont(new java.awt.Font("Montserrat SemiBold", 1, 14)); // NOI18N
         lb_userQ3.setForeground(new java.awt.Color(0, 0, 0));
-        lb_userQ3.setText("Duda Costa");
+        lb_userQ3.setText("-");
         add(lb_userQ3);
         lb_userQ3.setBounds(1100, 200, 200, 10);
 
@@ -634,7 +684,7 @@ public Panel_home(List<Hospede> hospedeList) {
         add(lb_nomeQuartoQ3);
         lb_nomeQuartoQ3.setBounds(1060, 133, 240, 40);
 
-        lb_cbcQ3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cbcLimpeza.png"))); // NOI18N
+        lb_cbcQ3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cbcDisp.png"))); // NOI18N
         add(lb_cbcQ3);
         lb_cbcQ3.setBounds(1060, 130, 241, 45);
 
@@ -645,7 +695,7 @@ public Panel_home(List<Hospede> hospedeList) {
         lb_statusCivilQ2.setBackground(new java.awt.Color(0, 0, 0));
         lb_statusCivilQ2.setFont(new java.awt.Font("Montserrat SemiBold", 1, 14)); // NOI18N
         lb_statusCivilQ2.setForeground(new java.awt.Color(0, 0, 0));
-        lb_statusCivilQ2.setText("Casal");
+        lb_statusCivilQ2.setText("-");
         add(lb_statusCivilQ2);
         lb_statusCivilQ2.setBounds(750, 240, 200, 10);
 
@@ -658,7 +708,7 @@ public Panel_home(List<Hospede> hospedeList) {
         lb_dataQ2.setBackground(new java.awt.Color(0, 0, 0));
         lb_dataQ2.setFont(new java.awt.Font("Montserrat SemiBold", 1, 14)); // NOI18N
         lb_dataQ2.setForeground(new java.awt.Color(0, 0, 0));
-        lb_dataQ2.setText("19/09/2023 - 22/09/2023");
+        lb_dataQ2.setText("-");
         add(lb_dataQ2);
         lb_dataQ2.setBounds(750, 220, 200, 10);
 
@@ -671,7 +721,7 @@ public Panel_home(List<Hospede> hospedeList) {
         lb_userQ2.setBackground(new java.awt.Color(0, 0, 0));
         lb_userQ2.setFont(new java.awt.Font("Montserrat SemiBold", 1, 14)); // NOI18N
         lb_userQ2.setForeground(new java.awt.Color(0, 0, 0));
-        lb_userQ2.setText("Duda Costa");
+        lb_userQ2.setText("-");
         add(lb_userQ2);
         lb_userQ2.setBounds(750, 200, 200, 10);
 
@@ -693,7 +743,7 @@ public Panel_home(List<Hospede> hospedeList) {
         add(lb_nomeQuartoQ2);
         lb_nomeQuartoQ2.setBounds(720, 133, 220, 40);
 
-        lb_cbcQ2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cbcSaiHoje.png"))); // NOI18N
+        lb_cbcQ2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cbcDisp.png"))); // NOI18N
         add(lb_cbcQ2);
         lb_cbcQ2.setBounds(710, 130, 241, 45);
 
@@ -704,7 +754,7 @@ public Panel_home(List<Hospede> hospedeList) {
         lb_statusCivilQ1.setBackground(new java.awt.Color(0, 0, 0));
         lb_statusCivilQ1.setFont(new java.awt.Font("Montserrat SemiBold", 1, 14)); // NOI18N
         lb_statusCivilQ1.setForeground(new java.awt.Color(0, 0, 0));
-        lb_statusCivilQ1.setText("Solteiro");
+        lb_statusCivilQ1.setText("-");
         add(lb_statusCivilQ1);
         lb_statusCivilQ1.setBounds(410, 240, 200, 10);
 
@@ -717,7 +767,7 @@ public Panel_home(List<Hospede> hospedeList) {
         lb_dataQ1.setBackground(new java.awt.Color(0, 0, 0));
         lb_dataQ1.setFont(new java.awt.Font("Montserrat SemiBold", 1, 14)); // NOI18N
         lb_dataQ1.setForeground(new java.awt.Color(0, 0, 0));
-        lb_dataQ1.setText("19/09/2023 - 22/09/2023");
+        lb_dataQ1.setText("-");
         add(lb_dataQ1);
         lb_dataQ1.setBounds(410, 220, 200, 10);
 
@@ -730,7 +780,7 @@ public Panel_home(List<Hospede> hospedeList) {
         lb_userQ1.setBackground(new java.awt.Color(0, 0, 0));
         lb_userQ1.setFont(new java.awt.Font("Montserrat SemiBold", 1, 14)); // NOI18N
         lb_userQ1.setForeground(new java.awt.Color(0, 0, 0));
-        lb_userQ1.setText("Duda Costa");
+        lb_userQ1.setText("-");
         add(lb_userQ1);
         lb_userQ1.setBounds(410, 200, 200, 10);
 
@@ -757,7 +807,7 @@ public Panel_home(List<Hospede> hospedeList) {
         add(lb_nomeQuartoQ1);
         lb_nomeQuartoQ1.setBounds(370, 133, 240, 40);
 
-        lb_cbcQ1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cbcEntraHoje.png"))); // NOI18N
+        lb_cbcQ1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cbcDisp.png"))); // NOI18N
         add(lb_cbcQ1);
         lb_cbcQ1.setBounds(370, 130, 241, 45);
 
@@ -778,7 +828,7 @@ public Panel_home(List<Hospede> hospedeList) {
             }
         });
         add(lb_Mailing);
-        lb_Mailing.setBounds(50, 350, 70, 20);
+        lb_Mailing.setBounds(50, 350, 70, 21);
 
         lb_DayUse.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_DayUse.setText("Day Use");
@@ -793,7 +843,7 @@ public Panel_home(List<Hospede> hospedeList) {
             }
         });
         add(lb_DayUse);
-        lb_DayUse.setBounds(50, 310, 70, 20);
+        lb_DayUse.setBounds(50, 310, 70, 21);
 
         lb_Cadastro.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_Cadastro.setText("Cadastrar Hóspedes");
@@ -811,7 +861,7 @@ public Panel_home(List<Hospede> hospedeList) {
             }
         });
         add(lb_Cadastro);
-        lb_Cadastro.setBounds(50, 270, 180, 20);
+        lb_Cadastro.setBounds(50, 270, 180, 21);
 
         lb_Reservar.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_Reservar.setText("Reservar/Hospedar");
@@ -826,7 +876,7 @@ public Panel_home(List<Hospede> hospedeList) {
             }
         });
         add(lb_Reservar);
-        lb_Reservar.setBounds(50, 230, 170, 20);
+        lb_Reservar.setBounds(50, 230, 170, 21);
 
         lb_Calendario.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_Calendario.setText("Cadastro Reserva");
@@ -844,7 +894,7 @@ public Panel_home(List<Hospede> hospedeList) {
             }
         });
         add(lb_Calendario);
-        lb_Calendario.setBounds(50, 190, 150, 20);
+        lb_Calendario.setBounds(50, 190, 150, 21);
 
         lb_Home.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_Home.setText("Home");
@@ -859,7 +909,7 @@ public Panel_home(List<Hospede> hospedeList) {
             }
         });
         add(lb_Home);
-        lb_Home.setBounds(50, 150, 60, 20);
+        lb_Home.setBounds(50, 150, 60, 21);
 
         lb_logoSideBar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/hotelIcon-reduzido.png"))); // NOI18N
         lb_logoSideBar.setText("jLabel1");
@@ -1030,10 +1080,10 @@ public Panel_home(List<Hospede> hospedeList) {
     }//GEN-LAST:event_lb_MailingMouseExited
 
     private void lb_iconInfoQ1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_iconInfoQ1MouseClicked
-        JOptionPane.showMessageDialog(null, "Nome: "+hospedeList.get(0).getNome()+
-                "\nTelefone: "+hospedeList.get(0).getTelefone()+
-                "\nE-mail: "+hospedeList.get(0).getEmail()+
-                "\nQuantidade Acompanhantes: "+hospedeList.get(0).getQuantidadeAcompanhantes());        
+        JOptionPane.showMessageDialog(null, "Nome: " + hospedeList.get(0).getNome()
+                + "\nTelefone: " + hospedeList.get(0).getTelefone()
+                + "\nE-mail: " + hospedeList.get(0).getEmail()
+                + "\nQuantidade Acompanhantes: " + hospedeList.get(0).getQuantidadeAcompanhantes());
     }//GEN-LAST:event_lb_iconInfoQ1MouseClicked
 
     private void lb_CalendarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_CalendarioMouseClicked
