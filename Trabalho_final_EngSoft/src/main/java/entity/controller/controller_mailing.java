@@ -10,7 +10,7 @@ import entity.view.Panel_reservar;
 public class Controller_mailing {
     
     public void bt_homeMouseClicked(){
-        Main.c1.getView().setTelaHome(new Panel_home());
+        Main.c1.getView().setTelaHome(new Panel_home(null));
         Main.c1.getView().mostraTela(Main.c1.getView().getTelaHome());
     }
     
@@ -20,7 +20,7 @@ public class Controller_mailing {
     }
     
     public void bt_cadastrarHospedeMouseClicked(){
-        Main.c1.getView().setTelaCadastro(new Panel_cadastroHospede());
+        Main.c1.getView().setTelaCadastro(new Panel_cadastroHospede(null));
         Main.c1.getView().mostraTela(Main.c1.getView().getTelaCadastro());
     }
     

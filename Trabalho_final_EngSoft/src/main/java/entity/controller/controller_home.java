@@ -20,7 +20,7 @@ public class Controller_home {
     }
     
     public void bt_cadastrarHospedeMouseClicked(){
-        Main.c1.getView().setTelaCadastro(new Panel_cadastroHospede());
+        Main.c1.getView().setTelaCadastro(new Panel_cadastroHospede(null));
         Main.c1.getView().mostraTela(Main.c1.getView().getTelaCadastro());
     }
     
