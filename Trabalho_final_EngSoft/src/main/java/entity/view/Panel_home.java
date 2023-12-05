@@ -5,6 +5,7 @@ import entity.model.Hospede;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 public class Panel_home extends javax.swing.JPanel {
 
@@ -739,6 +740,11 @@ public Panel_home(List<Hospede> hospedeList) {
         lb_iconInfoQ1.setText("jLabel1");
         lb_iconInfoQ1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lb_iconInfoQ1.setPreferredSize(new java.awt.Dimension(25, 27));
+        lb_iconInfoQ1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_iconInfoQ1MouseClicked(evt);
+            }
+        });
         add(lb_iconInfoQ1);
         lb_iconInfoQ1.setBounds(570, 250, 25, 27);
 
@@ -770,7 +776,7 @@ public Panel_home(List<Hospede> hospedeList) {
             }
         });
         add(lb_Mailing);
-        lb_Mailing.setBounds(50, 350, 70, 21);
+        lb_Mailing.setBounds(50, 350, 70, 20);
 
         lb_DayUse.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_DayUse.setText("Day Use");
@@ -785,7 +791,7 @@ public Panel_home(List<Hospede> hospedeList) {
             }
         });
         add(lb_DayUse);
-        lb_DayUse.setBounds(50, 310, 70, 21);
+        lb_DayUse.setBounds(50, 310, 70, 20);
 
         lb_Cadastro.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_Cadastro.setText("Cadastrar Hóspedes");
@@ -803,7 +809,7 @@ public Panel_home(List<Hospede> hospedeList) {
             }
         });
         add(lb_Cadastro);
-        lb_Cadastro.setBounds(50, 270, 146, 21);
+        lb_Cadastro.setBounds(50, 270, 180, 20);
 
         lb_Reservar.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_Reservar.setText("Reservar/Hospedar");
@@ -818,7 +824,7 @@ public Panel_home(List<Hospede> hospedeList) {
             }
         });
         add(lb_Reservar);
-        lb_Reservar.setBounds(50, 230, 210, 21);
+        lb_Reservar.setBounds(50, 230, 170, 20);
 
         lb_Calendario.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_Calendario.setText("Cadastro Reserva");
@@ -833,10 +839,7 @@ public Panel_home(List<Hospede> hospedeList) {
             }
         });
         add(lb_Calendario);
-
-        lb_Calendario.setBounds(50, 190, 145, 20);
-
-        lb_Calendario.setBounds(50, 190, 181, 21);
+        lb_Calendario.setBounds(50, 190, 150, 20);
 
         lb_Home.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_Home.setText("Home");
@@ -851,7 +854,7 @@ public Panel_home(List<Hospede> hospedeList) {
             }
         });
         add(lb_Home);
-        lb_Home.setBounds(50, 150, 60, 21);
+        lb_Home.setBounds(50, 150, 60, 20);
 
         lb_logoSideBar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/hotelIcon-reduzido.png"))); // NOI18N
         lb_logoSideBar.setText("jLabel1");
@@ -1020,6 +1023,10 @@ public Panel_home(List<Hospede> hospedeList) {
     private void lb_MailingMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_MailingMouseExited
         removeSelecao();
     }//GEN-LAST:event_lb_MailingMouseExited
+
+    private void lb_iconInfoQ1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_iconInfoQ1MouseClicked
+        JOptionPane.showMessageDialog(null, "oi corna");
+    }//GEN-LAST:event_lb_iconInfoQ1MouseClicked
     private void lb_HomeMouseClicked(java.awt.event.MouseEvent evt) {
         Main.c1.getView().setTelaHome(new Panel_home(hospedeList));
         Main.c1.getView().mostraTela(Main.c1.getView().getTelaHome());

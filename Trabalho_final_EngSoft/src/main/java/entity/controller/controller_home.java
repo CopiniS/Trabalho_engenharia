@@ -1,4 +1,3 @@
-//
 package entity.controller;
 
 import entity.view.Panel_cadastroHospede;
