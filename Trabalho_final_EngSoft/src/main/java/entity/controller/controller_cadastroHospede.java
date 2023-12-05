@@ -22,7 +22,7 @@ public class Controller_cadastroHospede {
     }
     
     public void bt_calendarioReservasMouseClicked(){
-        Main.c1.getView().setTelaCalendario(new panel_cadastroReserva());
+        Main.c1.getView().setTelaCalendario(new panel_cadastroReserva(hospedeList));
         Main.c1.getView().mostraTela(Main.c1.getView().getTelaCalendario());
     }
     

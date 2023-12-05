@@ -16,7 +16,9 @@ public Panel_home(List<Hospede> hospedeList) {
         
         String undelineHome = "<HTML><u>Home</u></HTML>";
         lb_Home.setText(undelineHome);
+        
         this.hospedeList = hospedeList;
+        
         menuSideBarBranco();
         removeSelecao();
         checkGuests(hospedeList);
@@ -831,6 +833,9 @@ public Panel_home(List<Hospede> hospedeList) {
         lb_Calendario.setAlignmentY(0.0F);
         lb_Calendario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lb_Calendario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_CalendarioMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 lb_CalendarioMouseEntered(evt);
             }
@@ -1025,8 +1030,16 @@ public Panel_home(List<Hospede> hospedeList) {
     }//GEN-LAST:event_lb_MailingMouseExited
 
     private void lb_iconInfoQ1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_iconInfoQ1MouseClicked
-        JOptionPane.showMessageDialog(null, "oi corna");
+        JOptionPane.showMessageDialog(null, "Nome: "+hospedeList.get(0).getNome()+
+                "\nTelefone: "+hospedeList.get(0).getTelefone()+
+                "\nE-mail: "+hospedeList.get(0).getEmail()+
+                "\nQuantidade Acompanhantes: "+hospedeList.get(0).getQuantidadeAcompanhantes());        
     }//GEN-LAST:event_lb_iconInfoQ1MouseClicked
+
+    private void lb_CalendarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_CalendarioMouseClicked
+        Main.c1.getView().setTelaCalendario(new panel_cadastroReserva(hospedeList));
+        Main.c1.getView().mostraTela(Main.c1.getView().getTelaCalendario());
+    }//GEN-LAST:event_lb_CalendarioMouseClicked
     private void lb_HomeMouseClicked(java.awt.event.MouseEvent evt) {
         Main.c1.getView().setTelaHome(new Panel_home(hospedeList));
         Main.c1.getView().mostraTela(Main.c1.getView().getTelaHome());

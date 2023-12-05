@@ -5,12 +5,13 @@ import entity.model.Hospede;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 public class panel_cadastroReserva extends javax.swing.JPanel {
 
     private List<Hospede> hospedeList = new ArrayList<>();
     
-    public panel_cadastroReserva() {
+    public panel_cadastroReserva(List<Hospede> hospedeList) {
         initComponents();
         
         String undelineHome = "<HTML><u>Cadastro Reservar</u></HTML>";
@@ -23,15 +24,14 @@ public class panel_cadastroReserva extends javax.swing.JPanel {
         preencherComboBox();
     }
     
+    public void limparFTF(){
+        ftf_Checkin.setText("");
+        ftf_Checkout.setText("");
+    }
+    
     public void preencherComboBox(){
         for (Hospede h1 : hospedeList) {
             cb_nomeCadastrados.addItem(h1.getNome());
-        }
-        for (Hospede h1 : hospedeList) {
-            if(h1.getNome().equals(cb_nomeCadastrados.getSelectedItem())){
-                h1.setCheck_in(ftf_Checkin.getText());
-                h1.setCheck_out(ftf_Checkout.getText());
-            }
         }
     }
     
@@ -79,6 +79,7 @@ public class panel_cadastroReserva extends javax.swing.JPanel {
         ftf_Checkin = new javax.swing.JFormattedTextField();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(1366, 768));
         setLayout(null);
 
         lb_Mailing.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
@@ -222,7 +223,6 @@ public class panel_cadastroReserva extends javax.swing.JPanel {
         cb_nomeCadastrados.setBackground(new java.awt.Color(255, 255, 255));
         cb_nomeCadastrados.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         cb_nomeCadastrados.setForeground(new java.awt.Color(0, 0, 0));
-        cb_nomeCadastrados.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(cb_nomeCadastrados);
         cb_nomeCadastrados.setBounds(570, 140, 570, 40);
 
@@ -333,7 +333,16 @@ public class panel_cadastroReserva extends javax.swing.JPanel {
     }//GEN-LAST:event_lb_HomeMouseExited
 
     private void lb_SalvarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_SalvarMouseClicked
+        for (Hospede h1 : hospedeList) {
+            if(h1.getNome().equals(cb_nomeCadastrados.getSelectedItem())){
+                h1.setCheck_in(ftf_Checkin.getText());
+                h1.setCheck_out(ftf_Checkout.getText());
+            }
+        }
         
+        JOptionPane.showMessageDialog(null, "Data check-in e checkout incluidas com sucesso");
+        
+        limparFTF();
     }//GEN-LAST:event_lb_SalvarMouseClicked
 
     private void ftf_CheckinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ftf_CheckinActionPerformed

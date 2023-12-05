@@ -30,7 +30,7 @@ public class Controller_mailing {
     }
     
     public void bt_calendarioReservasMouseClicked(){
-        Main.c1.getView().setTelaCalendario(new panel_cadastroReserva());
+        Main.c1.getView().setTelaCalendario(new panel_cadastroReserva(null));
         Main.c1.getView().mostraTela(Main.c1.getView().getTelaCalendario());
     }
     

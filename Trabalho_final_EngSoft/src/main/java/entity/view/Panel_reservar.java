@@ -302,6 +302,9 @@ public class Panel_reservar extends javax.swing.JPanel {
         lb_Calendario.setMaximumSize(new java.awt.Dimension(32000, 32000));
         lb_Calendario.setPreferredSize(new java.awt.Dimension(10, 10));
         lb_Calendario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_CalendarioMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 lb_CalendarioMouseEntered(evt);
             }
@@ -432,6 +435,11 @@ public class Panel_reservar extends javax.swing.JPanel {
     private void lb_ReservarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_ReservarMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_lb_ReservarMouseClicked
+
+    private void lb_CalendarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_CalendarioMouseClicked
+        Main.c1.getView().setTelaCalendario(new panel_cadastroReserva(hospedeList));
+        Main.c1.getView().mostraTela(Main.c1.getView().getTelaCalendario());
+    }//GEN-LAST:event_lb_CalendarioMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
