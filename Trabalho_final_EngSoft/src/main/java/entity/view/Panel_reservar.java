@@ -76,8 +76,6 @@ public class Panel_reservar extends javax.swing.JPanel {
         lb_titAcompanhantes = new javax.swing.JLabel();
         cbcTabela = new javax.swing.JLabel();
         linhaTabela = new javax.swing.JLabel();
-        lb_Descartar = new javax.swing.JLabel();
-        lb_Salvar = new javax.swing.JLabel();
         pesquisa = new javax.swing.JLabel();
         lb_novoHospede = new javax.swing.JLabel();
         lb_Mailing = new javax.swing.JLabel();
@@ -212,21 +210,16 @@ public class Panel_reservar extends javax.swing.JPanel {
         add(linhaTabela);
         linhaTabela.setBounds(350, 260, 964, 260);
 
-        lb_Descartar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/btDescartar.png"))); // NOI18N
-        lb_Descartar.setText("jLabel3");
-        add(lb_Descartar);
-        lb_Descartar.setBounds(960, 660, 170, 30);
-
-        lb_Salvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/bt_Salvar.png"))); // NOI18N
-        lb_Salvar.setText("jLabel3");
-        add(lb_Salvar);
-        lb_Salvar.setBounds(1160, 660, 150, 30);
-
         pesquisa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Barra Pesquisa.png"))); // NOI18N
         add(pesquisa);
         pesquisa.setBounds(350, 130, 380, 50);
 
         lb_novoHospede.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/bt_NovoHospede.png"))); // NOI18N
+        lb_novoHospede.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_novoHospedeMouseClicked(evt);
+            }
+        });
         add(lb_novoHospede);
         lb_novoHospede.setBounds(810, 130, 160, 50);
 
@@ -450,17 +443,20 @@ public class Panel_reservar extends javax.swing.JPanel {
         Main.c1.getView().mostraTela(Main.c1.getView().getTelaHome());
     }//GEN-LAST:event_lb_HomeMouseClicked
 
+    private void lb_novoHospedeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_novoHospedeMouseClicked
+        Main.c1.getView().setTelaCadastro(new Panel_cadastroHospede(hospedeList));
+        Main.c1.getView().mostraTela(Main.c1.getView().getTelaCadastro());
+    }//GEN-LAST:event_lb_novoHospedeMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel cbcTabela;
     private javax.swing.JLabel lb_Cadastro;
     private javax.swing.JLabel lb_Calendario;
     private javax.swing.JLabel lb_DayUse;
-    private javax.swing.JLabel lb_Descartar;
     private javax.swing.JLabel lb_Home;
     private javax.swing.JLabel lb_Mailing;
     private javax.swing.JLabel lb_Reservar;
-    private javax.swing.JLabel lb_Salvar;
     private javax.swing.JLabel lb_bkgCadastrar;
     private javax.swing.JLabel lb_bkgCalendReserv;
     private javax.swing.JLabel lb_bkgDayUse;
