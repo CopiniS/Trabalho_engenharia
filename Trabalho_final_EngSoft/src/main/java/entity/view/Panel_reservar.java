@@ -34,7 +34,8 @@ public class Panel_reservar extends javax.swing.JPanel {
          for (Hospede h1 : hospedeList) {
             int numAcompanhantes = h1.getQuantidadeAcompanhantes();
             String numAcompanhantesTxt = String.valueOf(numAcompanhantes);
-                        
+            h1.setCheck_in(h1.getCheck_in() == null ? "-" : h1.getCheck_in());
+            h1.setCheck_out(h1.getCheck_out() == null ? "-" : h1.getCheck_out()); 
             lb_txtAcompanhantes.setText(lb_txtAcompanhantes.getText()+"<HTML><p>"+numAcompanhantesTxt+"</p><HTML>");    
             lb_txtCheckIn.setText(lb_txtCheckIn.getText()+"<HTML><p>"+h1.getCheck_in()+"</p><HTML>");
             lb_txtCheckout.setText(lb_txtCheckout.getText()+"<HTML><p>"+h1.getCheck_out()+"</p><HTML>");
@@ -320,6 +321,9 @@ public class Panel_reservar extends javax.swing.JPanel {
         lb_Home.setAlignmentY(0.0F);
         lb_Home.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lb_Home.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_HomeMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 lb_HomeMouseEntered(evt);
             }
@@ -440,6 +444,11 @@ public class Panel_reservar extends javax.swing.JPanel {
         Main.c1.getView().setTelaCalendario(new panel_cadastroReserva(hospedeList));
         Main.c1.getView().mostraTela(Main.c1.getView().getTelaCalendario());
     }//GEN-LAST:event_lb_CalendarioMouseClicked
+
+    private void lb_HomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_HomeMouseClicked
+        Main.c1.getView().setTelaHome(new Panel_home(hospedeList));
+        Main.c1.getView().mostraTela(Main.c1.getView().getTelaHome());
+    }//GEN-LAST:event_lb_HomeMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

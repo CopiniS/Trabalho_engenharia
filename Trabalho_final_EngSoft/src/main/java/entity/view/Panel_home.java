@@ -28,7 +28,9 @@ public class Panel_home extends javax.swing.JPanel {
 
         menuSideBarBranco();
         removeSelecao();
-        checkGuests(hospedeList);
+        if (hospedeList != null) {
+            checkGuests(hospedeList);
+        }
         lb_menuSelecionado.setVisible(true);
         lb_menuSupDisp.setText("Disponível: " + disponivel);
         lb_menuSupSaiHoje.setText("Sai Hoje: " + saiHoje);
@@ -45,6 +47,8 @@ public class Panel_home extends javax.swing.JPanel {
     }
 
     public void checkLabelGuest(Integer labelValue, Hospede h) {
+        h.setCheck_in(h.getCheck_in() == null ? " " : h.getCheck_in());
+        h.setCheck_out(h.getCheck_out() == null ? " " : h.getCheck_out());
         switch (labelValue) {
             case 0:
                 lb_userQ1.setText(h.getNome());
@@ -104,31 +108,32 @@ public class Panel_home extends javax.swing.JPanel {
     }
 
     public void checkStatus(Hospede h, javax.swing.JLabel label) {
-        LocalDate dataAtual = LocalDate.now();
-        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        String dataAtualString = dataAtual.format(formato);
+        if (!h.getCheck_in().equals(" ") && !h.getCheck_out().equals(" ")) {
+            LocalDate dataAtual = LocalDate.now();
+            DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            String dataAtualString = dataAtual.format(formato);
 
-        LocalDate data1 = LocalDate.parse(dataAtualString, formato);
-        LocalDate data2 = LocalDate.parse(h.getCheck_out(), formato);
-        LocalDate data3 = LocalDate.parse(h.getCheck_in(), formato);
+            LocalDate data1 = LocalDate.parse(dataAtualString, formato);
+            LocalDate data2 = LocalDate.parse(h.getCheck_out(), formato);
+            LocalDate data3 = LocalDate.parse(h.getCheck_in(), formato);
 
-        if (h.getCheck_in().equals(dataAtualString)) {
-            label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cbcEntraHoje.png")));
-            entraHoje = entraHoje + 1;
-        } else if (data1.isAfter(data2)) {
-            label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cbcLimpeza.png")));
-            emLimpeza = emLimpeza + 1;
-        } else if (h.getCheck_out().equals(dataAtualString)) {
-            label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cbcSaiHoje.png")));
-            saiHoje = saiHoje + 1;
-        } else if (data1.isAfter(data3) && data1.isBefore(data2)) {
-            label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cbcOcupado.png")));
-            ocupado = ocupado + 1;
-        } else {
-            label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cbcDisp.png")));
-            disponivel = disponivel + 1;
+            if (h.getCheck_in().equals(dataAtualString)) {
+                label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cbcEntraHoje.png")));
+                entraHoje = entraHoje + 1;
+            } else if (data1.isAfter(data2)) {
+                label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cbcLimpeza.png")));
+                emLimpeza = emLimpeza + 1;
+            } else if (h.getCheck_out().equals(dataAtualString)) {
+                label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cbcSaiHoje.png")));
+                saiHoje = saiHoje + 1;
+            } else if (data1.isAfter(data3) && data1.isBefore(data2)) {
+                label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cbcOcupado.png")));
+                ocupado = ocupado + 1;
+            } else {
+                label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cbcDisp.png")));
+                disponivel = disponivel + 1;
+            }
         }
-
     }
 
     public void menuSideBarBranco() {
@@ -315,6 +320,11 @@ public class Panel_home extends javax.swing.JPanel {
         lb_infoQ9.setText("jLabel1");
         lb_infoQ9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lb_infoQ9.setPreferredSize(new java.awt.Dimension(25, 27));
+        lb_infoQ9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_infoQ9MouseClicked(evt);
+            }
+        });
         add(lb_infoQ9);
         lb_infoQ9.setBounds(1260, 650, 25, 27);
 
@@ -376,6 +386,11 @@ public class Panel_home extends javax.swing.JPanel {
         lb_infoQ8.setText("jLabel1");
         lb_infoQ8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lb_infoQ8.setPreferredSize(new java.awt.Dimension(25, 27));
+        lb_infoQ8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_infoQ8MouseClicked(evt);
+            }
+        });
         add(lb_infoQ8);
         lb_infoQ8.setBounds(910, 660, 25, 27);
 
@@ -436,6 +451,11 @@ public class Panel_home extends javax.swing.JPanel {
         lb_infoQ7.setText("jLabel1");
         lb_infoQ7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lb_infoQ7.setPreferredSize(new java.awt.Dimension(25, 27));
+        lb_infoQ7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_infoQ7MouseClicked(evt);
+            }
+        });
         add(lb_infoQ7);
         lb_infoQ7.setBounds(570, 660, 25, 27);
 
@@ -495,6 +515,11 @@ public class Panel_home extends javax.swing.JPanel {
         lb_infoQ6.setText("jLabel1");
         lb_infoQ6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lb_infoQ6.setPreferredSize(new java.awt.Dimension(25, 27));
+        lb_infoQ6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_infoQ6MouseClicked(evt);
+            }
+        });
         add(lb_infoQ6);
         lb_infoQ6.setBounds(1260, 450, 25, 27);
 
@@ -555,6 +580,11 @@ public class Panel_home extends javax.swing.JPanel {
         lb_infoQ5.setText("jLabel1");
         lb_infoQ5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lb_infoQ5.setPreferredSize(new java.awt.Dimension(25, 27));
+        lb_infoQ5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_infoQ5MouseClicked(evt);
+            }
+        });
         add(lb_infoQ5);
         lb_infoQ5.setBounds(910, 460, 25, 27);
 
@@ -615,6 +645,11 @@ public class Panel_home extends javax.swing.JPanel {
         lb_infoQ4.setText("jLabel1");
         lb_infoQ4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lb_infoQ4.setPreferredSize(new java.awt.Dimension(25, 27));
+        lb_infoQ4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_infoQ4MouseClicked(evt);
+            }
+        });
         add(lb_infoQ4);
         lb_infoQ4.setBounds(570, 460, 25, 27);
 
@@ -674,6 +709,11 @@ public class Panel_home extends javax.swing.JPanel {
         lb_infoQ3.setText("jLabel1");
         lb_infoQ3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lb_infoQ3.setPreferredSize(new java.awt.Dimension(25, 27));
+        lb_infoQ3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_infoQ3MouseClicked(evt);
+            }
+        });
         add(lb_infoQ3);
         lb_infoQ3.setBounds(1260, 250, 25, 27);
 
@@ -733,6 +773,11 @@ public class Panel_home extends javax.swing.JPanel {
         lb_infoQ2.setText("jLabel1");
         lb_infoQ2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lb_infoQ2.setPreferredSize(new java.awt.Dimension(25, 27));
+        lb_infoQ2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_infoQ2MouseClicked(evt);
+            }
+        });
         add(lb_infoQ2);
         lb_infoQ2.setBounds(910, 250, 25, 27);
 
@@ -828,7 +873,7 @@ public class Panel_home extends javax.swing.JPanel {
             }
         });
         add(lb_Mailing);
-        lb_Mailing.setBounds(50, 350, 70, 21);
+        lb_Mailing.setBounds(50, 350, 70, 20);
 
         lb_DayUse.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_DayUse.setText("Day Use");
@@ -843,7 +888,7 @@ public class Panel_home extends javax.swing.JPanel {
             }
         });
         add(lb_DayUse);
-        lb_DayUse.setBounds(50, 310, 70, 21);
+        lb_DayUse.setBounds(50, 310, 70, 20);
 
         lb_Cadastro.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_Cadastro.setText("Cadastrar Hóspedes");
@@ -861,13 +906,16 @@ public class Panel_home extends javax.swing.JPanel {
             }
         });
         add(lb_Cadastro);
-        lb_Cadastro.setBounds(50, 270, 180, 21);
+        lb_Cadastro.setBounds(50, 270, 180, 20);
 
         lb_Reservar.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_Reservar.setText("Reservar/Hospedar");
         lb_Reservar.setAlignmentY(0.0F);
         lb_Reservar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lb_Reservar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_ReservarMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 lb_ReservarMouseEntered(evt);
             }
@@ -876,7 +924,7 @@ public class Panel_home extends javax.swing.JPanel {
             }
         });
         add(lb_Reservar);
-        lb_Reservar.setBounds(50, 230, 170, 21);
+        lb_Reservar.setBounds(50, 230, 170, 20);
 
         lb_Calendario.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_Calendario.setText("Cadastro Reserva");
@@ -894,7 +942,7 @@ public class Panel_home extends javax.swing.JPanel {
             }
         });
         add(lb_Calendario);
-        lb_Calendario.setBounds(50, 190, 150, 21);
+        lb_Calendario.setBounds(50, 190, 150, 20);
 
         lb_Home.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_Home.setText("Home");
@@ -909,7 +957,7 @@ public class Panel_home extends javax.swing.JPanel {
             }
         });
         add(lb_Home);
-        lb_Home.setBounds(50, 150, 60, 21);
+        lb_Home.setBounds(50, 150, 60, 20);
 
         lb_logoSideBar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/hotelIcon-reduzido.png"))); // NOI18N
         lb_logoSideBar.setText("jLabel1");
@@ -1080,16 +1128,57 @@ public class Panel_home extends javax.swing.JPanel {
     }//GEN-LAST:event_lb_MailingMouseExited
 
     private void lb_iconInfoQ1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_iconInfoQ1MouseClicked
-        JOptionPane.showMessageDialog(null, "Nome: " + hospedeList.get(0).getNome()
-                + "\nTelefone: " + hospedeList.get(0).getTelefone()
-                + "\nE-mail: " + hospedeList.get(0).getEmail()
-                + "\nQuantidade Acompanhantes: " + hospedeList.get(0).getQuantidadeAcompanhantes());
+        preencherInfo(1);
     }//GEN-LAST:event_lb_iconInfoQ1MouseClicked
+
+    public void preencherInfo(Integer i) {
+        JOptionPane.showMessageDialog(null, "Nome: " + hospedeList.get(i).getNome()
+                + "\nTelefone: " + hospedeList.get(i).getTelefone()
+                + "\nE-mail: " + hospedeList.get(i).getEmail()
+                + "\nQuantidade Acompanhantes: " + hospedeList.get(i).getQuantidadeAcompanhantes());
+    }
 
     private void lb_CalendarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_CalendarioMouseClicked
         Main.c1.getView().setTelaCalendario(new panel_cadastroReserva(hospedeList));
         Main.c1.getView().mostraTela(Main.c1.getView().getTelaCalendario());
     }//GEN-LAST:event_lb_CalendarioMouseClicked
+
+    private void lb_infoQ2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_infoQ2MouseClicked
+        preencherInfo(2);
+    }//GEN-LAST:event_lb_infoQ2MouseClicked
+
+    private void lb_infoQ3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_infoQ3MouseClicked
+        preencherInfo(3);
+    }//GEN-LAST:event_lb_infoQ3MouseClicked
+
+    private void lb_infoQ4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_infoQ4MouseClicked
+        preencherInfo(4);
+    }//GEN-LAST:event_lb_infoQ4MouseClicked
+
+    private void lb_infoQ5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_infoQ5MouseClicked
+        preencherInfo(5);
+    }//GEN-LAST:event_lb_infoQ5MouseClicked
+
+    private void lb_infoQ6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_infoQ6MouseClicked
+        preencherInfo(6);
+    }//GEN-LAST:event_lb_infoQ6MouseClicked
+
+    private void lb_infoQ7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_infoQ7MouseClicked
+        preencherInfo(7);
+    }//GEN-LAST:event_lb_infoQ7MouseClicked
+
+    private void lb_infoQ8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_infoQ8MouseClicked
+        preencherInfo(8);
+    }//GEN-LAST:event_lb_infoQ8MouseClicked
+
+    private void lb_infoQ9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_infoQ9MouseClicked
+        preencherInfo(9);
+    }//GEN-LAST:event_lb_infoQ9MouseClicked
+
+    private void lb_ReservarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_ReservarMouseClicked
+        Main.c1.getView().setTelaReservar(new Panel_reservar(hospedeList));
+        Main.c1.getView().mostraTela(Main.c1.getView().getTelaReservar());
+    }//GEN-LAST:event_lb_ReservarMouseClicked
     private void lb_HomeMouseClicked(java.awt.event.MouseEvent evt) {
         Main.c1.getView().setTelaHome(new Panel_home(hospedeList));
         Main.c1.getView().mostraTela(Main.c1.getView().getTelaHome());
