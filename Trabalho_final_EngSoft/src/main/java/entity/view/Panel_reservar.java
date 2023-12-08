@@ -3,16 +3,19 @@ package entity.view;
 import entity.controller.Main;
 import entity.model.Hospede;
 import java.awt.Color;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Panel_reservar extends javax.swing.JPanel {
 
     private List<Hospede> hospedeList;
+    private List<String> servicos = new ArrayList<>();
     
     public Panel_reservar(List<Hospede> hospedeList) {
         initComponents();
         menuSideBarBranco();
         this.hospedeList = hospedeList;
+        this.servicos = servicos;
         
         String undelineHome = "<HTML><u>Reservar/Hospedar</u></HTML>";
         lb_Reservar.setText(undelineHome);
@@ -439,7 +442,7 @@ public class Panel_reservar extends javax.swing.JPanel {
     }//GEN-LAST:event_lb_CalendarioMouseClicked
 
     private void lb_HomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_HomeMouseClicked
-        Main.c1.getView().setTelaHome(new Panel_home(hospedeList));
+        Main.c1.getView().setTelaHome(new Panel_home(hospedeList, servicos));
         Main.c1.getView().mostraTela(Main.c1.getView().getTelaHome());
     }//GEN-LAST:event_lb_HomeMouseClicked
 

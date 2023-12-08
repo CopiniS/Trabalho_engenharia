@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 public class panel_cadastroReserva extends javax.swing.JPanel {
 
     private List<Hospede> hospedeList = new ArrayList<>();
+    private List<String> servicos = new ArrayList<>();
     
     public panel_cadastroReserva(List<Hospede> hospedeList) {
         initComponents();
@@ -21,6 +22,7 @@ public class panel_cadastroReserva extends javax.swing.JPanel {
         removeSelecao();
         
         this.hospedeList = hospedeList;        
+        this.servicos = servicos;        
         preencherComboBox();
     }
     
@@ -522,7 +524,7 @@ public class panel_cadastroReserva extends javax.swing.JPanel {
     }//GEN-LAST:event_tf_tipoQuartoActionPerformed
 
     private void lb_HomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_HomeMouseClicked
-        Main.c1.getView().setTelaHome(new Panel_home(hospedeList));
+        Main.c1.getView().setTelaHome(new Panel_home(hospedeList, servicos));
         Main.c1.getView().mostraTela(Main.c1.getView().getTelaHome());
     }//GEN-LAST:event_lb_HomeMouseClicked
 

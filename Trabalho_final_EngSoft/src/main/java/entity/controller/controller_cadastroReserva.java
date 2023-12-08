@@ -10,7 +10,7 @@ import entity.view.Panel_reservar;
 public class controller_cadastroReserva {
     
     public void bt_homeMouseClicked(){
-        Main.c1.getView().setTelaHome(new Panel_home(null));
+        Main.c1.getView().setTelaHome(new Panel_home(null,null));
         Main.c1.getView().mostraTela(Main.c1.getView().getTelaHome());
     }
     

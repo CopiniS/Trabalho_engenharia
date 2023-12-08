@@ -465,6 +465,7 @@ public class Panel_cadastroHospede extends javax.swing.JPanel {
         String name = tf_nomeCompleto.getText();
         String phone = tf_Telefone.getText();
         String email = tf_Email.getText();
+        float valorTotal = 0;
         Integer guests = Integer.valueOf(tf_Acompanhantes.getText());
         String roomTypeStr = (String) cb_tipoQuarto.getSelectedItem();
         if (roomTypeStr.equals("Duplo Solteiro")) {
@@ -494,7 +495,7 @@ public class Panel_cadastroHospede extends javax.swing.JPanel {
             servicos.add("Aluguel Carro");
         }
 
-        Hospede h = new Hospede(name, phone, guests, roomType, email, servicos);
+        Hospede h = new Hospede(name, phone, guests, roomType, email, servicos, valorTotal);
         hospedeList.add(h);
         servicos = new ArrayList<>();
         JOptionPane.showMessageDialog(null, "Hóspede cadastrado com sucesso", "Sucesso!", JOptionPane.INFORMATION_MESSAGE);
@@ -585,7 +586,7 @@ public class Panel_cadastroHospede extends javax.swing.JPanel {
     }//GEN-LAST:event_lb_ReservarMouseClicked
 
     private void lb_HomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_HomeMouseClicked
-        Main.c1.getView().setTelaHome(new Panel_home(hospedeList));
+        Main.c1.getView().setTelaHome(new Panel_home(hospedeList, servicos));
         Main.c1.getView().mostraTela(Main.c1.getView().getTelaHome());
     }//GEN-LAST:event_lb_HomeMouseClicked
 

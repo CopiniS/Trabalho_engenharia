@@ -1,7 +1,6 @@
 
 package entity.model;
 //teste 4
-import java.util.Date;
 import java.util.List;
 
 public class Hospede {
@@ -14,14 +13,16 @@ public class Hospede {
     private String check_in;
     private String check_out;
     private List<String> servicos;
+    private float valorTotal;
 
-    public Hospede(String nome, String telefone, int quantidadeAcompanhantes, Enum tipoQuarto, String email, List<String> servicos) {
+    public Hospede(String nome, String telefone, int quantidadeAcompanhantes, Enum tipoQuarto, String email, List<String> servicos, float valorTotal) {
         this.nome = nome;
         this.telefone = telefone;
         this.quantidadeAcompanhantes = quantidadeAcompanhantes;
         this.tipoQuarto = tipoQuarto;
         this.email = email;
         this.servicos = servicos;
+        this.valorTotal = valorTotal;
     }
 
     public List<String> getServicos() {
@@ -70,6 +71,14 @@ public class Hospede {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public float getValorTotal() {
+        return valorTotal;
+    }
+
+    public void setValorTotal(float valorTotal) {
+        this.valorTotal = valorTotal;
     }
 
     public String getCheck_in() {

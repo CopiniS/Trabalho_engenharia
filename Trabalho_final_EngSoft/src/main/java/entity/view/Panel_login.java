@@ -9,10 +9,13 @@ import java.util.List;
 public class Panel_login extends javax.swing.JPanel {
 
     private List<Hospede> hospedeList = new ArrayList<>();
+    private List<String> servicos = new ArrayList<>();
 
     public Panel_login() {
         initComponents();
         this.hospedeList = hospedeList;
+        this.servicos = servicos;
+        
         lb_txAcessar.setForeground(Color.WHITE);
     }
 
@@ -99,7 +102,7 @@ public class Panel_login extends javax.swing.JPanel {
     }//GEN-LAST:event_tf_SenhaActionPerformed
 
     private void lb_btAcessarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_btAcessarMouseClicked
-        Main.c1.getView().setTelaHome(new Panel_home(hospedeList));
+        Main.c1.getView().setTelaHome(new Panel_home(hospedeList, servicos));
         Main.c1.getView().mostraTela(Main.c1.getView().getTelaHome());
     }//GEN-LAST:event_lb_btAcessarMouseClicked
 

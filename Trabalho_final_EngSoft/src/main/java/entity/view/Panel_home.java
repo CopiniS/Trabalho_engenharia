@@ -14,20 +14,23 @@ import sun.security.krb5.internal.crypto.Des;
 public class Panel_home extends javax.swing.JPanel {
 
     private List<Hospede> hospedeList = new ArrayList<>();
+    private List<String> servicos = new ArrayList<>();
     private Integer disponivel = 0;
     private Integer saiHoje = 0;
     private Integer entraHoje = 0;
     private Integer emLimpeza = 0;
     private Integer ocupado = 0;
     
-    public Panel_home(List<Hospede> hospedeList) {
+    public Panel_home(List<Hospede> hospedeList, List<String> servicos) {
         initComponents();
         
         String undelineHome = "<HTML><u>Home</u></HTML>";
         lb_Home.setText(undelineHome);
 
         this.hospedeList = hospedeList;
-
+        this.servicos = servicos;
+        
+        removeIconSair();
         menuSideBarBranco();
         removeSelecao();
         if (hospedeList != null) {
@@ -41,11 +44,11 @@ public class Panel_home extends javax.swing.JPanel {
         lb_menuSupOcupado.setText("Ocupado: " + ocupado);
     }
     
-    public void preencherIconSaida(JLabel label){
-        System.out.println("entrou"); 
-        System.out.println(label.toString());
-        System.out.println(label.getText());
-        
+    public void cliqueIconSair(int num){
+        JOptionPane.showMessageDialog(null, "Tipo Quarto:\n"+hospedeList.get(num).getTipoQuarto().toString()+"\n"+"Quantidade Diárias\n"+"Serviços:\n"+hospedeList.get(num).getServicos());
+    }
+    
+    public void removeIconSair(){
         lb_iconSairQ1.setVisible(false);
         lb_iconSairQ2.setVisible(false);
         lb_iconSairQ3.setVisible(false);
@@ -56,6 +59,9 @@ public class Panel_home extends javax.swing.JPanel {
         lb_iconSairQ8.setVisible(false);
         lb_iconSairQ9.setVisible(false);
         
+    }
+    
+    public void preencherIconSaida(JLabel label){
         if(label.equals(lb_cbcQ1)){
             lb_iconSairQ1.setVisible(true);
         } else if(label.equals(lb_cbcQ2)){
@@ -1337,43 +1343,49 @@ public class Panel_home extends javax.swing.JPanel {
     }//GEN-LAST:event_lb_ReservarMouseClicked
 
     private void lb_iconSairQ1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_iconSairQ1MouseClicked
-        // TODO add your handling code here:
+//        for (int i = 0; i < hospedeList.get(0).getServicos().size(); i++) {
+//            if(hospedeList.get(0).getServicos().equals("Restaurante"));{
+//                hospedeList.get(0).setValorTotal(hospedeList.get(0).getValorTotal()+100);
+//            }
+//        }
+//        
+//        System.out.println(hospedeList.get(0).getValorTotal());   
+        cliqueIconSair(0);
     }//GEN-LAST:event_lb_iconSairQ1MouseClicked
 
     private void lb_iconSairQ2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_iconSairQ2MouseClicked
-        // TODO add your handling code here:
+        cliqueIconSair(1);
     }//GEN-LAST:event_lb_iconSairQ2MouseClicked
 
     private void lb_iconSairQ3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_iconSairQ3MouseClicked
-        // TODO add your handling code here:
+        cliqueIconSair(2);
     }//GEN-LAST:event_lb_iconSairQ3MouseClicked
 
     private void lb_iconSairQ4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_iconSairQ4MouseClicked
-        // TODO add your handling code here:
+        cliqueIconSair(3);
     }//GEN-LAST:event_lb_iconSairQ4MouseClicked
 
     private void lb_iconSairQ5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_iconSairQ5MouseClicked
-        // TODO add your handling code here:
+        cliqueIconSair(4);
     }//GEN-LAST:event_lb_iconSairQ5MouseClicked
 
     private void lb_iconSairQ6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_iconSairQ6MouseClicked
-        // TODO add your handling code here:
+        cliqueIconSair(5);
     }//GEN-LAST:event_lb_iconSairQ6MouseClicked
 
     private void lb_iconSairQ7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_iconSairQ7MouseClicked
-        // TODO add your handling code here:
+        cliqueIconSair(6);
     }//GEN-LAST:event_lb_iconSairQ7MouseClicked
 
     private void lb_iconSairQ8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_iconSairQ8MouseClicked
-        // TODO add your handling code here:
+        cliqueIconSair(7);
     }//GEN-LAST:event_lb_iconSairQ8MouseClicked
 
     private void lb_iconSairQ9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_iconSairQ9MouseClicked
-        // TODO add your handling code here:
+        cliqueIconSair(8);
     }//GEN-LAST:event_lb_iconSairQ9MouseClicked
     private void lb_HomeMouseClicked(java.awt.event.MouseEvent evt) {
-        Main.c1.getView().setTelaHome(new Panel_home(hospedeList));
-        Main.c1.getView().mostraTela(Main.c1.getView().getTelaHome());
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

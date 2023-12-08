@@ -13,7 +13,7 @@ import java.util.Date;
 public class Controller_reservar {
     
     public void bt_homeMouseClicked(){
-        Main.c1.getView().setTelaHome(new Panel_home(null));
+        Main.c1.getView().setTelaHome(new Panel_home(null,null));
         Main.c1.getView().mostraTela(Main.c1.getView().getTelaHome());
     }
     

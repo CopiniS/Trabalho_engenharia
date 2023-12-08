@@ -11,8 +11,9 @@ import java.util.List;
 
 public class Controller_cadastroHospede {
        private List<Hospede> hospedeList = new ArrayList<>();
+       private List<String> servicos = new ArrayList<>();
     public void bt_homeMouseClicked(){
-        Main.c1.getView().setTelaHome(new Panel_home(hospedeList));
+        Main.c1.getView().setTelaHome(new Panel_home(hospedeList, servicos));
         Main.c1.getView().mostraTela(Main.c1.getView().getTelaHome());
     }
     
