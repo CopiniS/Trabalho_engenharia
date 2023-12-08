@@ -7,7 +7,9 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import sun.security.krb5.internal.crypto.Des;
 
 public class Panel_home extends javax.swing.JPanel {
 
@@ -17,10 +19,10 @@ public class Panel_home extends javax.swing.JPanel {
     private Integer entraHoje = 0;
     private Integer emLimpeza = 0;
     private Integer ocupado = 0;
-
+    
     public Panel_home(List<Hospede> hospedeList) {
         initComponents();
-
+        
         String undelineHome = "<HTML><u>Home</u></HTML>";
         lb_Home.setText(undelineHome);
 
@@ -37,6 +39,42 @@ public class Panel_home extends javax.swing.JPanel {
         lb_menuSupEntraHoje.setText("Entra Hoje: " + entraHoje);
         lb_menuSupLimpeza.setText("Em Limpeza: " + emLimpeza);
         lb_menuSupOcupado.setText("Ocupado: " + ocupado);
+    }
+    
+    public void preencherIconSaida(JLabel label){
+        System.out.println("entrou"); 
+        System.out.println(label.toString());
+        System.out.println(label.getText());
+        
+        lb_iconSairQ1.setVisible(false);
+        lb_iconSairQ2.setVisible(false);
+        lb_iconSairQ3.setVisible(false);
+        lb_iconSairQ4.setVisible(false);
+        lb_iconSairQ5.setVisible(false);
+        lb_iconSairQ6.setVisible(false);
+        lb_iconSairQ7.setVisible(false);
+        lb_iconSairQ8.setVisible(false);
+        lb_iconSairQ9.setVisible(false);
+        
+        if(label.equals(lb_cbcQ1)){
+            lb_iconSairQ1.setVisible(true);
+        } else if(label.equals(lb_cbcQ2)){
+            lb_iconSairQ2.setVisible(true);
+        } else if(label.equals(lb_cbcQ3)){
+            lb_iconSairQ3.setVisible(true);
+        } else if(label.equals(lb_cbcQ4)){
+            lb_iconSairQ4.setVisible(true);
+        } else if(label.equals(lb_cbcQ5)){
+            lb_iconSairQ5.setVisible(true);
+        } else if(label.equals(lb_cbcQ6)){
+            lb_iconSairQ6.setVisible(true);
+        } else if(label.equals(lb_cbcQ7)){
+            lb_iconSairQ7.setVisible(true);
+        } else if(label.equals(lb_cbcQ8)){
+            lb_iconSairQ8.setVisible(true);
+        } else if(label.equals(lb_cbcQ9)){
+            lb_iconSairQ9.setVisible(true);
+        }
     }
 
     public void checkGuests(List<Hospede> hospedeList) {
@@ -126,6 +164,7 @@ public class Panel_home extends javax.swing.JPanel {
             } else if (h.getCheck_out().equals(dataAtualString)) {
                 label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cbcSaiHoje.png")));
                 saiHoje = saiHoje + 1;
+                preencherIconSaida(label);
             } else if (data1.isAfter(data3) && data1.isBefore(data2)) {
                 label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cbcOcupado.png")));
                 ocupado = ocupado + 1;
@@ -165,6 +204,7 @@ public class Panel_home extends javax.swing.JPanel {
         lb_dataQ9 = new javax.swing.JLabel();
         lb_iconDataQ9 = new javax.swing.JLabel();
         lb_infoQ9 = new javax.swing.JLabel();
+        lb_iconSairQ9 = new javax.swing.JLabel();
         lb_nomeQuartoQ9 = new javax.swing.JLabel();
         lb_cbcQ9 = new javax.swing.JLabel();
         lb_bkgQ9 = new javax.swing.JLabel();
@@ -175,6 +215,7 @@ public class Panel_home extends javax.swing.JPanel {
         lb_statusCivilQ8 = new javax.swing.JLabel();
         lb_userQ8 = new javax.swing.JLabel();
         lb_infoQ8 = new javax.swing.JLabel();
+        lb_iconSairQ8 = new javax.swing.JLabel();
         lb_nomeQuartoQ8 = new javax.swing.JLabel();
         lb_cbcQ8 = new javax.swing.JLabel();
         lb_bkgQ8 = new javax.swing.JLabel();
@@ -185,6 +226,7 @@ public class Panel_home extends javax.swing.JPanel {
         lb_userQ7 = new javax.swing.JLabel();
         lb_iconUserQ7 = new javax.swing.JLabel();
         lb_infoQ7 = new javax.swing.JLabel();
+        lb_iconSairQ7 = new javax.swing.JLabel();
         lb_nomeQuartoQ7 = new javax.swing.JLabel();
         lb_cbcQ7 = new javax.swing.JLabel();
         lb_bkgQ7 = new javax.swing.JLabel();
@@ -195,6 +237,7 @@ public class Panel_home extends javax.swing.JPanel {
         lb_dataQ6 = new javax.swing.JLabel();
         lb_userQ6 = new javax.swing.JLabel();
         lb_infoQ6 = new javax.swing.JLabel();
+        lb_iconSairQ6 = new javax.swing.JLabel();
         lb_nomeQuartoQ6 = new javax.swing.JLabel();
         lb_cbcQ6 = new javax.swing.JLabel();
         lb_bkgQ6 = new javax.swing.JLabel();
@@ -205,6 +248,7 @@ public class Panel_home extends javax.swing.JPanel {
         lb_iconUserQ5 = new javax.swing.JLabel();
         lb_iconQuartoQ5 = new javax.swing.JLabel();
         lb_infoQ5 = new javax.swing.JLabel();
+        lb_iconSairQ5 = new javax.swing.JLabel();
         lb_nomeQuartoQ5 = new javax.swing.JLabel();
         lb_cbcQ5 = new javax.swing.JLabel();
         lb_bkgQ5 = new javax.swing.JLabel();
@@ -215,6 +259,7 @@ public class Panel_home extends javax.swing.JPanel {
         lb_iconUserQ4 = new javax.swing.JLabel();
         lb_iconQuartoQ4 = new javax.swing.JLabel();
         lb_infoQ4 = new javax.swing.JLabel();
+        lb_iconSairQ4 = new javax.swing.JLabel();
         lb_nomeQuartoQ4 = new javax.swing.JLabel();
         lb_cbcQ4 = new javax.swing.JLabel();
         lb_bkgQ4 = new javax.swing.JLabel();
@@ -225,6 +270,7 @@ public class Panel_home extends javax.swing.JPanel {
         lb_userQ3 = new javax.swing.JLabel();
         lb_iconUserQ3 = new javax.swing.JLabel();
         lb_infoQ3 = new javax.swing.JLabel();
+        lb_iconSairQ3 = new javax.swing.JLabel();
         lb_nomeQuartoQ3 = new javax.swing.JLabel();
         lb_cbcQ3 = new javax.swing.JLabel();
         lb_bkgQ3 = new javax.swing.JLabel();
@@ -234,6 +280,7 @@ public class Panel_home extends javax.swing.JPanel {
         lb_iconDataQ2 = new javax.swing.JLabel();
         lb_userQ2 = new javax.swing.JLabel();
         lb_iconUserQ2 = new javax.swing.JLabel();
+        lb_iconSairQ2 = new javax.swing.JLabel();
         lb_infoQ2 = new javax.swing.JLabel();
         lb_nomeQuartoQ2 = new javax.swing.JLabel();
         lb_cbcQ2 = new javax.swing.JLabel();
@@ -245,6 +292,7 @@ public class Panel_home extends javax.swing.JPanel {
         lb_userQ1 = new javax.swing.JLabel();
         lb_iconUserQ1 = new javax.swing.JLabel();
         lb_iconInfoQ1 = new javax.swing.JLabel();
+        lb_iconSairQ1 = new javax.swing.JLabel();
         lb_nomeQuartoQ1 = new javax.swing.JLabel();
         lb_cbcQ1 = new javax.swing.JLabel();
         lb_bkgQ1 = new javax.swing.JLabel();
@@ -326,10 +374,22 @@ public class Panel_home extends javax.swing.JPanel {
             }
         });
         add(lb_infoQ9);
-        lb_infoQ9.setBounds(1260, 650, 25, 27);
+        lb_infoQ9.setBounds(1260, 660, 25, 27);
+
+        lb_iconSairQ9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/saida 3.png"))); // NOI18N
+        lb_iconSairQ9.setText("jLabel1");
+        lb_iconSairQ9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lb_iconSairQ9.setPreferredSize(new java.awt.Dimension(25, 27));
+        lb_iconSairQ9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_iconSairQ9MouseClicked(evt);
+            }
+        });
+        add(lb_iconSairQ9);
+        lb_iconSairQ9.setBounds(1230, 660, 25, 27);
 
         lb_nomeQuartoQ9.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
-        lb_nomeQuartoQ9.setForeground(new java.awt.Color(255, 255, 255));
+        lb_nomeQuartoQ9.setForeground(new java.awt.Color(0, 0, 0));
         lb_nomeQuartoQ9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lb_nomeQuartoQ9.setText("QUARTO 09");
         lb_nomeQuartoQ9.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -394,8 +454,20 @@ public class Panel_home extends javax.swing.JPanel {
         add(lb_infoQ8);
         lb_infoQ8.setBounds(910, 660, 25, 27);
 
+        lb_iconSairQ8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/saida 3.png"))); // NOI18N
+        lb_iconSairQ8.setText("jLabel1");
+        lb_iconSairQ8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lb_iconSairQ8.setPreferredSize(new java.awt.Dimension(25, 27));
+        lb_iconSairQ8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_iconSairQ8MouseClicked(evt);
+            }
+        });
+        add(lb_iconSairQ8);
+        lb_iconSairQ8.setBounds(880, 660, 25, 27);
+
         lb_nomeQuartoQ8.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
-        lb_nomeQuartoQ8.setForeground(new java.awt.Color(255, 255, 255));
+        lb_nomeQuartoQ8.setForeground(new java.awt.Color(0, 0, 0));
         lb_nomeQuartoQ8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lb_nomeQuartoQ8.setText("QUARTO 08");
         lb_nomeQuartoQ8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -459,6 +531,18 @@ public class Panel_home extends javax.swing.JPanel {
         add(lb_infoQ7);
         lb_infoQ7.setBounds(570, 660, 25, 27);
 
+        lb_iconSairQ7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/saida 3.png"))); // NOI18N
+        lb_iconSairQ7.setText("jLabel1");
+        lb_iconSairQ7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lb_iconSairQ7.setPreferredSize(new java.awt.Dimension(25, 27));
+        lb_iconSairQ7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_iconSairQ7MouseClicked(evt);
+            }
+        });
+        add(lb_iconSairQ7);
+        lb_iconSairQ7.setBounds(540, 660, 25, 27);
+
         lb_nomeQuartoQ7.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_nomeQuartoQ7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lb_nomeQuartoQ7.setText("QUARTO 07");
@@ -521,7 +605,19 @@ public class Panel_home extends javax.swing.JPanel {
             }
         });
         add(lb_infoQ6);
-        lb_infoQ6.setBounds(1260, 450, 25, 27);
+        lb_infoQ6.setBounds(1260, 460, 25, 27);
+
+        lb_iconSairQ6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/saida 3.png"))); // NOI18N
+        lb_iconSairQ6.setText("jLabel1");
+        lb_iconSairQ6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lb_iconSairQ6.setPreferredSize(new java.awt.Dimension(25, 27));
+        lb_iconSairQ6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_iconSairQ6MouseClicked(evt);
+            }
+        });
+        add(lb_iconSairQ6);
+        lb_iconSairQ6.setBounds(1230, 460, 25, 27);
 
         lb_nomeQuartoQ6.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_nomeQuartoQ6.setForeground(new java.awt.Color(0, 0, 0));
@@ -588,6 +684,18 @@ public class Panel_home extends javax.swing.JPanel {
         add(lb_infoQ5);
         lb_infoQ5.setBounds(910, 460, 25, 27);
 
+        lb_iconSairQ5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/saida 3.png"))); // NOI18N
+        lb_iconSairQ5.setText("jLabel1");
+        lb_iconSairQ5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lb_iconSairQ5.setPreferredSize(new java.awt.Dimension(25, 27));
+        lb_iconSairQ5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_iconSairQ5MouseClicked(evt);
+            }
+        });
+        add(lb_iconSairQ5);
+        lb_iconSairQ5.setBounds(880, 460, 25, 27);
+
         lb_nomeQuartoQ5.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_nomeQuartoQ5.setForeground(new java.awt.Color(0, 0, 0));
         lb_nomeQuartoQ5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -653,6 +761,18 @@ public class Panel_home extends javax.swing.JPanel {
         add(lb_infoQ4);
         lb_infoQ4.setBounds(570, 460, 25, 27);
 
+        lb_iconSairQ4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/saida 3.png"))); // NOI18N
+        lb_iconSairQ4.setText("jLabel1");
+        lb_iconSairQ4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lb_iconSairQ4.setPreferredSize(new java.awt.Dimension(25, 27));
+        lb_iconSairQ4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_iconSairQ4MouseClicked(evt);
+            }
+        });
+        add(lb_iconSairQ4);
+        lb_iconSairQ4.setBounds(540, 460, 25, 27);
+
         lb_nomeQuartoQ4.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_nomeQuartoQ4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lb_nomeQuartoQ4.setText("QUARTO 04");
@@ -717,6 +837,18 @@ public class Panel_home extends javax.swing.JPanel {
         add(lb_infoQ3);
         lb_infoQ3.setBounds(1260, 250, 25, 27);
 
+        lb_iconSairQ3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/saida 3.png"))); // NOI18N
+        lb_iconSairQ3.setText("jLabel1");
+        lb_iconSairQ3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lb_iconSairQ3.setPreferredSize(new java.awt.Dimension(25, 27));
+        lb_iconSairQ3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_iconSairQ3MouseClicked(evt);
+            }
+        });
+        add(lb_iconSairQ3);
+        lb_iconSairQ3.setBounds(1230, 250, 25, 27);
+
         lb_nomeQuartoQ3.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_nomeQuartoQ3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lb_nomeQuartoQ3.setText("QUARTO 03");
@@ -768,6 +900,18 @@ public class Panel_home extends javax.swing.JPanel {
         lb_iconUserQ2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/iconUser.png"))); // NOI18N
         add(lb_iconUserQ2);
         lb_iconUserQ2.setBounds(730, 200, 20, 12);
+
+        lb_iconSairQ2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/saida 3.png"))); // NOI18N
+        lb_iconSairQ2.setText("jLabel1");
+        lb_iconSairQ2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lb_iconSairQ2.setPreferredSize(new java.awt.Dimension(25, 27));
+        lb_iconSairQ2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_iconSairQ2MouseClicked(evt);
+            }
+        });
+        add(lb_iconSairQ2);
+        lb_iconSairQ2.setBounds(880, 250, 25, 27);
 
         lb_infoQ2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/informacoes 1.png"))); // NOI18N
         lb_infoQ2.setText("jLabel1");
@@ -844,6 +988,18 @@ public class Panel_home extends javax.swing.JPanel {
         });
         add(lb_iconInfoQ1);
         lb_iconInfoQ1.setBounds(570, 250, 25, 27);
+
+        lb_iconSairQ1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/saida 3.png"))); // NOI18N
+        lb_iconSairQ1.setText("jLabel1");
+        lb_iconSairQ1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lb_iconSairQ1.setPreferredSize(new java.awt.Dimension(25, 27));
+        lb_iconSairQ1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_iconSairQ1MouseClicked(evt);
+            }
+        });
+        add(lb_iconSairQ1);
+        lb_iconSairQ1.setBounds(540, 250, 25, 27);
 
         lb_nomeQuartoQ1.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_nomeQuartoQ1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -1128,7 +1284,7 @@ public class Panel_home extends javax.swing.JPanel {
     }//GEN-LAST:event_lb_MailingMouseExited
 
     private void lb_iconInfoQ1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_iconInfoQ1MouseClicked
-        preencherInfo(1);
+        preencherInfo(0);
     }//GEN-LAST:event_lb_iconInfoQ1MouseClicked
 
     public void preencherInfo(Integer i) {
@@ -1144,41 +1300,77 @@ public class Panel_home extends javax.swing.JPanel {
     }//GEN-LAST:event_lb_CalendarioMouseClicked
 
     private void lb_infoQ2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_infoQ2MouseClicked
-        preencherInfo(2);
+        preencherInfo(1);
     }//GEN-LAST:event_lb_infoQ2MouseClicked
 
     private void lb_infoQ3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_infoQ3MouseClicked
-        preencherInfo(3);
+        preencherInfo(2);
     }//GEN-LAST:event_lb_infoQ3MouseClicked
 
     private void lb_infoQ4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_infoQ4MouseClicked
-        preencherInfo(4);
+        preencherInfo(3);
     }//GEN-LAST:event_lb_infoQ4MouseClicked
 
     private void lb_infoQ5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_infoQ5MouseClicked
-        preencherInfo(5);
+        preencherInfo(4);
     }//GEN-LAST:event_lb_infoQ5MouseClicked
 
     private void lb_infoQ6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_infoQ6MouseClicked
-        preencherInfo(6);
+        preencherInfo(5);
     }//GEN-LAST:event_lb_infoQ6MouseClicked
 
     private void lb_infoQ7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_infoQ7MouseClicked
-        preencherInfo(7);
+        preencherInfo(6);
     }//GEN-LAST:event_lb_infoQ7MouseClicked
 
     private void lb_infoQ8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_infoQ8MouseClicked
-        preencherInfo(8);
+        preencherInfo(7);
     }//GEN-LAST:event_lb_infoQ8MouseClicked
 
     private void lb_infoQ9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_infoQ9MouseClicked
-        preencherInfo(9);
+        preencherInfo(8);
     }//GEN-LAST:event_lb_infoQ9MouseClicked
 
     private void lb_ReservarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_ReservarMouseClicked
         Main.c1.getView().setTelaReservar(new Panel_reservar(hospedeList));
         Main.c1.getView().mostraTela(Main.c1.getView().getTelaReservar());
     }//GEN-LAST:event_lb_ReservarMouseClicked
+
+    private void lb_iconSairQ1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_iconSairQ1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lb_iconSairQ1MouseClicked
+
+    private void lb_iconSairQ2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_iconSairQ2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lb_iconSairQ2MouseClicked
+
+    private void lb_iconSairQ3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_iconSairQ3MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lb_iconSairQ3MouseClicked
+
+    private void lb_iconSairQ4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_iconSairQ4MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lb_iconSairQ4MouseClicked
+
+    private void lb_iconSairQ5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_iconSairQ5MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lb_iconSairQ5MouseClicked
+
+    private void lb_iconSairQ6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_iconSairQ6MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lb_iconSairQ6MouseClicked
+
+    private void lb_iconSairQ7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_iconSairQ7MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lb_iconSairQ7MouseClicked
+
+    private void lb_iconSairQ8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_iconSairQ8MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lb_iconSairQ8MouseClicked
+
+    private void lb_iconSairQ9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_iconSairQ9MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lb_iconSairQ9MouseClicked
     private void lb_HomeMouseClicked(java.awt.event.MouseEvent evt) {
         Main.c1.getView().setTelaHome(new Panel_home(hospedeList));
         Main.c1.getView().mostraTela(Main.c1.getView().getTelaHome());
@@ -1249,6 +1441,15 @@ public class Panel_home extends javax.swing.JPanel {
     private javax.swing.JLabel lb_iconQuartoQ7;
     private javax.swing.JLabel lb_iconQuartoQ8;
     private javax.swing.JLabel lb_iconQuartoQ9;
+    private javax.swing.JLabel lb_iconSairQ1;
+    private javax.swing.JLabel lb_iconSairQ2;
+    private javax.swing.JLabel lb_iconSairQ3;
+    private javax.swing.JLabel lb_iconSairQ4;
+    private javax.swing.JLabel lb_iconSairQ5;
+    private javax.swing.JLabel lb_iconSairQ6;
+    private javax.swing.JLabel lb_iconSairQ7;
+    private javax.swing.JLabel lb_iconSairQ8;
+    private javax.swing.JLabel lb_iconSairQ9;
     private javax.swing.JLabel lb_iconUserQ1;
     private javax.swing.JLabel lb_iconUserQ2;
     private javax.swing.JLabel lb_iconUserQ3;

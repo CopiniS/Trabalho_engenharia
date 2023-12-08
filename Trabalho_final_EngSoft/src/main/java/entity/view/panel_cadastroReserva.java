@@ -14,7 +14,7 @@ public class panel_cadastroReserva extends javax.swing.JPanel {
     public panel_cadastroReserva(List<Hospede> hospedeList) {
         initComponents();
         
-        String undelineHome = "<HTML><u>Cadastro Reservar</u></HTML>";
+        String undelineHome = "<HTML><u>Cadastro Reserva</u></HTML>";
         lb_Calendario.setText(undelineHome);
         
         menuSideBarBranco();
