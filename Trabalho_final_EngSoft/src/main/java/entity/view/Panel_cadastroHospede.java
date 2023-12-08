@@ -16,7 +16,7 @@ public class Panel_cadastroHospede extends javax.swing.JPanel {
     public Panel_cadastroHospede(List<Hospede> hospedeList) {
         initComponents();
 
-        String undelineHome = "<HTML><u>Cadastrar Hóspede</u></HTML>";
+        String undelineHome = "<HTML><u>Cadastrar Hóspedes</u></HTML>";
         lb_Cadastro.setText(undelineHome);
         this.hospedeList = hospedeList;
         menuSideBarBranco();
@@ -304,7 +304,7 @@ public class Panel_cadastroHospede extends javax.swing.JPanel {
             }
         });
         add(lb_DayUse);
-        lb_DayUse.setBounds(50, 310, 70, 20);
+        lb_DayUse.setBounds(50, 310, 80, 20);
 
         lb_Cadastro.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_Cadastro.setText("Cadastrar Hóspedes");
@@ -347,6 +347,9 @@ public class Panel_cadastroHospede extends javax.swing.JPanel {
         lb_Calendario.setAlignmentY(0.0F);
         lb_Calendario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lb_Calendario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_CalendarioMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 lb_CalendarioMouseEntered(evt);
             }
@@ -355,7 +358,7 @@ public class Panel_cadastroHospede extends javax.swing.JPanel {
             }
         });
         add(lb_Calendario);
-        lb_Calendario.setBounds(50, 190, 150, 20);
+        lb_Calendario.setBounds(50, 190, 160, 20);
 
         lb_Home.setFont(new java.awt.Font("Montserrat SemiBold", 0, 16)); // NOI18N
         lb_Home.setText("Home");
@@ -585,6 +588,11 @@ public class Panel_cadastroHospede extends javax.swing.JPanel {
         Main.c1.getView().setTelaHome(new Panel_home(hospedeList));
         Main.c1.getView().mostraTela(Main.c1.getView().getTelaHome());
     }//GEN-LAST:event_lb_HomeMouseClicked
+
+    private void lb_CalendarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_CalendarioMouseClicked
+        Main.c1.getView().setTelaCalendario(new panel_cadastroReserva(hospedeList));
+        Main.c1.getView().mostraTela(Main.c1.getView().getTelaCalendario());
+    }//GEN-LAST:event_lb_CalendarioMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
